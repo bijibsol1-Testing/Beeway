@@ -1,386 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-03-03T17:36:29.446845" rpa="false" schemaversion="5">
-<suite id="s1" name="SwapShiftTest" source="D:\Apps\Automation\BEEWAY\tests\SwapShiftTest.robot">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-03-03T17:52:58.008750" rpa="false" schemaversion="5">
+<suite id="s1" name="ReplaceShiftTest" source="D:\Apps\Automation\BEEWAY\tests\ReplaceShiftTest.robot">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-03-03T17:36:30.288478" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001ACDF801E80&gt;</msg>
+<msg time="2026-03-03T17:52:59.159579" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000010DC3951E80&gt;</msg>
 <var>${chrome_options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-03-03T17:36:30.286884" elapsed="0.002672"/>
+<status status="PASS" start="2026-03-03T17:52:59.157764" elapsed="0.002014"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--headless</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-03-03T17:36:30.290419" elapsed="0.001115"/>
+<status status="PASS" start="2026-03-03T17:52:59.161051" elapsed="0.001079"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-03-03T17:36:30.292374" elapsed="0.000980"/>
+<status status="PASS" start="2026-03-03T17:52:59.162732" elapsed="0.000896"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-dev-shm-usage</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-03-03T17:36:30.293887" elapsed="0.000960"/>
+<status status="PASS" start="2026-03-03T17:52:59.164138" elapsed="0.000848"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:36:30.298300" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2026-03-03T17:52:59.166056" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${chrome_options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2026-03-03T17:36:30.295333" elapsed="2.770348"/>
+<status status="PASS" start="2026-03-03T17:52:59.165517" elapsed="3.470875"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:36:33.066698" level="INFO">Opening url 'https://test.bijib.in'</msg>
+<msg time="2026-03-03T17:53:02.637549" level="INFO">Opening url 'https://test.bijib.in'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-03-03T17:36:33.066274" elapsed="3.138272"/>
+<status status="PASS" start="2026-03-03T17:53:02.636898" elapsed="1.848753"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.205003" elapsed="0.000686"/>
+<status status="PASS" start="2026-03-03T17:53:04.486258" elapsed="0.001151"/>
 </kw>
-<status status="PASS" start="2026-03-03T17:36:30.284016" elapsed="5.921940"/>
+<status status="PASS" start="2026-03-03T17:52:59.154647" elapsed="5.333068"/>
 </kw>
-<test id="s1-t1" name="Login And Swap Shift In Beeway" line="10">
+<test id="s1-t1" name="Login And Replace Shift In Beeway" line="12">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.226119" level="INFO">${USERNAME} = rgarikapati</msg>
+<msg time="2026-03-03T17:53:04.497359" level="INFO">${USERNAME} = rgarikapati</msg>
 <var>${USERNAME}</var>
 <arg>rgarikapati</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.225129" elapsed="0.001107"/>
+<status status="PASS" start="2026-03-03T17:53:04.496420" elapsed="0.001035"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.230056" level="INFO">${PASSWORD} = E7q_35&amp;ZR]5D*iRZ</msg>
+<msg time="2026-03-03T17:53:04.499556" level="INFO">${PASSWORD} = E7q_35&amp;ZR]5D*iRZ</msg>
 <var>${PASSWORD}</var>
 <arg>E7q_35&amp;ZR]5D*iRZ</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.229340" elapsed="0.000795"/>
+<status status="PASS" start="2026-03-03T17:53:04.498654" elapsed="0.001020"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.231387" level="INFO">${SHIFT_TIME} = 19:00-07:00</msg>
+<msg time="2026-03-03T17:53:04.501177" level="INFO">${SHIFT_TIME} = 19:00-07:00</msg>
 <var>${SHIFT_TIME}</var>
 <arg>19:00-07:00</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.230783" elapsed="0.000680"/>
+<status status="PASS" start="2026-03-03T17:53:04.500374" elapsed="0.000913"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.233059" level="INFO">${SHIFT_NAME} = N12</msg>
+<msg time="2026-03-03T17:53:04.502735" level="INFO">${SHIFT_NAME} = N12</msg>
 <var>${SHIFT_NAME}</var>
 <arg>N12</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.232237" elapsed="0.000925"/>
+<status status="PASS" start="2026-03-03T17:53:04.501949" elapsed="0.000896"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.235367" level="INFO">${YEAR} = 2026</msg>
+<msg time="2026-03-03T17:53:04.504342" level="INFO">${YEAR} = 2026</msg>
 <var>${YEAR}</var>
 <arg>2026</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.234660" elapsed="0.000787"/>
+<status status="PASS" start="2026-03-03T17:53:04.503504" elapsed="0.000961"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.237675" level="INFO">${MONTH} = JUN</msg>
+<msg time="2026-03-03T17:53:04.506018" level="INFO">${MONTH} = JUN</msg>
 <var>${MONTH}</var>
 <arg>JUN</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.236657" elapsed="0.001204"/>
+<status status="PASS" start="2026-03-03T17:53:04.505226" elapsed="0.000928"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.256135" level="INFO">${DATE} = 22</msg>
+<msg time="2026-03-03T17:53:04.507671" level="INFO">${DATE} = 20</msg>
 <var>${DATE}</var>
-<arg>22</arg>
+<arg>20</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.254584" elapsed="0.001662"/>
+<status status="PASS" start="2026-03-03T17:53:04.506791" elapsed="0.001010"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.269108" level="INFO">${DOCTOR_NAME} = Jessica ILM</msg>
+<msg time="2026-03-03T17:53:04.510482" level="INFO">${DOCTOR_NAME} = Jessica ILM</msg>
 <var>${DOCTOR_NAME}</var>
 <arg>Jessica ILM</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.268330" elapsed="0.000866"/>
+<status status="PASS" start="2026-03-03T17:53:04.508905" elapsed="0.001845"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.271583" level="INFO">${FIRSTNAME} = David</msg>
+<msg time="2026-03-03T17:53:04.515908" level="INFO">${FIRSTNAME} = David</msg>
 <var>${FIRSTNAME}</var>
 <arg>David</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.270882" elapsed="0.000778"/>
+<status status="PASS" start="2026-03-03T17:53:04.514868" elapsed="0.001177"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.294911" level="INFO">${LASTNAME} = AACIS</msg>
+<msg time="2026-03-03T17:53:04.519937" level="INFO">${LASTNAME} = AACIS</msg>
 <var>${LASTNAME}</var>
 <arg>AACIS</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.293962" elapsed="0.001069"/>
+<status status="PASS" start="2026-03-03T17:53:04.519172" elapsed="0.000867"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.296670" level="INFO">${SWAP_USER} = David AACIS</msg>
-<var>${SWAP_USER}</var>
+<msg time="2026-03-03T17:53:04.521563" level="INFO">${REPLACE_USER} = David AACIS</msg>
+<var>${REPLACE_USER}</var>
 <arg>${FIRSTNAME} ${LASTNAME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.295608" elapsed="0.001191"/>
+<status status="PASS" start="2026-03-03T17:53:04.520743" elapsed="0.000896"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.299567" level="INFO">${OPERATION} = Swap Shift</msg>
+<msg time="2026-03-03T17:53:04.522698" level="INFO">${OPERATION} = Replace Shift</msg>
 <var>${OPERATION}</var>
-<arg>Swap Shift</arg>
+<arg>Replace Shift</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.298646" elapsed="0.001054"/>
+<status status="PASS" start="2026-03-03T17:53:04.522133" elapsed="0.000639"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.343100" level="INFO">${SWAP_DATE} = 25/06/2026</msg>
-<var>${SWAP_DATE}</var>
-<arg>25/06/2026</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.342052" elapsed="0.001176"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.345686" level="INFO">${SWAPPING_DATE} = 22/06/2026</msg>
-<var>${SWAPPING_DATE}</var>
-<arg>22/06/2026</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.344535" elapsed="0.001274"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.347380" level="INFO">${DAY} = Thursday</msg>
-<var>${DAY}</var>
-<arg>Thursday</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.346522" elapsed="0.000980"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.371507" level="INFO">${EXPECTED_MESSAGE} = Do you want to Swap shift?</msg>
-<var>${EXPECTED_MESSAGE}</var>
-<arg>Do you want to Swap shift?</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.370509" elapsed="0.001117"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.377761" level="INFO">${ACTION} = ACCEPT</msg>
-<var>${ACTION}</var>
-<arg>ACCEPT</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.376754" elapsed="0.001086"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.381443" level="INFO">${VALIDATION_DATE} = 25</msg>
-<var>${VALIDATION_DATE}</var>
-<arg>25</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.378894" elapsed="0.002712"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.405090" level="INFO">${OPERATION} = Swap Shift</msg>
-<var>${OPERATION}</var>
-<arg>Swap Shift</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.404327" elapsed="0.000854"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.449616" level="INFO">${SHIFT_TEXT} = Swap with Jessica ILM 25/06/2026 - 19:00 - 07:00</msg>
+<msg time="2026-03-03T17:53:04.523861" level="INFO">${SHIFT_TEXT} = SR From Jessica ILM</msg>
 <var>${SHIFT_TEXT}</var>
-<arg>Swap with ${DOCTOR_NAME} ${SWAP_DATE} - 19:00 - 07:00</arg>
+<arg>SR From ${DOCTOR_NAME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.448441" elapsed="0.001276"/>
+<status status="PASS" start="2026-03-03T17:53:04.523213" elapsed="0.000725"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.452122" level="INFO">${SHIFT_COLOUR} = bg-octonary</msg>
+<msg time="2026-03-03T17:53:04.530265" level="INFO">${SHIFT_COLOUR} = bg-septenary</msg>
 <var>${SHIFT_COLOUR}</var>
-<arg>bg-octonary</arg>
+<arg>bg-septenary</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.451352" elapsed="0.000855"/>
+<status status="PASS" start="2026-03-03T17:53:04.528383" elapsed="0.002010"/>
 </kw>
-<kw name="Validate Swap Shift from Admin Login" owner="SwapShiftPage">
-<kw name="Validate shift from Admin Login" owner="ReplaceShiftPage">
+<kw name="Replace Shift In User Login" owner="ReplaceShiftPage">
 <kw name="Login and Goto Dashboard" owner="Login">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${LOGIN_PAGE_TITLE}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.484895" elapsed="0.228822"/>
+<status status="PASS" start="2026-03-03T17:53:04.538249" elapsed="0.139796"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Login Page Loaded Successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.714344" elapsed="0.001048"/>
+<status status="PASS" start="2026-03-03T17:53:04.678594" elapsed="0.001193"/>
 </kw>
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:36.718216" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<msg time="2026-03-03T17:53:04.682769" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.717138" elapsed="0.001192"/>
+<status status="PASS" start="2026-03-03T17:53:04.681593" elapsed="0.001294"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.718850" elapsed="0.249700"/>
+<status status="PASS" start="2026-03-03T17:53:04.683401" elapsed="0.240502"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-03T17:36:36.969185" elapsed="0.349127"/>
+<status status="PASS" start="2026-03-03T17:53:04.924535" elapsed="0.264191"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:36:37.319601" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<msg time="2026-03-03T17:53:05.190080" level="INFO">Typing text 'jlim' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-03T17:36:37.318905" elapsed="0.632054"/>
+<status status="PASS" start="2026-03-03T17:53:05.189344" elapsed="0.437117"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-03T17:36:37.951547" elapsed="0.001162"/>
+<status status="PASS" start="2026-03-03T17:53:05.627089" elapsed="0.001218"/>
 </kw>
 <arg>Enter Username</arg>
 <arg>${USERNAME}</arg>
-<status status="PASS" start="2026-03-03T17:36:36.715935" elapsed="1.237074"/>
+<status status="PASS" start="2026-03-03T17:53:04.680424" elapsed="0.948095"/>
 </kw>
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:37.955937" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<msg time="2026-03-03T17:53:05.630077" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:37.954856" elapsed="0.001202"/>
+<status status="PASS" start="2026-03-03T17:53:05.629567" elapsed="0.000562"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-03T17:36:37.956603" elapsed="0.250070"/>
+<status status="PASS" start="2026-03-03T17:53:05.630353" elapsed="0.239957"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-03T17:36:38.207305" elapsed="0.249206"/>
+<status status="PASS" start="2026-03-03T17:53:05.870941" elapsed="0.245215"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:36:38.457861" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<msg time="2026-03-03T17:53:06.117333" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-03T17:36:38.457139" elapsed="0.453089"/>
+<status status="PASS" start="2026-03-03T17:53:06.116629" elapsed="0.541201"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-03T17:36:38.910859" elapsed="0.001226"/>
+<status status="PASS" start="2026-03-03T17:53:06.658451" elapsed="0.001356"/>
 </kw>
 <arg>Enter Password</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-03-03T17:36:37.953702" elapsed="0.958592"/>
+<status status="PASS" start="2026-03-03T17:53:05.629015" elapsed="1.031005"/>
 </kw>
 <kw name="Button Click" owner="Buttons">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:38.914950" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<msg time="2026-03-03T17:53:06.662867" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
 <var>${BASE_PATH}</var>
 <arg>//button[normalize-space()="${LABEL}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:38.913933" elapsed="0.001142"/>
+<status status="PASS" start="2026-03-03T17:53:06.661713" elapsed="0.001289"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:38.916638" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<msg time="2026-03-03T17:53:06.664713" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
 <var>${BUTTON_PATH}</var>
 <arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:38.915589" elapsed="0.001159"/>
+<status status="PASS" start="2026-03-03T17:53:06.663558" elapsed="0.001282"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BUTTON_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-03T17:36:38.917279" elapsed="0.243808"/>
+<status status="PASS" start="2026-03-03T17:53:06.665422" elapsed="0.247198"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:36:39.162329" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<msg time="2026-03-03T17:53:06.913873" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
 <arg>${BUTTON_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-03T17:36:39.161719" elapsed="0.620491"/>
+<status status="PASS" start="2026-03-03T17:53:06.913246" elapsed="0.704545"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Clicked button with label ${LABEL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-03T17:36:39.782831" elapsed="0.001141"/>
+<status status="PASS" start="2026-03-03T17:53:07.618309" elapsed="0.001053"/>
 </kw>
 <arg>Login</arg>
-<status status="PASS" start="2026-03-03T17:36:38.912935" elapsed="0.871300"/>
+<status status="PASS" start="2026-03-03T17:53:06.660692" elapsed="0.958944"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${DASHBOARD_URL}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2026-03-03T17:36:39.784741" elapsed="1.680662"/>
+<status status="PASS" start="2026-03-03T17:53:07.620121" elapsed="1.098021"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navigated to Dashboard Successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-03T17:36:41.466029" elapsed="0.000997"/>
+<status status="PASS" start="2026-03-03T17:53:08.718749" elapsed="0.000988"/>
 </kw>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-03-03T17:36:36.483747" elapsed="4.983538"/>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>xpath=//div[contains(@class,'loader-wrapper')]</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-03-03T17:36:41.468735" elapsed="10.752195"/>
-</kw>
-<status status="PASS" start="2026-03-03T17:36:41.467859" elapsed="10.753417"/>
+<status status="PASS" start="2026-03-03T17:53:04.537180" elapsed="4.182751"/>
 </kw>
 <kw name="Goto Service" owner="Service">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:36:52.331747" level="INFO">Current location is 'https://test.bijib.in/#/layout/dashboard'.</msg>
+<msg time="2026-03-03T17:53:08.831973" level="INFO">Current location is 'https://test.bijib.in/#/layout/dashboard'.</msg>
 <arg>${DASHBOARD_URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2026-03-03T17:36:52.222441" elapsed="0.109576"/>
+<status status="PASS" start="2026-03-03T17:53:08.721785" elapsed="0.110909"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navigated to Dashboard</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-03T17:36:52.332587" elapsed="0.000982"/>
+<status status="PASS" start="2026-03-03T17:53:08.833240" elapsed="0.002066"/>
 </kw>
 <kw name="Click Element With Path" owner="Buttons">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-03-03T17:36:52.336425" level="INFO">${ELEMENT_PATH} = xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]</msg>
+<msg time="2026-03-03T17:53:08.837927" level="INFO">${ELEMENT_PATH} = xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]</msg>
 <var>${ELEMENT_PATH}</var>
 <arg>xpath=(${PATH})[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-03-03T17:36:52.335377" elapsed="0.001163"/>
+<status status="PASS" start="2026-03-03T17:53:08.836963" elapsed="0.001059"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ELEMENT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-03T17:36:52.337059" elapsed="0.248641"/>
+<status status="PASS" start="2026-03-03T17:53:08.838421" elapsed="0.270913"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:36:52.586660" level="INFO">Clicking element 'xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]'.</msg>
+<msg time="2026-03-03T17:53:09.110275" level="INFO">Clicking element 'xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]'.</msg>
 <arg>${ELEMENT_PATH}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-03T17:36:52.586179" elapsed="0.443242"/>
+<status status="PASS" start="2026-03-03T17:53:09.109640" elapsed="0.310557"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Clicked element with path ${PATH}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-03T17:36:53.029884" elapsed="0.002571"/>
+<status status="PASS" start="2026-03-03T17:53:09.420790" elapsed="0.001096"/>
 </kw>
 <arg>//li[@title="${SERVICE_NAME}"]/div[normalize-space()="${SERVICE_NAME}"]</arg>
-<status status="PASS" start="2026-03-03T17:36:52.334082" elapsed="0.698939"/>
+<status status="PASS" start="2026-03-03T17:53:08.835937" elapsed="0.586217"/>
 </kw>
 <if>
 <branch type="IF" condition="${HOSPITAL_NAME} != &quot;&quot;">
@@ -388,178 +329,579 @@
 <var>${SUBMENU_PATH}</var>
 <arg>//div[contains(@class,"submenu dsktp-vw-dsply")]/span[normalize-space()="${SERVICE_NAME}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-03-03T17:36:53.035801" elapsed="0.000106"/>
+<status status="NOT RUN" start="2026-03-03T17:53:09.423223" elapsed="0.000107"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${HOSPITAL_PATH}</var>
 <arg>${SUBMENU_PATH}/following-sibling::ul//li[normalize-space()="${HOSPITAL_NAME}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-03-03T17:36:53.036675" elapsed="0.000138"/>
+<status status="NOT RUN" start="2026-03-03T17:53:09.423880" elapsed="0.000099"/>
 </kw>
 <kw name="Click Element With Path" owner="Buttons">
 <arg>${HOSPITAL_PATH}</arg>
-<status status="NOT RUN" start="2026-03-03T17:36:53.037655" elapsed="0.000393"/>
+<status status="NOT RUN" start="2026-03-03T17:53:09.424645" elapsed="0.000109"/>
 </kw>
-<status status="NOT RUN" start="2026-03-03T17:36:53.034922" elapsed="0.003731"/>
+<status status="NOT RUN" start="2026-03-03T17:53:09.422407" elapsed="0.002505"/>
 </branch>
-<status status="PASS" start="2026-03-03T17:36:53.034791" elapsed="0.004057"/>
+<status status="PASS" start="2026-03-03T17:53:09.422335" elapsed="0.002760"/>
 </if>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<msg time="2026-03-03T17:37:23.383800" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-03-03T17:37:23.384076" level="FAIL">Location did not become 'https://test.bijib.in/beeway/0.1.58/#/layout/dashboard' in 30 seconds.</msg>
 <arg>${BEEWAY_URL}</arg>
 <arg>${TIMEOUT_LONG}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="FAIL" start="2026-03-03T17:36:53.039246" elapsed="30.350669">Location did not become 'https://test.bijib.in/beeway/0.1.58/#/layout/dashboard' in 30 seconds.</status>
+<status status="PASS" start="2026-03-03T17:53:09.425543" elapsed="3.253154"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navigated to ${SERVICE_NAME} Service</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.390224" elapsed="0.000053"/>
+<status status="PASS" start="2026-03-03T17:53:12.679307" elapsed="0.002301"/>
 </kw>
 <arg>BeeWay</arg>
-<status status="FAIL" start="2026-03-03T17:36:52.221957" elapsed="31.168507">Location did not become 'https://test.bijib.in/beeway/0.1.58/#/layout/dashboard' in 30 seconds.</status>
+<status status="PASS" start="2026-03-03T17:53:08.720795" elapsed="3.961113"/>
 </kw>
 <kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-03-03T17:37:23.390754" elapsed="0.000051"/>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:15.056858" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<arg>xpath=//div[contains(@class,'loader-wrapper')]</arg>
+<arg>${TIMEOUT_LONG}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:12.683307" elapsed="2.825159"/>
+</kw>
+<status status="PASS" start="2026-03-03T17:53:12.682475" elapsed="2.826340"/>
 </kw>
 <kw name="Select Hospital" owner="BeewayDashboardPage">
-<arg>Prince of Wales Private Hospital</arg>
-<status status="NOT RUN" start="2026-03-03T17:37:23.391064" elapsed="0.000046"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:15.510999" level="INFO">${HOSPITAL_DROPDOWN} = //li[contains(@class,'cus-select-dropdown')]</msg>
+<var>${HOSPITAL_DROPDOWN}</var>
+<arg>//li[contains(@class,'cus-select-dropdown')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:15.510216" elapsed="0.000906"/>
 </kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-03-03T17:37:23.391331" elapsed="0.000045"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.391553" elapsed="0.000042"/>
-</kw>
-<kw name=" Select Date from Hospital Schedule" owner="AddShiftPage">
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<status status="NOT RUN" start="2026-03-03T17:37:23.391834" elapsed="0.000046"/>
-</kw>
-<kw name="Get Shift exist Status" owner="AddShiftPage">
-<var>${SHIFT_EXISTS}</var>
-<arg>${DATE}</arg>
-<arg>${REPLACE_USER}</arg>
-<arg>${SHIFT_NAME}</arg>
-<status status="NOT RUN" start="2026-03-03T17:37:23.392204" elapsed="0.000043"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${SHIFT_EXISTS}</arg>
-<arg>Shift not found for ${REPLACE_USER} on ${DATE} with shift name ${SHIFT_NAME}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.392423" elapsed="0.000043"/>
-</kw>
-<kw name="Validate Shift Colour Displayed" owner="ReplaceShiftPage">
-<arg>${ROLE}</arg>
-<arg>${DATE}</arg>
-<arg>${SHIFT_COLOUR}</arg>
-<arg>${REPLACE_USER}</arg>
-<arg>${SHIFT_TIME}</arg>
-<status status="NOT RUN" start="2026-03-03T17:37:23.393359" elapsed="0.000105"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Replace Shift colour'${SHIFT_COLOUR}'</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.393953" elapsed="0.000091"/>
-</kw>
-<kw name="Hover Shift And Validate Tooltip" owner="ReplaceShiftPage">
-<arg>${ROLE}</arg>
-<arg>${DATE}</arg>
-<arg>${REPLACE_USER}</arg>
-<arg>${SHIFT_TIME}</arg>
-<arg>${SHIFT_TEXT}</arg>
-<status status="NOT RUN" start="2026-03-03T17:37:23.394925" elapsed="0.000102"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Shift '${SHIFT_NAME}' found for ${REPLACE_USER} on ${DATE} in Admin Login</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.395564" elapsed="0.000068"/>
-</kw>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<arg>${SWAP_USER}</arg>
-<arg>${SHIFT_NAME}</arg>
-<arg>${ROLE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_TIME}</arg>
-<arg>${SHIFT_TEXT}</arg>
-<arg>${SHIFT_COLOUR}</arg>
-<status status="FAIL" start="2026-03-03T17:36:36.481010" elapsed="46.914911">Location did not become 'https://test.bijib.in/beeway/0.1.58/#/layout/dashboard' in 30 seconds.</status>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.396177" elapsed="0.000042"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:15.512224" level="INFO">Clicking element 'xpath=//li[contains(@class,'cus-select-dropdown')]'.</msg>
+<arg>xpath=${HOSPITAL_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-03T17:53:15.511582" elapsed="0.644471"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${VALIDATION_DATE}']])[1]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'time') and normalize-space()='${SHIFT_TIME}']]</arg>
+<arg>xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')][1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:16.156701" elapsed="0.406125"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:16.564575" level="INFO">${HOSPITAL_OPTION} = //ul[contains(@class,'dropdown-list')]/li[normalize-space(.)='Prince of Wales Private Hospital']</msg>
+<var>${HOSPITAL_OPTION}</var>
+<arg>//ul[contains(@class,'dropdown-list')]/li[normalize-space(.)='${HOSPITAL_NAME}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:16.563458" elapsed="0.001238"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:16.565915" level="INFO">Clicking element 'xpath=//ul[contains(@class,'dropdown-list')]/li[normalize-space(.)='Prince of Wales Private Hospital']'.</msg>
+<arg>xpath=${HOSPITAL_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-03T17:53:16.565235" elapsed="0.438799"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Hospital selected: ${HOSPITAL_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-03T17:53:17.005052" elapsed="0.001690"/>
+</kw>
+<arg>Prince of Wales Private Hospital</arg>
+<status status="PASS" start="2026-03-03T17:53:15.509472" elapsed="1.497561"/>
+</kw>
+<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class,'loader-wrapper')]</arg>
+<arg>${TIMEOUT_LONG}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:17.008342" elapsed="0.121110"/>
+</kw>
+<status status="PASS" start="2026-03-03T17:53:17.007502" elapsed="0.122131"/>
+</kw>
+<kw name="Select Date from My Schedule" owner="AddShiftPage">
+<kw name="Select Year and Month" owner="PageSelect">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-03T17:53:19.132226" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-03T17:53:17.131424" elapsed="2.001023"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:19.135398" level="INFO">${ELEMENT_PATH} = xpath=(//i[contains(@class,"fa-solid fa-calendar-days")])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:19.134202" elapsed="0.001320"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:19.136099" elapsed="0.316044"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:19.453356" level="INFO">Clicking element 'xpath=(//i[contains(@class,"fa-solid fa-calendar-days")])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-03T17:53:19.452793" elapsed="0.556719"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.010260" elapsed="0.004123"/>
+</kw>
+<arg>//i[contains(@class,"fa-solid fa-calendar-days")]</arg>
+<status status="PASS" start="2026-03-03T17:53:19.133177" elapsed="0.882214"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:20.017504" level="INFO">${SMALL_CALENDAR_PATH} = //div[contains(@class,"small-calender")]</msg>
+<var>${SMALL_CALENDAR_PATH}</var>
+<arg>//div[contains(@class,"small-calender")]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.016479" elapsed="0.001154"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:20.020663" level="INFO">${ELEMENT_PATH} = xpath=(//div[contains(@class,"small-calender")]/div/div/ul/li[normalize-space(text())="JUN"])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.019791" elapsed="0.000949"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.021186" elapsed="0.284180"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:20.306842" level="INFO">Clicking element 'xpath=(//div[contains(@class,"small-calender")]/div/div/ul/li[normalize-space(text())="JUN"])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.306132" elapsed="0.683593"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.990326" elapsed="0.001252"/>
+</kw>
+<arg>${SMALL_CALENDAR_PATH}/div/div/ul/li[normalize-space(text())="${MONTH}"]</arg>
+<status status="PASS" start="2026-03-03T17:53:20.018355" elapsed="0.973445"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:20.994887" level="INFO">${ELEMENT_PATH} = xpath=(//div[contains(@class,"small-calender")]/ul/li[normalize-space(text())="Year"])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.993764" elapsed="0.001247"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:20.995570" elapsed="0.290966"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:21.287842" level="INFO">Clicking element 'xpath=(//div[contains(@class,"small-calender")]/ul/li[normalize-space(text())="Year"])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-03T17:53:21.287166" elapsed="0.356142"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-03T17:53:21.643906" elapsed="0.001155"/>
+</kw>
+<arg>${SMALL_CALENDAR_PATH}/ul/li[normalize-space(text())="Year"]</arg>
+<status status="PASS" start="2026-03-03T17:53:20.992428" elapsed="0.652846"/>
+</kw>
+<kw name="Click Element With Path" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:21.648333" level="INFO">${ELEMENT_PATH} = xpath=(//div[contains(@class,"small-calender")]/div/ul/li[normalize-space(text())="2026"])[1]</msg>
+<var>${ELEMENT_PATH}</var>
+<arg>xpath=(${PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:21.647282" elapsed="0.001166"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEMENT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:21.648958" elapsed="0.244207"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:21.894425" level="INFO">Clicking element 'xpath=(//div[contains(@class,"small-calender")]/div/ul/li[normalize-space(text())="2026"])[1]'.</msg>
+<arg>${ELEMENT_PATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-03T17:53:21.893807" elapsed="0.328145"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked element with path ${PATH}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-03T17:53:22.222553" elapsed="0.001155"/>
+</kw>
+<arg>${SMALL_CALENDAR_PATH}/div/ul/li[normalize-space(text())="${YEAR}"]</arg>
+<status status="PASS" start="2026-03-03T17:53:21.645890" elapsed="0.578026"/>
+</kw>
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:22.226470" level="INFO">${BASE_PATH} = //button[normalize-space()="Done"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:22.225497" elapsed="0.001084"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-03-03T17:53:22.228063" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Done"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-03-03T17:53:22.227055" elapsed="0.001116"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-03T17:53:22.228671" elapsed="0.260070"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:22.489489" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Done"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-03T17:53:22.489159" elapsed="0.713194"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-03T17:53:23.202952" elapsed="0.001112"/>
+</kw>
+<arg>Done</arg>
+<status status="PASS" start="2026-03-03T17:53:22.224532" elapsed="0.979725"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-03T17:53:25.206331" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-03T17:53:23.204632" elapsed="2.001966"/>
+</kw>
+<arg>${YEAR}</arg>
+<arg>${MONTH}</arg>
+<status status="PASS" start="2026-03-03T17:53:17.130731" elapsed="8.076146"/>
+</kw>
+<kw name="Maximize Calendar" owner="BeewayDashboardPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//li[normalize-space()='Maximize'])[1]</arg>
 <arg>${TIMEOUT_LONG}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.396431" elapsed="0.000047"/>
+<status status="PASS" start="2026-03-03T17:53:25.208414" elapsed="0.233808"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-03T17:53:25.442799" level="INFO">Clicking element 'xpath=(//li[normalize-space()='Maximize'])[1]'.</msg>
+<msg time="2026-03-03T17:53:26.802349" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-03T17:53:26.802911" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;li class="c-pointer hide-print-view ng-tns-c3004122033-13 ng-star-inserted"&gt;...&lt;/li&gt; is not clickable at point (602, 82). Other element would receive the click: &lt;ul class="header-menu ng-tns-c2274678120-10"&gt;...&lt;/ul&gt;
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF61769CF45+75717]
+	GetHandleVerifier [0x00007FF61769CFA0+75808]
+	(No symbol) [0x00007FF617468F9A]
+	(No symbol) [0x00007FF6174C7439]
+	(No symbol) [0x00007FF6174C4DF2]
+	(No symbol) [0x00007FF6174C1EA1]
+	(No symbol) [0x00007FF6174C0DA1]
+	(No symbol) [0x00007FF6174B2394]
+	(No symbol) [0x00007FF6174E737A]
+	(No symbol) [0x00007FF6174B1C46]
+	(No symbol) [0x00007FF6174E7590]
+	(No symbol) [0x00007FF61750F39C]
+	(No symbol) [0x00007FF6174E7153]
+	(No symbol) [0x00007FF6174B0421]
+	(No symbol) [0x00007FF6174B11B3]
+	GetHandleVerifier [0x00007FF61799D71D+3223453]
+	GetHandleVerifier [0x00007FF617997CC2+3200322]
+	GetHandleVerifier [0x00007FF6179B5AF3+3322739]
+	GetHandleVerifier [0x00007FF6176B6A1A+180890]
+	GetHandleVerifier [0x00007FF6176BE11F+211359]
+	GetHandleVerifier [0x00007FF6176A5294+109332]
+	GetHandleVerifier [0x00007FF6176A5442+109762]
+	GetHandleVerifier [0x00007FF61768BA59+4825]
+	BaseThreadInitThunk [0x00007FFE03107374+20]
+	RtlUserThreadStart [0x00007FFE033FCC91+33]
+</msg>
+<arg>xpath=(//li[normalize-space()='Maximize'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-03T17:53:25.442533" elapsed="1.389020">ElementClickInterceptedException: Message: element click intercepted: Element &lt;li class="c-pointer hide-print-view ng-tns-c3004122033-13 ng-star-inserted"&gt;...&lt;/li&gt; is not clickable at point (602, 82). Other element would receive the click: &lt;ul class="header-menu ng-tns-c2274678120-10"&gt;...&lt;/ul&gt;
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF61769CF45+75717]
+	GetHandleVerifier [0x00007FF61769CFA0+75808]
+	(No symbol) [0x00007FF617468F9A]
+	(No symbol) [0x00007FF6174C7439]
+	(No symbol) [0x00007FF6174C4DF2]
+	(No symbol) [0x00007FF6174C1EA1]
+	(No symbol) [0x00007FF6174C0DA1]
+	(No symbol) [0x00007FF6174B2394]
+	(No symbol) [0x00007FF6174E737A]
+	(No symbol) [0x00007FF6174B1C46]
+	(No symbol) [0x00007FF6174E7590]
+	(No symbol) [0x00007FF61750F39C]
+	(No symbol) [0x00007FF6174E7153]
+	(No symbol) [0x00007FF6174B0421]
+	(No symbol) [0x00007FF6174B11B3]
+	GetHandleVerifier [0x00007FF61799D71D+3223453]
+	GetHandleVerifier [0x00007FF617997CC2+3200322]
+	GetHandleVerifier [0x00007FF6179B5AF3+3322739]
+	GetHandleVerifier [0x00007FF6176B6A1A+180890]
+	GetHandleVerifier [0x00007FF6176BE11F+211359]
+	GetHandleVerifier [0x00007FF6176A5294+109332]
+	GetHandleVerifier [0x00007FF6176A5442+109762]
+	GetHandleVerifier [0x00007FF61768BA59+4825]
+	BaseThreadInitThunk [0x00007FFE03107374+20]
+	RtlUserThreadStart [0x00007FFE033FCC91+33]
+</status>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Shift for Dr.${DOCTOR_NAME} at ${SHIFT_TIME} on ${VALIDATION_DATE} found in Admin Login</arg>
+<arg>✅ Calendar maximized</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.396671" elapsed="0.000041"/>
+<status status="NOT RUN" start="2026-03-03T17:53:26.832270" elapsed="0.000107"/>
 </kw>
-<kw name="Validate Shift Colour Displayed" owner="ReplaceShiftPage">
-<arg>${ROLE}</arg>
-<arg>${VALIDATION_DATE}</arg>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-03-03T17:53:26.832810" elapsed="0.000092"/>
+</kw>
+<status status="FAIL" start="2026-03-03T17:53:25.207561" elapsed="1.625844">ElementClickInterceptedException: Message: element click intercepted: Element &lt;li class="c-pointer hide-print-view ng-tns-c3004122033-13 ng-star-inserted"&gt;...&lt;/li&gt; is not clickable at point (602, 82). Other element would receive the click: &lt;ul class="header-menu ng-tns-c2274678120-10"&gt;...&lt;/ul&gt;
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF61769CF45+75717]
+	GetHandleVerifier [0x00007FF61769CFA0+75808]
+	(No symbol) [0x00007FF617468F9A]
+	(No symbol) [0x00007FF6174C7439]
+	(No symbol) [0x00007FF6174C4DF2]
+	(No symbol) [0x00007FF6174C1EA1]
+	(No symbol) [0x00007FF6174C0DA1]
+	(No symbol) [0x00007FF6174B2394]
+	(No symbol) [0x00007FF6174E737A]
+	(No symbol) [0x00007FF6174B1C46]
+	(No symbol) [0x00007FF6174E7590]
+	(No symbol) [0x00007FF61750F39C]
+	(No symbol) [0x00007FF6174E7153]
+	(No symbol) [0x00007FF6174B0421]
+	(No symbol) [0x00007FF6174B11B3]
+	GetHandleVerifier [0x00007FF61799D71D+3223453]
+	GetHandleVerifier [0x00007FF617997CC2+3200322]
+	GetHandleVerifier [0x00007FF6179B5AF3+3322739]
+	GetHandleVerifier [0x00007FF6176B6A1A+180890]
+	GetHandleVerifier [0x00007FF6176BE11F+211359]
+	GetHandleVerifier [0x00007FF6176A5294+109332]
+	GetHandleVerifier [0x00007FF6176A5442+109762]
+	GetHandleVerifier [0x00007FF61768BA59+4825]
+	BaseThreadInitThunk [0x00007FFE03107374+20]
+	RtlUserThreadStart [0x00007FFE033FCC91+33]
+</status>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-03-03T17:53:26.833967" elapsed="0.000093"/>
+</kw>
+<arg>${YEAR}</arg>
+<arg>${MONTH}</arg>
+<arg>${DATE}</arg>
+<status status="FAIL" start="2026-03-03T17:53:17.129927" elapsed="9.704564">ElementClickInterceptedException: Message: element click intercepted: Element &lt;li class="c-pointer hide-print-view ng-tns-c3004122033-13 ng-star-inserted"&gt;...&lt;/li&gt; is not clickable at point (602, 82). Other element would receive the click: &lt;ul class="header-menu ng-tns-c2274678120-10"&gt;...&lt;/ul&gt;
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF61769CF45+75717]
+	GetHandleVerifier [0x00007FF61769CFA0+75808]
+	(No symbol) [0x00007FF617468F9A]
+	(No symbol) [0x00007FF6174C7439]
+	(No symbol) [0x00007FF6174C4DF2]
+	(No symbol) [0x00007FF6174C1EA1]
+	(No symbol) [0x00007FF6174C0DA1]
+	(No symbol) [0x00007FF6174B2394]
+	(No symbol) [0x00007FF6174E737A]
+	(No symbol) [0x00007FF6174B1C46]
+	(No symbol) [0x00007FF6174E7590]
+	(No symbol) [0x00007FF61750F39C]
+	(No symbol) [0x00007FF6174E7153]
+	(No symbol) [0x00007FF6174B0421]
+	(No symbol) [0x00007FF6174B11B3]
+	GetHandleVerifier [0x00007FF61799D71D+3223453]
+	GetHandleVerifier [0x00007FF617997CC2+3200322]
+	GetHandleVerifier [0x00007FF6179B5AF3+3322739]
+	GetHandleVerifier [0x00007FF6176B6A1A+180890]
+	GetHandleVerifier [0x00007FF6176BE11F+211359]
+	GetHandleVerifier [0x00007FF6176A5294+109332]
+	GetHandleVerifier [0x00007FF6176A5442+109762]
+	GetHandleVerifier [0x00007FF61768BA59+4825]
+	BaseThreadInitThunk [0x00007FFE03107374+20]
+	RtlUserThreadStart [0x00007FFE033FCC91+33]
+</status>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${DATE_SHIFT_XPATH}</var>
+<arg>(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'shift-tme') and normalize-space()='${SHIFT_TIME}']]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-03-03T17:53:26.835067" elapsed="0.000101"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=${DATE_SHIFT_XPATH}</arg>
+<arg>${TIMEOUT_LONG}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-03-03T17:53:26.835665" elapsed="0.000094"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=${DATE_SHIFT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-03T17:53:26.836231" elapsed="0.000091"/>
+</kw>
+<kw name="Select Shift Operation" owner="ReplaceShiftPage">
+<arg>${OPERATION}</arg>
+<status status="NOT RUN" start="2026-03-03T17:53:26.836944" elapsed="0.000103"/>
+</kw>
+<kw name="select Doctor" owner="UserSelectionPage">
+<arg>${REPLACE_USER}</arg>
+<status status="NOT RUN" start="2026-03-03T17:53:26.837584" elapsed="0.000097"/>
+</kw>
+<kw name="Button Click" owner="Buttons">
+<arg>Replace Shift</arg>
+<status status="NOT RUN" start="2026-03-03T17:53:26.838275" elapsed="0.000097"/>
+</kw>
+<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
+<status status="NOT RUN" start="2026-03-03T17:53:26.838904" elapsed="0.000100"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=${DATE_SHIFT_XPATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-03-03T17:53:26.839453" elapsed="0.000095"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Shift Replaced with '${REPLACE_USER}'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-03-03T17:53:26.840010" elapsed="0.000091"/>
+</kw>
+<arg>jlim</arg>
+<arg>${PASSWORD}</arg>
+<arg>${YEAR}</arg>
+<arg>${MONTH}</arg>
+<arg>${DATE}</arg>
+<arg>${DOCTOR_NAME}</arg>
+<arg>${SHIFT_TIME}</arg>
+<arg>${OPERATION}</arg>
+<arg>${REPLACE_USER}</arg>
+<arg>${FIRSTNAME}</arg>
+<arg>${LASTNAME}</arg>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<doc>End-to-end flow: Login → Beeway → Replace Shift</doc>
+<status status="FAIL" start="2026-03-03T17:53:04.534477" elapsed="22.306059">ElementClickInterceptedException: Message: element click intercepted: Element &lt;li class="c-pointer hide-print-view ng-tns-c3004122033-13 ng-star-inserted"&gt;...&lt;/li&gt; is not clickable at point (602, 82). Other element would receive the click: &lt;ul class="header-menu ng-tns-c2274678120-10"&gt;...&lt;/ul&gt;
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF61769CF45+75717]
+	GetHandleVerifier [0x00007FF61769CFA0+75808]
+	(No symbol) [0x00007FF617468F9A]
+	(No symbol) [0x00007FF6174C7439]
+	(No symbol) [0x00007FF6174C4DF2]
+	(No symbol) [0x00007FF6174C1EA1]
+	(No symbol) [0x00007FF6174C0DA1]
+	(No symbol) [0x00007FF6174B2394]
+	(No symbol) [0x00007FF6174E737A]
+	(No symbol) [0x00007FF6174B1C46]
+	(No symbol) [0x00007FF6174E7590]
+	(No symbol) [0x00007FF61750F39C]
+	(No symbol) [0x00007FF6174E7153]
+	(No symbol) [0x00007FF6174B0421]
+	(No symbol) [0x00007FF6174B11B3]
+	GetHandleVerifier [0x00007FF61799D71D+3223453]
+	GetHandleVerifier [0x00007FF617997CC2+3200322]
+	GetHandleVerifier [0x00007FF6179B5AF3+3322739]
+	GetHandleVerifier [0x00007FF6176B6A1A+180890]
+	GetHandleVerifier [0x00007FF6176BE11F+211359]
+	GetHandleVerifier [0x00007FF6176A5294+109332]
+	GetHandleVerifier [0x00007FF6176A5442+109762]
+	GetHandleVerifier [0x00007FF61768BA59+4825]
+	BaseThreadInitThunk [0x00007FFE03107374+20]
+	RtlUserThreadStart [0x00007FFE033FCC91+33]
+</status>
+</kw>
+<kw name="Open Browser To Application" owner="BrowserKeywords">
+<status status="NOT RUN" start="2026-03-03T17:53:26.841550" elapsed="0.000122"/>
+</kw>
+<kw name="Validate Replace Shift In User Login" owner="ReplaceShiftPage">
+<arg>DISAAC</arg>
+<arg>${PASSWORD}</arg>
+<arg>${YEAR}</arg>
+<arg>${MONTH}</arg>
+<arg>${DATE}</arg>
+<arg>${REPLACE_USER}</arg>
+<arg>USER</arg>
+<arg>${SHIFT_TIME}</arg>
+<arg>${SHIFT_TEXT}</arg>
 <arg>${SHIFT_COLOUR}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_TIME}</arg>
-<status status="NOT RUN" start="2026-03-03T17:37:23.397067" elapsed="0.000046"/>
+<status status="NOT RUN" start="2026-03-03T17:53:26.842469" elapsed="0.000110"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Swap Shift colour'${SHIFT_COLOUR}'</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-03-03T17:37:23.397292" elapsed="0.000039"/>
+<kw name="Open Browser To Application" owner="BrowserKeywords">
+<status status="NOT RUN" start="2026-03-03T17:53:26.843818" elapsed="0.000107"/>
 </kw>
-<kw name="Hover Shift And Validate Tooltip" owner="ReplaceShiftPage">
-<arg>${ROLE}</arg>
-<arg>${VALIDATION_DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_TIME}</arg>
-<arg>Swap with ${SWAP_USER} ${SWAPPING_DATE} - 19:00 - 07:00</arg>
-<status status="NOT RUN" start="2026-03-03T17:37:23.397674" elapsed="0.000046"/>
-</kw>
+<kw name="Validate shift from Admin Login" owner="ReplaceShiftPage">
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
 <arg>${YEAR}</arg>
 <arg>${MONTH}</arg>
 <arg>${DATE}</arg>
-<arg>${SWAP_USER}</arg>
+<arg>${REPLACE_USER}</arg>
 <arg>${SHIFT_NAME}</arg>
 <arg>ADMIN</arg>
 <arg>${DOCTOR_NAME}</arg>
 <arg>${SHIFT_TIME}</arg>
 <arg>${SHIFT_TEXT}</arg>
 <arg>${SHIFT_COLOUR}</arg>
-<arg>${VALIDATION_DATE}</arg>
-<arg>${SWAPPING_DATE}</arg>
-<status status="FAIL" start="2026-03-03T17:36:36.477650" elapsed="46.920222">Location did not become 'https://test.bijib.in/beeway/0.1.58/#/layout/dashboard' in 30 seconds.</status>
+<status status="NOT RUN" start="2026-03-03T17:53:26.844615" elapsed="0.000061"/>
 </kw>
-<doc>End-to-end flow: Login → Beeway → Swap Shift</doc>
+<doc>End-to-end flow: Login → Beeway → Replace Shift</doc>
 <tag>Regression</tag>
 <tag>Smoke</tag>
-<status status="FAIL" start="2026-03-03T17:36:36.206196" elapsed="47.192471">Location did not become 'https://test.bijib.in/beeway/0.1.58/#/layout/dashboard' in 30 seconds.</status>
+<status status="FAIL" start="2026-03-03T17:53:04.489170" elapsed="22.355941">ElementClickInterceptedException: Message: element click intercepted: Element &lt;li class="c-pointer hide-print-view ng-tns-c3004122033-13 ng-star-inserted"&gt;...&lt;/li&gt; is not clickable at point (602, 82). Other element would receive the click: &lt;ul class="header-menu ng-tns-c2274678120-10"&gt;...&lt;/ul&gt;
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x00007FF61769CF45+75717]
+	GetHandleVerifier [0x00007FF61769CFA0+75808]
+	(No symbol) [0x00007FF617468F9A]
+	(No symbol) [0x00007FF6174C7439]
+	(No symbol) [0x00007FF6174C4DF2]
+	(No symbol) [0x00007FF6174C1EA1]
+	(No symbol) [0x00007FF6174C0DA1]
+	(No symbol) [0x00007FF6174B2394]
+	(No symbol) [0x00007FF6174E737A]
+	(No symbol) [0x00007FF6174B1C46]
+	(No symbol) [0x00007FF6174E7590]
+	(No symbol) [0x00007FF61750F39C]
+	(No symbol) [0x00007FF6174E7153]
+	(No symbol) [0x00007FF6174B0421]
+	(No symbol) [0x00007FF6174B11B3]
+	GetHandleVerifier [0x00007FF61799D71D+3223453]
+	GetHandleVerifier [0x00007FF617997CC2+3200322]
+	GetHandleVerifier [0x00007FF6179B5AF3+3322739]
+	GetHandleVerifier [0x00007FF6176B6A1A+180890]
+	GetHandleVerifier [0x00007FF6176BE11F+211359]
+	GetHandleVerifier [0x00007FF6176A5294+109332]
+	GetHandleVerifier [0x00007FF6176A5442+109762]
+	GetHandleVerifier [0x00007FF61768BA59+4825]
+	BaseThreadInitThunk [0x00007FFE03107374+20]
+	RtlUserThreadStart [0x00007FFE033FCC91+33]
+</status>
 </test>
 <kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-03-03T17:37:23.401802" elapsed="2.441924"/>
+<status status="PASS" start="2026-03-03T17:53:26.859308" elapsed="2.449803"/>
 </kw>
-<status status="PASS" start="2026-03-03T17:37:23.401131" elapsed="2.442758"/>
+<status status="PASS" start="2026-03-03T17:53:26.858770" elapsed="2.450649"/>
 </kw>
-<status status="FAIL" start="2026-03-03T17:36:29.452586" elapsed="56.391384"/>
+<status status="FAIL" start="2026-03-03T17:52:58.012274" elapsed="31.297305"/>
 </suite>
 <statistics>
 <total>
@@ -570,7 +912,7 @@
 <stat pass="0" fail="1" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat name="SwapShiftTest" id="s1" pass="0" fail="1" skip="0">SwapShiftTest</stat>
+<stat name="ReplaceShiftTest" id="s1" pass="0" fail="1" skip="0">ReplaceShiftTest</stat>
 </suite>
 </statistics>
 <errors>

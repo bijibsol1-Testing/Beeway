@@ -23,7 +23,7 @@ Swap Shift In User Login
     Wait For Page Loader To Disappear
     Select Hospital    Prince of Wales Private Hospital
     Wait For Page Loader To Disappear
-    Select Date from My Schedule    ${YEAR}    ${MONTH}    ${DATE}     
+    Select Date from My Schedule    ${YEAR}    ${MONTH}    ${DATE}    
     ${DATE_SHIFT_XPATH}=    Set Variable
     ...    (//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'shift-tme') and normalize-space()='${SHIFT_TIME}']]
     Log To Console    ✅ Shift element XPath: ${DATE_SHIFT_XPATH}

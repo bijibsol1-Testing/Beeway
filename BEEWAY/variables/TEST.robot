@@ -1,7 +1,7 @@
 *** Variables ***
 ${URL}              https://test.bijib.in
 ${DASHBOARD_URL}    ${URL}/#/layout/dashboard
-${VERSION}          0.1.58
+${VERSION}          0.1.59
 ${BEEWAY_URL}       ${URL}/beeway/${VERSION}/#/layout/dashboard
 
 ${USERNAME}         rgarikapati

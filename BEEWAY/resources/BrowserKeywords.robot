@@ -4,6 +4,7 @@ Resource    ../variables/Common.robot
 
 *** Keywords ***
 Open Browser To Application
+
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --no-sandbox

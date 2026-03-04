@@ -47,5 +47,5 @@ Login And Swap Shift In Beeway
     Validate shift from Admin Login    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${DATE}     ${SWAP_USER}    ${SHIFT_NAME}     ADMIN    ${DOCTOR_NAME}    ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}
     Open Browser To Application
     Validate shift from Admin Login    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${VALIDATION_DATE}     ${DOCTOR_NAME}    ${SHIFT_NAME}     ADMIN    ${SWAP_USER}    ${SHIFT_TIME}    Swap with ${SWAP_USER} ${SWAPPING_DATE} - 19:00 - 07:00    ${SHIFT_COLOUR}
-    # Open Browser To Application
-    # Validate Swap Shift from Admin Login    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${DATE}     ${SWAP_USER}    ${SHIFT_NAME}     ADMIN    ${DOCTOR_NAME}    ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}     ${VALIDATION_DATE}    ${SWAPPING_DATE}
+    Open Browser To Application
+    Validate Swap Shift from Admin Login    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${DATE}     ${SWAP_USER}    ${SHIFT_NAME}     ADMIN    ${DOCTOR_NAME}    ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}     ${VALIDATION_DATE}    ${SWAPPING_DATE}

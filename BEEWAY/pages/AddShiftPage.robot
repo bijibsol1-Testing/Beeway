@@ -36,14 +36,18 @@ Add Shift in Beeway
     [Arguments]   ${YEAR}    ${MONTH}    ${DATE}    
 
     Select Year and Month    ${YEAR}     ${MONTH}
+    Sleep    2s
     Maximize Calendar
+    wait Until Element Is Visible    xpath=(//li[.//div[normalize-space()='${DATE}']])[1]     ${TIMEOUT_LONG}
     Scroll Element Into View        xpath=(//li[.//div[normalize-space()='${DATE}']])[1]
     
 Select Date from My Schedule
     [Arguments]   ${YEAR}    ${MONTH}    ${DATE}     
 
     Select Year and Month    ${YEAR}     ${MONTH}
+    Sleep    2s
     Maximize Calendar
+    wait Until Element Is Visible    xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]     ${TIMEOUT_LONG}
     Scroll Element Into View        xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]
     
 Add Shift

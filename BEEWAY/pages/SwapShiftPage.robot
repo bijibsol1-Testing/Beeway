@@ -22,8 +22,10 @@ Swap Shift In User Login
     Goto Service    BeeWay
     Wait For Page Loader To Disappear
     Select Hospital    Prince of Wales Private Hospital
-    Wait For Page Loader To Disappear
-    Select Date from My Schedule    ${YEAR}    ${MONTH}    ${DATE}    
+    Sleep    2s
+    Select Date from My Schedule    ${YEAR}    ${MONTH}    ${DATE} 
+    wait Until Element Is Visible    xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'shift-tme') and normalize-space()='${SHIFT_TIME}']]   ${TIMEOUT_LONG}
+    Scroll to element    xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'shift-tme') and normalize-space()='${SHIFT_TIME}']]   
     ${DATE_SHIFT_XPATH}=    Set Variable
     ...    (//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'shift-tme') and normalize-space()='${SHIFT_TIME}']]
     Log To Console    ✅ Shift element XPath: ${DATE_SHIFT_XPATH}
@@ -50,6 +52,7 @@ Swap Shift In Admin Login
     Goto Service    BeeWay
     Wait For Page Loader To Disappear
     Select Hospital    Prince of Wales Private Hospital
+    Wait For Page Loader To Disappear
     sleep    2s
     Select Date from Hospital Schedule    ${YEAR}    ${MONTH}    ${DATE}
     Click Shift Based On Doctor And Time    ${DATE}    ${DOCTOR_NAME}    ${SHIFT_TIME}

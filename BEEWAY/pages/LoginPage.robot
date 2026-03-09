@@ -2,6 +2,8 @@
 Library    SeleniumLibrary
 Resource    ../resources/UIComponents.robot
 
+
+
 *** Variables ***
 ${ERROR_MSG_PATH}    //p[contains(@class,"alert alert-danger")]
 
@@ -25,6 +27,7 @@ Click Forgot Password Link
 
 Submit Login
    [Arguments]    ${username}    ${password}
+   
    Enter Username    ${username}
    Enter Password    ${password}
    Click Login Button     
@@ -46,4 +49,6 @@ Wait Until Error Msg Disappear
     Log To Console    ✅ Error Msg Disappear
    
 Login Should Be Successful
-   Wait Until Location Is    ${DASHBOARD_URL}     ${TIMEOUT}   
+   Wait Until Location Is    ${DASHBOARD_URL}     ${TIMEOUT} 
+
+

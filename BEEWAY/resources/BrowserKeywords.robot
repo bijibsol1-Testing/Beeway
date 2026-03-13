@@ -14,8 +14,6 @@ Open Browser To Application
     Set Selenium Speed    0.1s
 
 
-
-
     # Open Browser    ${URL}    ${BROWSER}
     # Maximize Browser Window
     # Set Selenium Speed    0.1s

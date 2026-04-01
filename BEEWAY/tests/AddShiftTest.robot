@@ -33,6 +33,10 @@ Add Shift Test
     ...    ${COMMENTS}
     ...    ${TIME}
     ...    ${DOCTORLOGIN}
+    ...    ${STARTHOUR}
+    ...    ${STARTMIN}                
+    ...    ${ENDHOUR}
+    ...    ${ENDMIN}
 
 
     # Open Browser To Application
@@ -52,6 +56,10 @@ Add Shift Test
     ...   ${SHIFT_NAME_TIME}
     ...   ${DUTY_TYPE}
     ...   ${COMMENTS}
+    ...   ${STARTHOUR}
+    ...   ${STARTMIN}   
+    ...   ${ENDHOUR}    
+    ...   ${ENDMIN}
 
     Sleep    2s
 

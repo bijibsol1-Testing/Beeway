@@ -1,0 +1,3 @@
+*** Test Cases ***,${USERNAME},${USER_LOGIN},${PASSWORD},${SERVICE_NAME},${HOSPITAL_NAME},${SUBSERVICE_NAME},${YEAR},${MONTH},${DATE},${DOCTOR_NAME},${SHIFT_TIME},${OPERATION},${SHIFT},${SHIFT_COLOUR},${NAME_OF_USER_TO_OPEN_SHIFT}
+Open Shift By User Login,,JLIM,E7q_35&ZR]5D*iRZ,BeeWay,Prince of Wales Private Hospital,Ans Roster,2026,APR,22,Jessica ILM,19:00-07:00,Open Shift,1st Half,bg-senary,
+Open Shift By Admin Login,rgarikapati,,E7q_35&ZR]5D*iRZ,BeeWay,Prince of Wales Private Hospital,Ans Roster,2026,APR,23,Jessica ILM,19:00-07:00,Open Shift,1st Half,bg-senary,User

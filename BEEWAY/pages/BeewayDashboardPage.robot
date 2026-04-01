@@ -14,21 +14,23 @@ Resource    ../resources/Service.robot
 Select Hospital
     [Arguments]    ${HOSPITAL_NAME}
 
+    Click Element    xpath=//li[contains(@class,'cus-select-dropdown')]
     ${DROPDOWN_VISIBLE}=    Run Keyword And Return Status
-    ...    Wait Until Element Is Visible    xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')][1]    ${TIMEOUT}
+    ...    Wait Until Element Is Visible    
+    ...    xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]    ${TIMEOUT_LONG}
 
     IF    ${DROPDOWN_VISIBLE}
-
-        Click Element
-        ...    xpath=//ul[contains(@class,'dropdown-list')]/li[contains(normalize-space(.),'${HOSPITAL_NAME}')]
+        Wait Until Element Is Visible    
+        ...    xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]//li[contains(normalize-space(), '${HOSPITAL_NAME}')]    ${TIMEOUT_LONG}
+        Click Element    
+        ...    xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]//li[contains(normalize-space(), '${HOSPITAL_NAME}')]
         Log To Console    ✅ Hospital selected: ${HOSPITAL_NAME}
 
     ELSE
-
-        ${DEFAULT_HOSPITAL}=    Get Text    xpath=//div[contains(@class,'between-xs')]//div[1]
-        Should Contain    ${DEFAULT_HOSPITAL}    ${HOSPITAL_NAME}
+        ${DEFAULT_HOSPITAL}=    Get Text    
+        ...    xpath=//li[contains(@class,'cus-select-dropdown')]//div[contains(@class,'b-p-2')]//div[1]
+        Should Be Equal    ${DEFAULT_HOSPITAL}    ${HOSPITAL_NAME}
         Log To Console    ✅ Default hospital verified: ${DEFAULT_HOSPITAL}
-
     END
 
 Maximize Calendar
@@ -44,15 +46,19 @@ Select SubService
     Click Element    xpath=//li[normalize-space()="${SUBSERVICE_NAME}"]
     Log To Console    ✅ Sub-service selected: ${SUBSERVICE_NAME} 
 
-Select Side Bar links
-    [Arguments]    ${LINK}    ${PAGE_NAME}
-
-    Wait Until Element Is Visible     xpath=//li[.//div[contains(@class,'tooltip-message')]]    ${TIMEOUT}
-    Mouse Over    xpath=//li[.//div[contains(@class,'tooltip-message')]]//div[normalize-space()='${LINK}']
-    Click Element    xpath=//li[.//div[contains(@class,'tooltip-message')]]//div[normalize-space()='${LINK}']
-    Log To Console    ✅ Clicked on ${LINK} link in sidebar
-    Click Element    Xpath=//li[normalize-space()="${PAGE_NAME}"]
-    Log To Console    ✅ Clicked on ${PAGE_NAME} link in sidebar
+Click Side Bar Menu
+    [Arguments]    ${LINK}    ${SUBLINK}
+  
+    ${MENU}=    Set Variable    xpath=//li[.//div[normalize-space()='${LINK}']]
+    ${SUBMENU}=    Set Variable    Xpath=//ul[contains(@class,'submenu')]//li[normalize-space()='${SUBLINK}']
+    ${TOOLTIP}=    Set Variable    xpath=//div[contains(@class,'tooltip-message') and normalize-space()='${LINK}']
+    Wait Until Element Is Visible    ${MENU}    ${TIMEOUT_LONG}
+    Mouse Over    ${MENU}
+    Wait Until Element Is Visible    ${TOOLTIP}    ${TIMEOUT}
+    Element Text Should Be    ${TOOLTIP}    ${LINK}
+    Click Element    ${MENU}
+    Wait Until Element Is Visible    ${SUBMENU}    ${TIMEOUT}
+    Click Element    ${SUBMENU}
 
 Select Role
     [Arguments]    ${ROLE}
@@ -75,23 +81,28 @@ User Shift exist Status
     ${USER_SHIFT_LIST}=    Set Variable    //li[.//div[contains(@class,'date') and normalize-space()='${DATE}']]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'shift-tme') and normalize-space()='${TIME}']]
     Log To Console    Shift XPath: ${USER_SHIFT_LIST} 
     Wait Until Element Is Visible    xpath=${USER_SHIFT_LIST}    ${TIMEOUT_LONG} 
+    Scroll Element Into View    xpath=${USER_SHIFT_LIST}    
     ${exists}=    Run Keyword And Return Status
     ...    Page Should Contain Element    xpath=${USER_SHIFT_LIST}
     RETURN     ${exists}
 
 Select Date from Hospital Schedule
-    [Arguments]   ${YEAR}    ${MONTH}    ${DATE}    
+    [Arguments]   ${YEAR}    ${MONTH}    ${DATE}    ${HOSPITAL_NAME}
 
     Select Year and Month    ${YEAR}     ${MONTH}
-    Maximize Calendar
-    Scroll Element Into View        xpath=(//li[.//div[normalize-space()='${DATE}']])[1]
+    IF    'Chris' not in '${HOSPITAL_NAME}'
+        Maximize Calendar
+    END
+    Scroll Element Into View    xpath=(//li[.//div[normalize-space()='${DATE}']])[1]
     
 Select Date from My Schedule
-    [Arguments]   ${YEAR}    ${MONTH}    ${DATE}     
+    [Arguments]   ${YEAR}    ${MONTH}    ${DATE}    ${HOSPITAL_NAME}     
 
     Select Year and Month    ${YEAR}     ${MONTH}
-    Maximize Calendar
-    Scroll Element Into View        xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]
+    IF    'Chris' not in '${HOSPITAL_NAME}'
+        Maximize Calendar
+    END
+    Scroll Element Into View    xpath=(//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]
 
 Sub Service selection
     [Arguments]    ${SUBSERVICE_NAME}
@@ -111,7 +122,7 @@ Select Month Arrows
     Log To Console    ✅ Clicked on ${DIRECTION} arrow and navigated to ${MONTH} - ${YEAR}
 
 Select Shift Dropdown
-    [Arguments]    ${SHIFT_NAME_TIME}    ${DEPARTMENT}=${EMPTY}    ${WARD}=${EMPTY}
+    [Arguments]    ${SHIFT_NAME_TIME}    ${DEPARTMENT}    ${WARD}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
 
     ${INDEX}=    Set Variable    4
 
@@ -122,11 +133,27 @@ Select Shift Dropdown
     IF    '${DEPARTMENT}'!='' and '${WARD}'!=''
         ${INDEX}=    Set Variable    6
     END
-
     Wait Until Element Is Visible    xpath=(//select)[${INDEX}]    ${TIMEOUT}
     Select From List By Label        xpath=(//select)[${INDEX}]    ${SHIFT_NAME_TIME}
-
     Log To Console    ✅ Shift '${SHIFT_NAME_TIME}' selected from dropdown index ${INDEX}
+    # Execute only if shift is Custom
+    IF    '${SHIFT_NAME_TIME}' == 'Custom'
+        Log To Console    ⏱ Selecting custom shift time
+        Select Custom Shift Time    ${STARTHOUR}    ${STARTMIN}    ${ENDHOUR}    ${ENDMIN}
+    END
+
+Select Custom Shift Time
+    [Arguments]    ${STARTHOUR}    ${STARTMIN}    ${ENDHOUR}    ${ENDMIN}
+
+    Wait Until Element Is Visible    (//div[contains(@class,'custom-equal-width')]//select)[3]    ${TIMEOUT}
+    Click Element    (//div[contains(@class,'custom-equal-width')]//select)[3]//option[normalize-space()='${STARTHOUR}']   
+    Wait Until Element Is Visible    (//div[contains(@class,'custom-equal-width')]//select)[4]    ${TIMEOUT}
+    Click Element    (//div[contains(@class,'custom-equal-width')]//select)[4]//option[normalize-space()='${STARTMIN}']    
+    Wait Until Element Is Visible    (//div[contains(@class,'custom-equal-width')]//select)[5]    ${TIMEOUT}
+    Click Element    (//div[contains(@class,'custom-equal-width')]//select)[5]//option[normalize-space()='${ENDHOUR}']   
+    Wait Until Element Is Visible    (//div[contains(@class,'custom-equal-width')]//select)[6]    ${TIMEOUT}
+    Click Element    (//div[contains(@class,'custom-equal-width')]//select)[6]//option[normalize-space()='${ENDMIN}']    
+    Log To Console    ✅ Custom shift time selected: ${STARTHOUR}:${STARTMIN} - ${ENDHOUR}:${ENDMIN}
 
 Select Duty type Dropdown
     [Arguments]    ${DUTY_TYPE}    ${DEPARTMENT}    ${WARD}
@@ -147,21 +174,20 @@ Select Duty type Dropdown
     Log To Console    ✅ Duty type '${DUTY_TYPE}' selected from dropdown index ${INDEX}
 
 Select Comments Dropdown
-    [Arguments]    ${COMMENTS}    ${DEPARTMENT}    ${WARD}
+    [Arguments]    ${COMMENTS}    ${DEPARTMENT}    ${WARD}    ${SHIFT_NAME_TIME}
 
     ${INDEX}=    Set Variable    5
-
-    IF    '${DEPARTMENT}'!='' or '${WARD}'!=''
-        ${INDEX}=    Set Variable    6
-    END
-
     IF    '${DEPARTMENT}'!='' and '${WARD}'!=''
-        ${INDEX}=    Set Variable    7
+        ${INDEX}=    Evaluate    ${INDEX}+2
+    ELSE IF    '${DEPARTMENT}'!='' or '${WARD}'!=''
+        ${INDEX}=    Evaluate    ${INDEX}+1
     END
 
+    IF    '${SHIFT_NAME_TIME}'=='Custom'
+        ${INDEX}=    Evaluate    ${INDEX}+4
+    END
     Wait Until Element Is Visible    xpath=(//select)[${INDEX}]    ${TIMEOUT}
     Select From List By Label        xpath=(//select)[${INDEX}]    ${COMMENTS}
-
     Log To Console    ✅ Comments '${COMMENTS}' selected from dropdown index ${INDEX}
 
 Select Role Department Ward
@@ -169,29 +195,20 @@ Select Role Department Ward
 
     Run Keyword If    '${ROLE}'!=''    
     ...    Log To Console    🔹 Selecting UI field: Role: ${ROLE}
-
     Run Keyword If    '${ROLE}'!=''    
     ...    Select Role    ${ROLE}
-
     Run Keyword If    '${ROLE}'==''    
     ...    Log To Console    ⚠️ Role: not provided, skipping
-
     Run Keyword If    '${DEPARTMENT}'!=''    
     ...    Log To Console    🔹 Selecting UI field: Department: ${DEPARTMENT}
-
     Run Keyword If    '${DEPARTMENT}'!=''    
     ...    Select Department    ${DEPARTMENT}
-
     Run Keyword If    '${DEPARTMENT}'==''    
     ...    Log To Console    ⚠️ Department: not provided, skipping
-
     Run Keyword If    '${WARD}'!=''    
     ...    Log To Console    🔹 Selecting UI field: Ward: ${WARD}
-
     Run Keyword If    '${WARD}'!=''    
     ...    Select Ward    ${WARD}
-
     Run Keyword If    '${WARD}'==''    
     ...    Log To Console    ⚠️ Ward: not provided, skipping
-
     Log To Console    ✅ Role / Department / Ward selection completed 

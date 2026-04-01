@@ -12,16 +12,16 @@ Resource    ../pages/AddShiftPage.robot
 
 *** Keywords ***
 Replace Shift In User Login
-    [Arguments]    ${USERNAME}    ${PASSWORD}    ${YEAR}   ${MONTH}    ${DATE}  ${DOCTOR_NAME}     ${SHIFT_TIME}    ${OPERATION}    ${REPLACE_USER}    ${FIRSTNAME}    ${LASTNAME}   
-    [Documentation]    End-to-end flow: Login → Beeway → Replace Shift
+    [Arguments]    ${USER_LOGIN}    ${PASSWORD}    ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}   ${MONTH}    ${DATE}  ${DOCTOR_NAME}     ${SHIFT_TIME}    ${OPERATION}    ${REPLACE_USER}    
     [Tags]    Smoke    Regression 
 
-    Login and Goto Dashboard   ${USERNAME}    ${PASSWORD}
-    Goto Service    BeeWay
+    Login and Goto Dashboard   ${USER_LOGIN}    ${PASSWORD}
+    Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
-    Select Hospital    Prince of Wales Private Hospital
+    Select Hospital     ${HOSPITAL_NAME}
     Wait For Page Loader To Disappear
-    Select Date from My Schedule    ${YEAR}    ${MONTH}    ${DATE}     
+    Sub Service selection    ${SUBSERVICE_NAME}
+    Select Date from My Schedule    ${YEAR}    ${MONTH}    ${DATE}    ${HOSPITAL_NAME} 
     ${DATE_SHIFT_XPATH}=    Set Variable
 ...    (//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]//h4[normalize-space()='${DOCTOR_NAME}']/ancestor::div[contains(@class,'user-section')][1][.//span[contains(@class,'shift-tme') and normalize-space()='${SHIFT_TIME}']]
     Wait Until Element Is Visible    xpath=${DATE_SHIFT_XPATH}    ${TIMEOUT_LONG}
@@ -34,17 +34,20 @@ Replace Shift In User Login
     Log To Console    ✅ Shift Replaced with '${REPLACE_USER}'
 
 Replace Shift In Admin Login
-    [Arguments]    ${USERNAME}    ${PASSWORD}    ${YEAR}   ${MONTH}    ${DATE}    ${DOCTOR_NAME}     ${SHIFT_TIME}     ${REPLACE_USER}    ${SHIFT_TEXT}
+    [Arguments]    ${USERNAME}    ${PASSWORD}    ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}   ${MONTH}    ${DATE}    ${DOCTOR_NAME}     ${SHIFT_TIME}     ${REPLACE_USER}  
     [Documentation]    End-to-end flow: Login → Beeway → Replace Shift in Admin Login
     [Tags]    Smoke    Regression        
 
     Login and Goto Dashboard   ${USERNAME}    ${PASSWORD}
     Wait For Page Loader To Disappear
-    Goto Service    BeeWay
+    Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
-    Select Hospital    Prince of Wales Private Hospital
+    Select Hospital     ${HOSPITAL_NAME}
+    Wait For Page Loader To Disappear
+    Sub Service selection    ${SUBSERVICE_NAME}
+    Wait For Page Loader To Disappear
     sleep    2s
-    Select Date from Hospital Schedule    ${YEAR}    ${MONTH}    ${DATE} 
+    Select Date from Hospital Schedule    ${YEAR}    ${MONTH}    ${DATE}    ${HOSPITAL_NAME}
     Click Shift Based On Doctor And Time    ${DATE}    ${DOCTOR_NAME}    ${SHIFT_TIME}
     Button Click    Replace
     Log To Console    ✅ Clicked 'Replace' button in Admin Login
@@ -93,35 +96,36 @@ Click Shift Based On Doctor And Time
 
 
 Validate Replace Shift In User Login
-    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${YEAR}     ${MONTH}    ${DATE}    ${REPLACE_USER}     ${ROLE}    ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}
+    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_COLOUR}    ${SHIFT_TEXT}
 
-    Validate Shift in Doctor login      ${DOCTORLOGIN}   ${PASSWORD}     ${YEAR}     ${MONTH}    ${DATE}     ${REPLACE_USER}    ${SHIFT_TIME}
-    Validate Shift Colour Displayed    ${ROLE}    ${DATE}    ${SHIFT_COLOUR}    ${REPLACE_USER}    ${SHIFT_TIME}
+    Validate Shift in Doctor login      ${DOCTORLOGIN}   ${PASSWORD}     ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${REPLACE_USER}    ${SHIFT_TIME}
+    Validate Shift Colour Displayed    USER    ${DATE}    ${SHIFT_COLOUR}    ${REPLACE_USER}    ${SHIFT_TIME}
     Log To Console    ✅ Replace Shift colour'${SHIFT_COLOUR}' 
-    Hover Shift And Validate Tooltip     ${ROLE}    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_TEXT}
+    Hover Shift And Validate Tooltip     USER    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_TEXT}
 
 
 Validate shift from Admin Login
-    [Arguments]    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${DATE}     ${REPLACE_USER}    ${SHIFT_NAME}     ${ROLE}    ${DOCTOR_NAME}    ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}
+    [Arguments]    ${USERNAME}    ${PASSWORD}    ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${REPLACE_USER}    ${SHIFT_NAME}    ${WARD}    ${DOCTOR_NAME}    ${SHIFT_TIME}    ${SHIFT_COLOUR}    ${SHIFT_TEXT}
 
     Login and Goto Dashboard   ${USERNAME}    ${PASSWORD}
     Wait For Page Loader To Disappear
-    Goto Service    BeeWay
+    Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
-    Select Hospital    Prince of Wales Private Hospital
+    Select Hospital     ${HOSPITAL_NAME}
+    Wait For Page Loader To Disappear
+    Sub Service selection    ${SUBSERVICE_NAME}
     Wait For Page Loader To Disappear
     sleep    2s
-    Select Date from Hospital Schedule    ${YEAR}    ${MONTH}    ${DATE} 
-    ${SHIFT_EXISTS}=    Get Shift exist Status    ${DATE}     ${REPLACE_USER}   ${SHIFT_NAME}
+    Select Date from Hospital Schedule    ${YEAR}    ${MONTH}    ${DATE}    ${HOSPITAL_NAME}
+    ${SHIFT_EXISTS}=    Get Shift Exist Status Admin Login    ${DATE}     ${REPLACE_USER}   ${SHIFT_NAME}    ${SHIFT_TIME}    ${WARD}
     Should Be True     ${SHIFT_EXISTS}    Shift not found for ${REPLACE_USER} on ${DATE} with shift name ${SHIFT_NAME}
-    Validate Shift Colour Displayed     ${ROLE}    ${DATE}    ${SHIFT_COLOUR}    ${REPLACE_USER}    ${SHIFT_TIME}
+    Validate Shift Colour Displayed     ADMIN    ${DATE}    ${SHIFT_COLOUR}    ${REPLACE_USER}    ${SHIFT_TIME}
     Log To Console    ✅ Replace Shift colour'${SHIFT_COLOUR}' 
-    Hover Shift And Validate Tooltip     ${ROLE}    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_TEXT}
-    
+    Hover Shift And Validate Tooltip     ADMIN    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}     ${SHIFT_TEXT}
     Log To Console    ✅ Shift '${SHIFT_NAME}' found for ${REPLACE_USER} on ${DATE} in Admin Login
    
 Hover Shift And Validate Tooltip
-    [Arguments]    ${ROLE}    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_TEXT}
+    [Arguments]    ${ROLE}    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_TEXT} 
 
     ${DATE_CONTAINER}=    Set Variable
     ...    (//li[.//div[contains(@class,'date') and normalize-space()='${DATE}']])[1]
@@ -145,7 +149,7 @@ Hover Shift And Validate Tooltip
     ${TOOLTIP_XPATH}=    Set Variable
     ...    ${SHIFT_XPATH}//span[normalize-space()='${SHIFT_TEXT}']
 
-    Wait Until Element Is Visible    xpath=${TOOLTIP_XPATH}    ${TIMEOUT}
+    Wait Until Element Is Visible    xpath=${TOOLTIP_XPATH}    ${TIMEOUT_LONG}
     Element Text Should Be      xpath=${TOOLTIP_XPATH}    ${SHIFT_TEXT}
 
     Log To Console    ✅ Tooltip '${SHIFT_TEXT}' validated for ${ROLE} role

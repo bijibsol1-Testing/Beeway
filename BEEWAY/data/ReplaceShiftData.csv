@@ -1,0 +1,2 @@
+*** Test Cases ***,${USERNAME},${USER_LOGIN},${PASSWORD},${SERVICE_NAME},${HOSPITAL_NAME},${SUBSERVICE_NAME},${YEAR},${MONTH},${DATE},${DOCTOR_NAME},${SHIFT_NAME},${SHIFT_TIME},${WARD},${OPERATION},${REPLACE_USER},${DOCTORLOGIN},${SHIFT_COLOUR},${SHIFT_TEXT}
+Replace Shift,rgarikapati,jlim,E7q_35&ZR]5D*iRZ,BeeWay,Prince of Wales Private Hospital,Ans Roster,2026,MAY,09,Jessica ILM,N12,19:00-07:00,,Replace Shift,David AACIS,disaac,bg-septenary,SR From Jessica ILM

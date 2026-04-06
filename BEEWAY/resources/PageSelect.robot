@@ -1,5 +1,5 @@
 *** Settings ***
-Library    SeleniumLibrary
+# Library    SeleniumLibrary
 Resource    UIComponents.robot
 Resource    ../variables/Common.robot
 

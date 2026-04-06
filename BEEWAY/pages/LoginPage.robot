@@ -1,8 +1,6 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    ../resources/UIComponents.robot
-
-
+# Library    SeleniumLibrary    
+Resource    ../../MODPAY/pages/Generate_invoicePage.robot
 
 *** Variables ***
 ${ERROR_MSG_PATH}    //p[contains(@class,"alert alert-danger")]
@@ -30,7 +28,8 @@ Submit Login
    
    Enter Username    ${username}
    Enter Password    ${password}
-   Click Login Button     
+   Click Login Button
+   # Capture Screenshot Step    After Click Login Button
 
 Verify Login Error Message
    [Arguments]    ${EXPECTED_ERROR_MESSAGE}

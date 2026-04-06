@@ -1,1 +1,4 @@
+*** Test Cases ***,${USERNAME},${USER_LOGIN},${SWAP_USER_LOGIN},${PASSWORD},${SERVICE_NAME},${HOSPITAL_NAME},${SUBSERVICE_NAME},${YEAR},${MONTH},${DATE},${DOCTOR_NAME},${SHIFT_TIME},${OPERATION},${SWAP_USER},${SWAP_DATE},${DAY},${EXPECTED_MESSAGE},${ACTION},${VALIDATION_DATE},${SHIFT_NAME},${SHIFT_TEXT},${SHIFT_COLOUR},${SWAP_SHIFT_TEXT},${SWAPPING_DATE}
+Swap Shift,,jlim,DISAAC,E7q_35&ZR]5D*iRZ,BeeWay,Prince of Wales Private Hospital,Ans Roster,2026,APR,08,Jessica ILM,19:00-07:00,Swap Shift,David AACIS,15/04/2026,Wednesday,Do you want to Swap shift?,ACCEPT,2026,MAY,10,N12,SR From Jessica ILM
+Swap Shift,rgarikapati,,DISAAC,E7q_35&ZR]5D*iRZ,BeeWay,Prince of Wales Private Hospital,Ans Roster,2026,MAY,09,Jessica ILM,19:00-07:00,Swap Shift,David AACIS,2026,MAY,10,Swap Shift with David AACIS on 10th May 2026 at 19:00-07:00,Replace Shift,2026,MAY,10,N12,SR From Jessica ILM
 

@@ -12,10 +12,11 @@ Test Teardown    Close Application Browser
 Test Template    Login And Swap Shift Based On Role
 
 *** Keywords ***
-Swap Shift Based On Role
+Login And Swap Shift Based On Role
     [Arguments]  
     ...    ${USERNAME}
     ...    ${USER_LOGIN}
+    ...    ${SWAP_USER_LOGIN}
     ...    ${PASSWORD}
     ...    ${SERVICE_NAME}
     ...    ${HOSPITAL_NAME}
@@ -33,6 +34,11 @@ Swap Shift Based On Role
     ...    ${ACTION}
     ...    ${VALIDATION_DATE}
     ...    ${SHIFT_NAME}
+    ...    ${SHIFT_TEXT}    
+    ...    ${SHIFT_COLOUR}  
+    ...    ${SWAP_SHIFT_TEXT}
+    ...    ${SWAPPING_DATE}
+
 
     IF    '${USER_LOGIN}' != ''
         Swap Shift In User Login
@@ -148,9 +154,5 @@ Login And Swap Shift Based On Role
     Swap Shift In User Login     JLIM    ${PASSWORD}    ${YEAR}   ${MONTH}    ${DATE}  ${DOCTOR_NAME}     ${SHIFT_TIME}    ${OPERATION}    ${SWAP_USER}   ${SWAP_DATE}    ${DAY}   ${EXPECTED_MESSAGE}    ${ACTION}    ${VALIDATION_DATE}   
     Open Browser To Application
     Validate Swap Shift in User Login    DISAAC    ${PASSWORD}     ${YEAR}     ${MONTH}    ${DATE}    ${SWAP_USER}     USER   ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}
-    # Open Browser To Application
-    # Validate shift from Admin Login    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${DATE}     ${SWAP_USER}    ${SHIFT_NAME}     ADMIN    ${DOCTOR_NAME}    ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}
-    # Open Browser To Application
-    # Validate shift from Admin Login    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${VALIDATION_DATE}     ${DOCTOR_NAME}    ${SHIFT_NAME}     ADMIN    ${SWAP_USER}    ${SHIFT_TIME}    Swap with ${SWAP_USER} ${SWAPPING_DATE} - 19:00 - 07:00    ${SHIFT_COLOUR}
-    Open Browser To Application
+
     Validate Swap Shift from Admin Login    ${USERNAME}    ${PASSWORD}    ${YEAR}     ${MONTH}    ${DATE}     ${SWAP_USER}    ${SHIFT_NAME}     ADMIN    ${DOCTOR_NAME}    ${SHIFT_TIME}    ${SHIFT_TEXT}    ${SHIFT_COLOUR}     ${VALIDATION_DATE}    ${SWAPPING_DATE}

@@ -96,9 +96,9 @@ Click Shift Based On Doctor And Time
 
 
 Validate Replace Shift In User Login
-    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_COLOUR}    ${SHIFT_TEXT}
+    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_COLOUR}    ${SHIFT_TEXT}
 
-    Validate Shift in Doctor login      ${DOCTORLOGIN}   ${PASSWORD}     ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${REPLACE_USER}    ${SHIFT_TIME}
+    Validate Shift in Doctor login      ${DOCTORLOGIN}   ${PASSWORD}     ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${REPLACE_USER}    ${SHIFT_TIME}
     Validate Shift Colour Displayed    USER    ${DATE}    ${SHIFT_COLOUR}    ${REPLACE_USER}    ${SHIFT_TIME}
     Log To Console    ✅ Replace Shift colour'${SHIFT_COLOUR}' 
     Hover Shift And Validate Tooltip     USER    ${DATE}    ${REPLACE_USER}    ${SHIFT_TIME}    ${SHIFT_TEXT}

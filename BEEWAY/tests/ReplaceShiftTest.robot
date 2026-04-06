@@ -67,7 +67,8 @@ Login And Replace Shift In Beeway
    Open Browser To Application
    Validate Replace Shift In User Login 
    ...    ${DOCTORLOGIN}    
-   ...    ${PASSWORD}     
+   ...    ${PASSWORD}
+   ...    ${SERVICE_NAME}     
    ...    ${HOSPITAL_NAME}    
    ...    ${SUBSERVICE_NAME}    
    ...    ${YEAR}     

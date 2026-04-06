@@ -112,6 +112,7 @@ Validate shift from Admin Login
     Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
     Select Hospital     ${HOSPITAL_NAME}
+    sleep   2s
     Wait For Page Loader To Disappear
     Sub Service selection    ${SUBSERVICE_NAME}
     Wait For Page Loader To Disappear

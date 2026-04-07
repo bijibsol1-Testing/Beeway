@@ -16,7 +16,8 @@ Test Template    Add Shift Test
 Add Shift Test
     [Arguments]  
     ...    ${USERNAME}    
-    ...    ${PASSWORD} 
+    ...    ${PASSWORD}
+    ...    ${SERVICE_NAME} 
     ...    ${HOSPITAL_NAME} 
     ...    ${SUBSERVICE_NAME}  
     ...    ${YEAR}
@@ -42,7 +43,8 @@ Add Shift Test
     # Open Browser To Application
     Add Shift in Beeway  
     ...   ${USERNAME}    
-    ...   ${PASSWORD} 
+    ...   ${PASSWORD}
+    ...   ${SERVICE_NAME} 
     ...   ${HOSPITAL_NAME} 
     ...   ${SUBSERVICE_NAME}
     ...   ${YEAR}

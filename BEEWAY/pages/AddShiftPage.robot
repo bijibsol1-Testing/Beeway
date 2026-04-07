@@ -45,7 +45,8 @@ Add Shift
     Log To Console    ✅ Shift & duty type selected
     Checkbox Should Be Selected    xpath=//input[@id='clash_checkbox']
     Log To Console    ✅ Clash verified
-    Select Comments Dropdown    ${COMMENTS}    ${DEPARTMENT}    ${WARD}
+    Select Comments Dropdown    ${COMMENTS}    ${DEPARTMENT}    ${WARD}    ${SHIFT_NAME_TIME}
+
     Button Click    Save
     Log To Console    ✅ Shift saved successfully
 

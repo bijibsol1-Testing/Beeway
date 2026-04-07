@@ -29,7 +29,7 @@ Submit Login
    Enter Username    ${username}
    Enter Password    ${password}
    Click Login Button
-   # Capture Screenshot Step    After Click Login Button
+   Capture Screenshot Step    After Click Login Button
 
 Verify Login Error Message
    [Arguments]    ${EXPECTED_ERROR_MESSAGE}

@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library    allure_robotframework
 Library    DataDriver    file=../data/AddShiftData.csv    dialect=excel
 Resource    ../pages/AddShiftPage.robot
 
@@ -8,7 +9,7 @@ Resource    ../pages/AddShiftPage.robot
 # Test Template    Add Shift Test
 
 Test Setup    Open Browser To Application
-Test Teardown    Close Application Browser
+Test Teardown    Run Keywords    Attach Screenshot To Allure    AND    Close Application Browser
 Test Template    Add Shift Test
 
 
@@ -75,6 +76,7 @@ Add Shift Test
     Validate Shift in Doctor login     
     ...    ${DOCTORLOGIN}
     ...    ${PASSWORD}
+    ...    ${SERVICE_NAME}
     ...    ${HOSPITAL_NAME}
     ...    ${SUBSERVICE_NAME}
     ...    ${YEAR}

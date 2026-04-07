@@ -22,6 +22,7 @@ Add Shift in Beeway
     Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
     Select Hospital     ${HOSPITAL_NAME}
+    sleep     2s
     Sub Service selection    ${SUBSERVICE_NAME}
     sleep     2s 
     Select Date from Hospital Schedule    ${YEAR}     ${MONTH}    ${DATE}    

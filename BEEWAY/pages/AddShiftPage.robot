@@ -25,7 +25,7 @@ Add Shift in Beeway
     sleep     2s
     Sub Service selection    ${SUBSERVICE_NAME}
     sleep     2s 
-    Select Date from Hospital Schedule    ${YEAR}     ${MONTH}    ${DATE}    
+    Select Date from Hospital Schedule    ${YEAR}     ${MONTH}    ${DATE}    ${HOSPITAL_NAME}  
     ${DATE_XPATH}=    Set Variable    (//li[.//div[normalize-space()='${DATE}']])[1]
     Wait Until Element Is Visible    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']     ${TIMEOUT_LONG}
     Click Element    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']

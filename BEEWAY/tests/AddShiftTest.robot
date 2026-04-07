@@ -3,6 +3,7 @@ Library     SeleniumLibrary
 Library    allure_robotframework
 Library    DataDriver    file=../data/AddShiftData.csv    dialect=excel
 Resource    ../pages/AddShiftPage.robot
+Resource    ../pages/LoginPage.robot
 
 # Suite Setup    Open Browser To Application
 # Suite Teardown    Close Application Browser

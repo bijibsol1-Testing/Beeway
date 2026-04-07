@@ -13,13 +13,13 @@ Resource    ../pages/BeewayDashboardPage.robot
 *** Keywords ***
 
 Add Shift in Beeway
-    [Arguments]     ${USERNAME}    ${PASSWORD}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}   ${MONTH}    ${DATE}    ${ACTION}    ${ROLE}   ${DEPARTMENT}   ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
+    [Arguments]     ${USERNAME}    ${PASSWORD}    ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}   ${MONTH}    ${DATE}    ${ACTION}    ${ROLE}   ${DEPARTMENT}   ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
     [Documentation]    Login to Bijib and add shift in Beeway
     [Tags]    Smoke    Regression
     
     Login and Goto Dashboard   ${USERNAME}    ${PASSWORD}
     Wait For Page Loader To Disappear
-    Goto Service    BeeWay
+    Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
     Select Hospital     ${HOSPITAL_NAME}
     Sub Service selection    ${SUBSERVICE_NAME}

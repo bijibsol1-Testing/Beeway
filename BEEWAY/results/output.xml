@@ -1,154 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-04-06T18:03:25.102166" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-04-07T12:41:12.696300" rpa="false" schemaversion="5">
 <suite id="s1" name="LoginPageTest" source="D:\Apps\Automation\BEEWAY\tests\LoginPageTest.robot">
-<test id="s1-t1" name="Empty Credentials" line="34">
+<test id="s1-t1" name="Empty Credentials" line="35">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:25.780131" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-06T18:03:25.779362" elapsed="2.755456"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-07T12:41:13.541805" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAF2C2BCB0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-07T12:41:13.539767" elapsed="0.002129"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-06T18:03:28.535401" elapsed="0.820103"/>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:13.556588" elapsed="0.000633"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:13.557622" elapsed="0.000449"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:13.558428" elapsed="0.000440"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:13.559545" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-04-07T12:41:13.559241" elapsed="2.050284"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:15.649185" level="INFO">Opening url 'https://test.bijib.in'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-07T12:41:15.648601" elapsed="1.554308"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-06T18:03:29.356258" elapsed="0.000942"/>
+<status status="PASS" start="2026-04-07T12:41:17.220828" elapsed="0.000459"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:25.776664" elapsed="3.581393"/>
+<status status="PASS" start="2026-04-07T12:41:13.535138" elapsed="3.686469"/>
 </kw>
 <kw name="Login Test">
 <kw name="Submit Login" owner="LoginPage">
 <kw name="Enter Username" owner="LoginPage">
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:29.367585" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<msg time="2026-04-07T12:41:17.228014" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:29.365427" elapsed="0.002295"/>
+<status status="PASS" start="2026-04-07T12:41:17.227376" elapsed="0.000709"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:29.368259" elapsed="0.376091"/>
+<status status="PASS" start="2026-04-07T12:41:17.237056" elapsed="0.313046"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:29.744861" elapsed="0.267184"/>
+<status status="PASS" start="2026-04-07T12:41:17.550791" elapsed="0.277668"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:30.012715" level="INFO">Typing text '' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<msg time="2026-04-07T12:41:17.829489" level="INFO">Typing text '' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:30.012351" elapsed="0.454602"/>
+<status status="PASS" start="2026-04-07T12:41:17.829070" elapsed="0.476322"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:30.467973" elapsed="0.002002"/>
+<status status="PASS" start="2026-04-07T12:41:18.324118" elapsed="0.001371"/>
 </kw>
 <arg>Enter Username</arg>
 <arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-06T18:03:29.364129" elapsed="1.106336"/>
+<status status="PASS" start="2026-04-07T12:41:17.226755" elapsed="1.099545"/>
 </kw>
 <arg>${username}</arg>
-<status status="PASS" start="2026-04-06T18:03:29.362868" elapsed="1.107982"/>
+<status status="PASS" start="2026-04-07T12:41:17.226076" elapsed="1.100792"/>
 </kw>
 <kw name="Enter Password" owner="LoginPage">
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:30.474756" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<msg time="2026-04-07T12:41:18.334000" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:30.473712" elapsed="0.001187"/>
+<status status="PASS" start="2026-04-07T12:41:18.332820" elapsed="0.001311"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:30.475377" elapsed="0.252709"/>
+<status status="PASS" start="2026-04-07T12:41:18.357591" elapsed="0.246040"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:30.728602" elapsed="0.278018"/>
+<status status="PASS" start="2026-04-07T12:41:18.604528" elapsed="0.273945"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:31.009105" level="INFO">Typing text '' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<msg time="2026-04-07T12:41:18.882213" level="INFO">Typing text '' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:31.007901" elapsed="0.442228"/>
+<status status="PASS" start="2026-04-07T12:41:18.880527" elapsed="0.471474"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:31.450452" elapsed="0.000974"/>
+<status status="PASS" start="2026-04-07T12:41:19.371482" elapsed="0.001331"/>
 </kw>
 <arg>Enter Password</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-06T18:03:30.472582" elapsed="0.979091"/>
+<status status="PASS" start="2026-04-07T12:41:18.331629" elapsed="1.041864"/>
 </kw>
 <arg>${password}</arg>
-<status status="PASS" start="2026-04-06T18:03:30.471427" elapsed="0.980432"/>
+<status status="PASS" start="2026-04-07T12:41:18.330113" elapsed="1.043831"/>
 </kw>
 <kw name="Click Login Button" owner="LoginPage">
 <kw name="Button Click" owner="Buttons">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:31.457566" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<msg time="2026-04-07T12:41:19.378319" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
 <var>${BASE_PATH}</var>
 <arg>//button[normalize-space()="${LABEL}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:31.453192" elapsed="0.004531"/>
+<status status="PASS" start="2026-04-07T12:41:19.377080" elapsed="0.001382"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:31.460423" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<msg time="2026-04-07T12:41:19.410577" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
 <var>${BUTTON_PATH}</var>
 <arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:31.458791" elapsed="0.001749"/>
+<status status="PASS" start="2026-04-07T12:41:19.409247" elapsed="0.001480"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BUTTON_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:31.460940" elapsed="0.243100"/>
+<status status="PASS" start="2026-04-07T12:41:19.430613" elapsed="0.242211"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:31.706498" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<msg time="2026-04-07T12:41:19.673909" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
 <arg>${BUTTON_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:31.705248" elapsed="0.693906"/>
+<status status="PASS" start="2026-04-07T12:41:19.673445" elapsed="0.663683"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Clicked button with label ${LABEL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:32.399717" elapsed="0.002763"/>
+<status status="PASS" start="2026-04-07T12:41:20.356113" elapsed="0.001330"/>
 </kw>
 <arg>Login</arg>
-<status status="PASS" start="2026-04-06T18:03:31.452715" elapsed="0.950233"/>
+<status status="PASS" start="2026-04-07T12:41:19.375872" elapsed="0.982335"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:31.452173" elapsed="0.951115"/>
+<status status="PASS" start="2026-04-07T12:41:19.374729" elapsed="0.984012"/>
 </kw>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-06T18:03:29.361717" elapsed="3.041814"/>
+<status status="PASS" start="2026-04-07T12:41:17.225155" elapsed="3.134046"/>
 </kw>
 <if>
 <branch type="IF" condition="'${SUCCESS}' == 'True'">
 <kw name="Login Should Be Successful" owner="LoginPage">
-<status status="NOT RUN" start="2026-04-06T18:03:32.404755" elapsed="0.000100"/>
+<status status="NOT RUN" start="2026-04-07T12:41:20.360620" elapsed="0.000179"/>
 </kw>
-<status status="NOT RUN" start="2026-04-06T18:03:32.403922" elapsed="0.001074"/>
+<status status="NOT RUN" start="2026-04-07T12:41:20.359776" elapsed="0.001422"/>
 </branch>
 <branch type="ELSE">
 <kw name="Verify Login Error Message" owner="LoginPage">
@@ -157,595 +188,275 @@
 <arg>${ERROR_MSG_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:32.410465" elapsed="0.355450"/>
+<status status="PASS" start="2026-04-07T12:41:20.363997" elapsed="0.228541"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:32.999237" level="INFO">${msg} = Please Enter User Name/Mobile/Email</msg>
+<msg time="2026-04-07T12:41:20.848359" level="INFO">${msg} = Please Enter User Name/Mobile/Email</msg>
 <var>${msg}</var>
 <arg>${ERROR_MSG_PATH}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:32.766535" elapsed="0.232781"/>
+<status status="PASS" start="2026-04-07T12:41:20.593415" elapsed="0.255101"/>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2026-04-06T18:03:32.999950" level="INFO">${msg} = Please Enter User Name/Mobile/Email</msg>
+<msg time="2026-04-07T12:41:20.866061" level="INFO">${msg} = Please Enter User Name/Mobile/Email</msg>
 <var>${msg}</var>
 <arg>${msg}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2026-04-06T18:03:32.999629" elapsed="0.000369"/>
+<status status="PASS" start="2026-04-07T12:41:20.865383" elapsed="0.000802"/>
 </kw>
 <return>
 <value>${msg}</value>
-<status status="PASS" start="2026-04-06T18:03:33.000104" elapsed="0.000093"/>
+<status status="PASS" start="2026-04-07T12:41:20.882513" elapsed="0.000268"/>
 </return>
-<msg time="2026-04-06T18:03:33.000424" level="INFO">${actual_error_message} = Please Enter User Name/Mobile/Email</msg>
+<msg time="2026-04-07T12:41:20.883403" level="INFO">${actual_error_message} = Please Enter User Name/Mobile/Email</msg>
 <var>${actual_error_message}</var>
-<status status="PASS" start="2026-04-06T18:03:32.408679" elapsed="0.591793"/>
+<status status="PASS" start="2026-04-07T12:41:20.363204" elapsed="0.520274"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${actual_error_message}</arg>
 <arg>${EXPECTED_ERROR_MESSAGE}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-04-06T18:03:33.000667" elapsed="0.000726"/>
+<status status="PASS" start="2026-04-07T12:41:20.901689" elapsed="0.003131"/>
 </kw>
 <kw name="Wait Until Error Msg Disappear" owner="LoginPage">
 <kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
 <arg>${ERROR_MSG_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" start="2026-04-06T18:03:33.002247" elapsed="1.688822"/>
+<status status="PASS" start="2026-04-07T12:41:20.907075" elapsed="1.693250"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Error Msg Disappear</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:34.691572" elapsed="0.001138"/>
+<status status="PASS" start="2026-04-07T12:41:22.601198" elapsed="0.001172"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:33.001792" elapsed="1.691283"/>
+<status status="PASS" start="2026-04-07T12:41:20.905999" elapsed="1.697086"/>
 </kw>
 <arg>${EXPECTED_ERROR}</arg>
-<status status="PASS" start="2026-04-06T18:03:32.405760" elapsed="2.287638"/>
+<status status="PASS" start="2026-04-07T12:41:20.362151" elapsed="2.241644"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:32.405206" elapsed="2.288434"/>
+<status status="PASS" start="2026-04-07T12:41:20.361616" elapsed="2.242622"/>
 </branch>
-<status status="PASS" start="2026-04-06T18:03:32.403831" elapsed="2.290062"/>
+<status status="PASS" start="2026-04-07T12:41:20.359686" elapsed="2.244993"/>
 </if>
 <arg>USERNAME=</arg>
 <arg>PASSWORD=</arg>
 <arg>EXPECTED_ERROR=Please Enter User Name/Mobile/Email</arg>
 <arg>SUCCESS=False</arg>
-<status status="PASS" start="2026-04-06T18:03:29.360222" elapsed="5.333978"/>
+<status status="PASS" start="2026-04-07T12:41:17.223476" elapsed="5.381385"/>
 </kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Attach Screenshot To Allure" owner="LoginPage">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>${screenshot}=</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:22.608206" elapsed="0.001287"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Attach File</arg>
+<arg>${screenshot}</arg>
+<arg>name=Failure Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:22.611488" elapsed="0.001141"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:22.607318" elapsed="0.005944"/>
+</kw>
+<kw name="Close Application Browser" owner="BrowserKeywords">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-06T18:03:34.697222" elapsed="2.523572"/>
+<status status="PASS" start="2026-04-07T12:41:22.614966" elapsed="2.305633"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:34.696079" elapsed="2.524997"/>
+<status status="PASS" start="2026-04-07T12:41:22.614028" elapsed="2.307194"/>
+</kw>
+<arg>Attach Screenshot To Allure</arg>
+<arg>AND</arg>
+<arg>Close Application Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-07T12:41:22.606051" elapsed="2.315637"/>
 </kw>
 <tag>Regression</tag>
-<status status="PASS" start="2026-04-06T18:03:25.774149" elapsed="11.447385"/>
+<status status="PASS" start="2026-04-07T12:41:13.531761" elapsed="11.390696"/>
 </test>
-<test id="s1-t2" name="Empty password" line="34">
+<test id="s1-t2" name="Empty password" line="35">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:37.234924" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-06T18:03:37.234151" elapsed="3.443951"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-07T12:41:24.967996" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAF2D2A210&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-07T12:41:24.966229" elapsed="0.002124"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-06T18:03:40.678623" elapsed="0.171890"/>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:24.987092" elapsed="0.001236"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:24.989315" elapsed="0.000848"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:24.990635" elapsed="0.000466"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:24.991757" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-04-07T12:41:24.991468" elapsed="1.824574"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:26.851198" level="INFO">Opening url 'https://test.bijib.in'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-07T12:41:26.850589" elapsed="0.266861"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-06T18:03:40.850972" elapsed="0.000470"/>
+<status status="PASS" start="2026-04-07T12:41:27.188492" elapsed="0.000741"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:37.233055" elapsed="3.618585"/>
+<status status="PASS" start="2026-04-07T12:41:24.965484" elapsed="2.224378"/>
 </kw>
 <kw name="Login Test">
 <kw name="Submit Login" owner="LoginPage">
 <kw name="Enter Username" owner="LoginPage">
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:40.860526" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<msg time="2026-04-07T12:41:27.202311" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:40.859391" elapsed="0.001262"/>
+<status status="PASS" start="2026-04-07T12:41:27.200989" elapsed="0.001458"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:40.861161" elapsed="0.251551"/>
+<status status="PASS" start="2026-04-07T12:41:27.281586" elapsed="1.362527"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:41.113023" elapsed="0.282144"/>
+<status status="PASS" start="2026-04-07T12:41:28.645031" elapsed="0.267968"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:41.396330" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<msg time="2026-04-07T12:41:28.914427" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:41.395665" elapsed="0.500403"/>
+<status status="PASS" start="2026-04-07T12:41:28.913559" elapsed="0.457911"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:41.896524" elapsed="0.001242"/>
+<status status="PASS" start="2026-04-07T12:41:29.381560" elapsed="0.002686"/>
 </kw>
 <arg>Enter Username</arg>
 <arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-06T18:03:40.858146" elapsed="1.039849"/>
+<status status="PASS" start="2026-04-07T12:41:27.199673" elapsed="2.185267"/>
 </kw>
 <arg>${username}</arg>
-<status status="PASS" start="2026-04-06T18:03:40.854685" elapsed="1.043493"/>
+<status status="PASS" start="2026-04-07T12:41:27.198543" elapsed="2.186859"/>
 </kw>
 <kw name="Enter Password" owner="LoginPage">
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:41.900453" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<msg time="2026-04-07T12:41:29.388044" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:41.899915" elapsed="0.000594"/>
+<status status="PASS" start="2026-04-07T12:41:29.387420" elapsed="0.000690"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:41.900739" elapsed="0.235216"/>
+<status status="PASS" start="2026-04-07T12:41:29.397735" elapsed="0.246235"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:42.136260" elapsed="0.242737"/>
+<status status="PASS" start="2026-04-07T12:41:29.644874" elapsed="0.274275"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:42.380288" level="INFO">Typing text '' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<msg time="2026-04-07T12:41:29.921463" level="INFO">Typing text '' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:42.379560" elapsed="0.470440"/>
+<status status="PASS" start="2026-04-07T12:41:29.920529" elapsed="0.464748"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:42.850929" elapsed="0.080590"/>
+<status status="PASS" start="2026-04-07T12:41:30.401075" elapsed="0.000947"/>
 </kw>
 <arg>Enter Password</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-06T18:03:41.899379" elapsed="1.032493"/>
+<status status="PASS" start="2026-04-07T12:41:29.386763" elapsed="1.015792"/>
 </kw>
 <arg>${password}</arg>
-<status status="PASS" start="2026-04-06T18:03:41.898630" elapsed="1.033458"/>
+<status status="PASS" start="2026-04-07T12:41:29.386008" elapsed="1.017658"/>
 </kw>
 <kw name="Click Login Button" owner="LoginPage">
 <kw name="Button Click" owner="Buttons">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:42.952938" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<msg time="2026-04-07T12:41:30.407500" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
 <var>${BASE_PATH}</var>
 <arg>//button[normalize-space()="${LABEL}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:42.944503" elapsed="0.008585"/>
+<status status="PASS" start="2026-04-07T12:41:30.406605" elapsed="0.001004"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:42.955562" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<msg time="2026-04-07T12:41:30.419515" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
 <var>${BUTTON_PATH}</var>
 <arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:42.953821" elapsed="0.001890"/>
+<status status="PASS" start="2026-04-07T12:41:30.418136" elapsed="0.001519"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:43.198742" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B44E35]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
-<msg time="2026-04-06T18:03:43.207931" level="FAIL">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58DCC]
-	(No symbol) [0x00007FF6C8B4617B]
-	(No symbol) [0x00007FF6C8B4503E]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
 <arg>${BUTTON_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-04-06T18:03:42.956225" elapsed="0.314864">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58DCC]
-	(No symbol) [0x00007FF6C8B4617B]
-	(No symbol) [0x00007FF6C8B4503E]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:30.442917" elapsed="0.264238"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:30.708734" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
 <arg>${BUTTON_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T18:03:43.271795" elapsed="0.000122"/>
+<status status="PASS" start="2026-04-07T12:41:30.708050" elapsed="0.671702"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Clicked button with label ${LABEL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T18:03:43.272398" elapsed="0.000113"/>
+<status status="PASS" start="2026-04-07T12:41:31.389878" elapsed="0.002083"/>
 </kw>
 <arg>Login</arg>
-<status status="FAIL" start="2026-04-06T18:03:42.934774" elapsed="0.338156">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58DCC]
-	(No symbol) [0x00007FF6C8B4617B]
-	(No symbol) [0x00007FF6C8B4503E]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:30.405728" elapsed="0.986965"/>
 </kw>
-<status status="FAIL" start="2026-04-06T18:03:42.932593" elapsed="0.340758">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58DCC]
-	(No symbol) [0x00007FF6C8B4617B]
-	(No symbol) [0x00007FF6C8B4503E]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:30.404775" elapsed="0.988364"/>
 </kw>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-06T18:03:40.853653" elapsed="2.420041">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58DCC]
-	(No symbol) [0x00007FF6C8B4617B]
-	(No symbol) [0x00007FF6C8B4503E]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:27.197320" elapsed="4.196087"/>
 </kw>
 <if>
 <branch type="IF" condition="'${SUCCESS}' == 'True'">
 <kw name="Login Should Be Successful" owner="LoginPage">
-<status status="NOT RUN" start="2026-04-06T18:03:43.274455" elapsed="0.000090"/>
+<status status="NOT RUN" start="2026-04-07T12:41:31.394253" elapsed="0.000104"/>
 </kw>
-<status status="NOT RUN" start="2026-04-06T18:03:43.274040" elapsed="0.000609"/>
-</branch>
-<branch type="ELSE">
-<kw name="Verify Login Error Message" owner="LoginPage">
-<arg>${EXPECTED_ERROR}</arg>
-<status status="NOT RUN" start="2026-04-06T18:03:43.275131" elapsed="0.000082"/>
-</kw>
-<status status="NOT RUN" start="2026-04-06T18:03:43.274766" elapsed="0.000558"/>
-</branch>
-<status status="NOT RUN" start="2026-04-06T18:03:43.273975" elapsed="0.001457"/>
-</if>
-<arg>USERNAME=rgarikapati</arg>
-<arg>PASSWORD=</arg>
-<arg>EXPECTED_ERROR=Please Enter Password</arg>
-<arg>SUCCESS=False</arg>
-<status status="FAIL" start="2026-04-06T18:03:40.852470" elapsed="2.423228">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58DCC]
-	(No symbol) [0x00007FF6C8B4617B]
-	(No symbol) [0x00007FF6C8B4503E]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
-</kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-06T18:03:43.277962" elapsed="2.306757"/>
-</kw>
-<status status="PASS" start="2026-04-06T18:03:43.276875" elapsed="2.308024"/>
-</kw>
-<tag>Regression</tag>
-<status status="FAIL" start="2026-04-06T18:03:37.223587" elapsed="8.361656">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: unable to send message to renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58DCC]
-	(No symbol) [0x00007FF6C8B4617B]
-	(No symbol) [0x00007FF6C8B4503E]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
-</test>
-<test id="s1-t3" name="Invalid username" line="34">
-<kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:45.596266" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-06T18:03:45.595954" elapsed="3.601106"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-06T18:03:49.197367" elapsed="0.190756"/>
-</kw>
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>0.1s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-06T18:03:49.388763" elapsed="0.000768"/>
-</kw>
-<status status="PASS" start="2026-04-06T18:03:45.595453" elapsed="3.794456"/>
-</kw>
-<kw name="Login Test">
-<kw name="Submit Login" owner="LoginPage">
-<kw name="Enter Username" owner="LoginPage">
-<kw name="Textfield With Placeholder" owner="TextFields">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:49.400244" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
-<var>${INPUT_PATH}</var>
-<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:49.399044" elapsed="0.001315"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:49.401366" elapsed="0.255657"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:49.657570" elapsed="0.306877"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:49.965579" level="INFO">Typing text 'ram11' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
-<arg>${INPUT_PATH}</arg>
-<arg>${VALUE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:49.964990" elapsed="0.470166"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:50.435869" elapsed="0.033392"/>
-</kw>
-<arg>Enter Username</arg>
-<arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-06T18:03:49.398176" elapsed="1.077724"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2026-04-06T18:03:49.397340" elapsed="1.079095"/>
-</kw>
-<kw name="Enter Password" owner="LoginPage">
-<kw name="Textfield With Placeholder" owner="TextFields">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:50.483326" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
-<var>${INPUT_PATH}</var>
-<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:50.479615" elapsed="0.004080"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:50.484672" elapsed="0.511600"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:50.996594" elapsed="0.638354"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:51.636253" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
-<arg>${INPUT_PATH}</arg>
-<arg>${VALUE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:51.635543" elapsed="0.535078"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:52.171209" elapsed="0.001587"/>
-</kw>
-<arg>Enter Password</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-06T18:03:50.478491" elapsed="1.694714"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2026-04-06T18:03:50.477046" elapsed="1.696425"/>
-</kw>
-<kw name="Click Login Button" owner="LoginPage">
-<kw name="Button Click" owner="Buttons">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:52.177910" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
-<var>${BASE_PATH}</var>
-<arg>//button[normalize-space()="${LABEL}"]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:52.175497" elapsed="0.002796"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:03:52.182209" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
-<var>${BUTTON_PATH}</var>
-<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:03:52.179257" elapsed="0.003290"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${BUTTON_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:52.183329" elapsed="0.231785"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:52.416232" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
-<arg>${BUTTON_PATH}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:52.415627" elapsed="0.661692"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Clicked button with label ${LABEL}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:53.077614" elapsed="0.000687"/>
-</kw>
-<arg>Login</arg>
-<status status="PASS" start="2026-04-06T18:03:52.174816" elapsed="0.903671"/>
-</kw>
-<status status="PASS" start="2026-04-06T18:03:52.173944" elapsed="0.904724"/>
-</kw>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-06T18:03:49.396306" elapsed="3.682490"/>
-</kw>
-<if>
-<branch type="IF" condition="'${SUCCESS}' == 'True'">
-<kw name="Login Should Be Successful" owner="LoginPage">
-<status status="NOT RUN" start="2026-04-06T18:03:53.080112" elapsed="0.000296"/>
-</kw>
-<status status="NOT RUN" start="2026-04-06T18:03:53.078959" elapsed="0.001690"/>
+<status status="NOT RUN" start="2026-04-07T12:41:31.393757" elapsed="0.000835"/>
 </branch>
 <branch type="ELSE">
 <kw name="Verify Login Error Message" owner="LoginPage">
@@ -754,772 +465,897 @@ Stacktrace:
 <arg>${ERROR_MSG_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:03:53.083168" elapsed="0.850477"/>
+<status status="PASS" start="2026-04-07T12:41:31.396234" elapsed="0.232307"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:54.185774" level="INFO">${msg} = Enter Valid Credentials.</msg>
+<msg time="2026-04-07T12:41:31.882542" level="INFO">${msg} = Please Enter Password</msg>
 <var>${msg}</var>
 <arg>${ERROR_MSG_PATH}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:03:53.934500" elapsed="0.251558"/>
+<status status="PASS" start="2026-04-07T12:41:31.629436" elapsed="0.253250"/>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2026-04-06T18:03:54.187761" level="INFO">${msg} = Enter Valid Credentials.</msg>
+<msg time="2026-04-07T12:41:31.901694" level="INFO">${msg} = Please Enter Password</msg>
 <var>${msg}</var>
 <arg>${msg}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2026-04-06T18:03:54.186845" elapsed="0.001078"/>
+<status status="PASS" start="2026-04-07T12:41:31.900839" elapsed="0.000987"/>
 </kw>
 <return>
 <value>${msg}</value>
-<status status="PASS" start="2026-04-06T18:03:54.188262" elapsed="0.000217"/>
+<status status="PASS" start="2026-04-07T12:41:31.916959" elapsed="0.000213"/>
 </return>
-<msg time="2026-04-06T18:03:54.189132" level="INFO">${actual_error_message} = Enter Valid Credentials.</msg>
+<msg time="2026-04-07T12:41:31.917743" level="INFO">${actual_error_message} = Please Enter Password</msg>
 <var>${actual_error_message}</var>
-<status status="PASS" start="2026-04-06T18:03:53.082765" elapsed="1.106520"/>
+<status status="PASS" start="2026-04-07T12:41:31.395751" elapsed="0.522068"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${actual_error_message}</arg>
 <arg>${EXPECTED_ERROR_MESSAGE}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-04-06T18:03:54.189864" elapsed="0.001463"/>
+<status status="PASS" start="2026-04-07T12:41:31.931878" elapsed="0.000814"/>
 </kw>
 <kw name="Wait Until Error Msg Disappear" owner="LoginPage">
 <kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
 <arg>${ERROR_MSG_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" start="2026-04-06T18:03:54.193340" elapsed="1.752778"/>
+<status status="PASS" start="2026-04-07T12:41:31.933722" elapsed="1.682675"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Error Msg Disappear</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:03:55.946714" elapsed="0.000892"/>
+<status status="PASS" start="2026-04-07T12:41:33.616998" elapsed="0.000637"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:54.192148" elapsed="1.755745"/>
+<status status="PASS" start="2026-04-07T12:41:31.933214" elapsed="1.684804"/>
 </kw>
 <arg>${EXPECTED_ERROR}</arg>
-<status status="PASS" start="2026-04-06T18:03:53.081931" elapsed="2.866116"/>
+<status status="PASS" start="2026-04-07T12:41:31.395120" elapsed="2.223186"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:53.081050" elapsed="2.867083"/>
+<status status="PASS" start="2026-04-07T12:41:31.394822" elapsed="2.223742"/>
 </branch>
-<status status="PASS" start="2026-04-06T18:03:53.078912" elapsed="2.869307"/>
+<status status="PASS" start="2026-04-07T12:41:31.393706" elapsed="2.225078"/>
+</if>
+<arg>USERNAME=rgarikapati</arg>
+<arg>PASSWORD=</arg>
+<arg>EXPECTED_ERROR=Please Enter Password</arg>
+<arg>SUCCESS=False</arg>
+<status status="PASS" start="2026-04-07T12:41:27.196038" elapsed="6.422842"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Attach Screenshot To Allure" owner="LoginPage">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>${screenshot}=</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:33.620627" elapsed="0.000352"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Attach File</arg>
+<arg>${screenshot}</arg>
+<arg>name=Failure Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:33.621323" elapsed="0.000344"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:33.620175" elapsed="0.001746"/>
+</kw>
+<kw name="Close Application Browser" owner="BrowserKeywords">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-04-07T12:41:33.622670" elapsed="2.278561"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:33.622258" elapsed="2.279606"/>
+</kw>
+<arg>Attach Screenshot To Allure</arg>
+<arg>AND</arg>
+<arg>Close Application Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-07T12:41:33.619521" elapsed="2.282806"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" start="2026-04-07T12:41:24.962425" elapsed="10.940688"/>
+</test>
+<test id="s1-t3" name="Invalid username" line="35">
+<kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-07T12:41:35.949925" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAF3115E50&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-07T12:41:35.949226" elapsed="0.000767"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:35.963785" elapsed="0.000956"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:35.965522" elapsed="0.000881"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:35.967227" elapsed="0.000906"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:35.969290" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-04-07T12:41:35.968816" elapsed="1.804332"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:37.811466" level="INFO">Opening url 'https://test.bijib.in'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-07T12:41:37.810966" elapsed="1.169653"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-04-07T12:41:39.052876" elapsed="0.000799"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:35.948726" elapsed="3.105535"/>
+</kw>
+<kw name="Login Test">
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Enter Username" owner="LoginPage">
+<kw name="Textfield With Placeholder" owner="TextFields">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:41:39.060526" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<var>${INPUT_PATH}</var>
+<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:41:39.059632" elapsed="0.000987"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:41:39.075196" elapsed="0.273724"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:39.349856" elapsed="0.264181"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:39.615008" level="INFO">Typing text 'ram11' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<arg>${INPUT_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:39.614575" elapsed="0.437781"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:41:40.064400" elapsed="0.000950"/>
+</kw>
+<arg>Enter Username</arg>
+<arg>${USERNAME}</arg>
+<status status="PASS" start="2026-04-07T12:41:39.058774" elapsed="1.007107"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-04-07T12:41:39.057899" elapsed="1.008259"/>
+</kw>
+<kw name="Enter Password" owner="LoginPage">
+<kw name="Textfield With Placeholder" owner="TextFields">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:41:40.068394" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<var>${INPUT_PATH}</var>
+<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:41:40.067793" elapsed="0.000665"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:41:40.079597" elapsed="0.234800"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:40.315251" elapsed="0.274999"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:40.592751" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<arg>${INPUT_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:40.591816" elapsed="0.438650"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:41:41.071726" elapsed="0.004536"/>
+</kw>
+<arg>Enter Password</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2026-04-07T12:41:40.067208" elapsed="1.010471"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-04-07T12:41:40.066582" elapsed="1.011856"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:41:41.083805" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:41:41.082395" elapsed="0.001592"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:41:41.129469" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:41:41.128180" elapsed="0.001418"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:41:41.163498" elapsed="0.249928"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:41.414455" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:41.414024" elapsed="0.659793"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:41:42.084519" elapsed="0.000829"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2026-04-07T12:41:41.080812" elapsed="1.004932"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:41.079511" elapsed="1.006598"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2026-04-07T12:41:39.056977" elapsed="3.029410"/>
+</kw>
+<if>
+<branch type="IF" condition="'${SUCCESS}' == 'True'">
+<kw name="Login Should Be Successful" owner="LoginPage">
+<status status="NOT RUN" start="2026-04-07T12:41:42.087203" elapsed="0.000107"/>
+</kw>
+<status status="NOT RUN" start="2026-04-07T12:41:42.086721" elapsed="0.000859"/>
+</branch>
+<branch type="ELSE">
+<kw name="Verify Login Error Message" owner="LoginPage">
+<kw name="Get Error Msg" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:41:42.089429" elapsed="0.854717"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:43.196608" level="INFO">${msg} = Enter Valid Credentials.</msg>
+<var>${msg}</var>
+<arg>${ERROR_MSG_PATH}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:42.945002" elapsed="0.251757"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-07T12:41:43.217792" level="INFO">${msg} = Enter Valid Credentials.</msg>
+<var>${msg}</var>
+<arg>${msg}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-07T12:41:43.216720" elapsed="0.001222"/>
+</kw>
+<return>
+<value>${msg}</value>
+<status status="PASS" start="2026-04-07T12:41:43.229702" elapsed="0.000259"/>
+</return>
+<msg time="2026-04-07T12:41:43.230585" level="INFO">${actual_error_message} = Enter Valid Credentials.</msg>
+<var>${actual_error_message}</var>
+<status status="PASS" start="2026-04-07T12:41:42.088964" elapsed="1.141772"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_error_message}</arg>
+<arg>${EXPECTED_ERROR_MESSAGE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-07T12:41:43.243866" elapsed="0.000902"/>
+</kw>
+<kw name="Wait Until Error Msg Disappear" owner="LoginPage">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2026-04-07T12:41:43.245883" elapsed="1.704550"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Error Msg Disappear</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:41:44.951287" elapsed="0.001115"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:43.245320" elapsed="1.707851"/>
+</kw>
+<arg>${EXPECTED_ERROR}</arg>
+<status status="PASS" start="2026-04-07T12:41:42.088326" elapsed="2.865826"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:42.087957" elapsed="2.867833"/>
+</branch>
+<status status="PASS" start="2026-04-07T12:41:42.086675" elapsed="2.869736"/>
 </if>
 <arg>USERNAME=ram11</arg>
 <arg>PASSWORD=E7q_35&amp;ZR]5D*iRZ</arg>
 <arg>EXPECTED_ERROR=Enter Valid Credentials.</arg>
 <arg>SUCCESS=False</arg>
-<status status="PASS" start="2026-04-06T18:03:49.394710" elapsed="6.553605"/>
+<status status="PASS" start="2026-04-07T12:41:39.055822" elapsed="5.900853"/>
 </kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Attach Screenshot To Allure" owner="LoginPage">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>${screenshot}=</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:44.960213" elapsed="0.000727"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Attach File</arg>
+<arg>${screenshot}</arg>
+<arg>name=Failure Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:44.961625" elapsed="0.000754"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:44.959296" elapsed="0.004141"/>
+</kw>
+<kw name="Close Application Browser" owner="BrowserKeywords">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-06T18:03:55.949361" elapsed="2.391820"/>
+<status status="PASS" start="2026-04-07T12:41:44.965773" elapsed="2.290572"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:55.948925" elapsed="2.392574"/>
+<status status="PASS" start="2026-04-07T12:41:44.964641" elapsed="2.292400"/>
+</kw>
+<arg>Attach Screenshot To Allure</arg>
+<arg>AND</arg>
+<arg>Close Application Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-07T12:41:44.958020" elapsed="2.299522"/>
 </kw>
 <tag>Regression</tag>
-<status status="PASS" start="2026-04-06T18:03:45.593334" elapsed="12.748686"/>
+<status status="PASS" start="2026-04-07T12:41:35.946527" elapsed="11.311798"/>
 </test>
-<test id="s1-t4" name="invalid Password" line="34">
+<test id="s1-t4" name="invalid Password" line="35">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:03:58.353728" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-06T18:03:58.352308" elapsed="3.028735"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-07T12:41:47.306767" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAF2C4EEA0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-07T12:41:47.306030" elapsed="0.000810"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-06T18:04:01.381704" elapsed="1.702934"/>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:47.319350" elapsed="0.001011"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:47.320938" elapsed="0.000588"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:47.322210" elapsed="0.000756"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:47.323738" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-04-07T12:41:47.323395" elapsed="1.795715"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:49.162417" level="INFO">Opening url 'https://test.bijib.in'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-07T12:41:49.161798" elapsed="1.127331"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-06T18:04:03.085959" elapsed="0.001026"/>
+<status status="PASS" start="2026-04-07T12:41:50.320349" elapsed="0.000484"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:03:58.350425" elapsed="4.737023"/>
+<status status="PASS" start="2026-04-07T12:41:47.305523" elapsed="3.015621"/>
 </kw>
 <kw name="Login Test">
 <kw name="Submit Login" owner="LoginPage">
 <kw name="Enter Username" owner="LoginPage">
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:04:03.100921" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<msg time="2026-04-07T12:41:50.330833" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:04:03.097370" elapsed="0.003902"/>
+<status status="PASS" start="2026-04-07T12:41:50.329765" elapsed="0.001184"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-06T18:04:03.103675" elapsed="0.256129"/>
+<status status="PASS" start="2026-04-07T12:41:50.391839" elapsed="0.256041"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:04:03.360108" elapsed="0.268355"/>
+<status status="PASS" start="2026-04-07T12:41:50.648931" elapsed="0.297620"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:04:03.629195" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<msg time="2026-04-07T12:41:50.948836" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-06T18:04:03.628814" elapsed="0.460784"/>
+<status status="PASS" start="2026-04-07T12:41:50.947805" elapsed="0.457040"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-06T18:04:04.090100" elapsed="0.001358"/>
+<status status="PASS" start="2026-04-07T12:41:51.421726" elapsed="0.000768"/>
 </kw>
 <arg>Enter Username</arg>
 <arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-06T18:04:03.095643" elapsed="0.996196"/>
+<status status="PASS" start="2026-04-07T12:41:50.328547" elapsed="1.094320"/>
 </kw>
 <arg>${username}</arg>
-<status status="PASS" start="2026-04-06T18:04:03.093355" elapsed="0.998852"/>
+<status status="PASS" start="2026-04-07T12:41:50.327292" elapsed="1.095883"/>
 </kw>
 <kw name="Enter Password" owner="LoginPage">
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:04:04.095804" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<msg time="2026-04-07T12:41:51.425230" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:04:04.094737" elapsed="0.001175"/>
+<status status="PASS" start="2026-04-07T12:41:51.424681" elapsed="0.000610"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:04:04.691236" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
-<msg time="2026-04-06T18:04:04.737373" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-04-06T18:04:04.096353" elapsed="0.652862">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:51.451220" elapsed="0.238251"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T18:04:04.749734" elapsed="0.000095"/>
+<status status="PASS" start="2026-04-07T12:41:51.690338" elapsed="0.278256"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:51.969691" level="INFO">Typing text 'wrong123' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T18:04:04.750169" elapsed="0.000084"/>
+<status status="PASS" start="2026-04-07T12:41:51.969183" elapsed="0.470153"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T18:04:04.750639" elapsed="0.000078"/>
+<status status="PASS" start="2026-04-07T12:41:52.458216" elapsed="0.001427"/>
 </kw>
 <arg>Enter Password</arg>
 <arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-06T18:04:04.093754" elapsed="0.657322">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:51.424142" elapsed="1.036206"/>
 </kw>
 <arg>${password}</arg>
-<status status="FAIL" start="2026-04-06T18:04:04.092723" elapsed="0.658741">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:51.423577" elapsed="1.037329"/>
 </kw>
 <kw name="Click Login Button" owner="LoginPage">
-<status status="NOT RUN" start="2026-04-06T18:04:04.751950" elapsed="0.000117"/>
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:41:52.465733" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:41:52.463486" elapsed="0.002447"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:41:52.484119" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:41:52.482888" elapsed="0.001463"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:41:52.507304" elapsed="0.245818"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:52.754168" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:52.753694" elapsed="0.671218"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:41:53.437276" elapsed="0.000996"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2026-04-07T12:41:52.462466" elapsed="0.976513"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:52.461653" elapsed="0.977676"/>
 </kw>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-06T18:04:03.091551" elapsed="1.661155">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:50.326049" elapsed="3.113580"/>
 </kw>
 <if>
 <branch type="IF" condition="'${SUCCESS}' == 'True'">
 <kw name="Login Should Be Successful" owner="LoginPage">
-<status status="NOT RUN" start="2026-04-06T18:04:04.756066" elapsed="0.000212"/>
+<status status="NOT RUN" start="2026-04-07T12:41:53.440692" elapsed="0.000125"/>
 </kw>
-<status status="NOT RUN" start="2026-04-06T18:04:04.753904" elapsed="0.002515"/>
+<status status="NOT RUN" start="2026-04-07T12:41:53.440045" elapsed="0.001084"/>
 </branch>
 <branch type="ELSE">
 <kw name="Verify Login Error Message" owner="LoginPage">
-<arg>${EXPECTED_ERROR}</arg>
-<status status="NOT RUN" start="2026-04-06T18:04:04.757383" elapsed="0.000133"/>
+<kw name="Get Error Msg" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:41:53.443029" elapsed="1.513750"/>
 </kw>
-<status status="NOT RUN" start="2026-04-06T18:04:04.756562" elapsed="0.001141"/>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:55.296964" level="INFO">${msg} = Enter Valid Credentials.</msg>
+<var>${msg}</var>
+<arg>${ERROR_MSG_PATH}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:41:54.957758" elapsed="0.339293"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-04-07T12:41:55.310146" level="INFO">${msg} = Enter Valid Credentials.</msg>
+<var>${msg}</var>
+<arg>${msg}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-04-07T12:41:55.309242" elapsed="0.001084"/>
+</kw>
+<return>
+<value>${msg}</value>
+<status status="PASS" start="2026-04-07T12:41:55.322613" elapsed="0.000198"/>
+</return>
+<msg time="2026-04-07T12:41:55.325203" level="INFO">${actual_error_message} = Enter Valid Credentials.</msg>
+<var>${actual_error_message}</var>
+<status status="PASS" start="2026-04-07T12:41:53.442496" elapsed="1.882897"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_error_message}</arg>
+<arg>${EXPECTED_ERROR_MESSAGE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-07T12:41:55.337125" elapsed="0.000832"/>
+</kw>
+<kw name="Wait Until Error Msg Disappear" owner="LoginPage">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2026-04-07T12:41:55.338947" elapsed="1.367525"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Error Msg Disappear</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:41:56.707386" elapsed="0.001098"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:55.338457" elapsed="1.370685"/>
+</kw>
+<arg>${EXPECTED_ERROR}</arg>
+<status status="PASS" start="2026-04-07T12:41:53.441775" elapsed="3.267911"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:53.441404" elapsed="3.268721"/>
 </branch>
-<status status="NOT RUN" start="2026-04-06T18:04:04.753119" elapsed="0.004713"/>
+<status status="PASS" start="2026-04-07T12:41:53.439951" elapsed="3.270608"/>
 </if>
 <arg>USERNAME=rgarikapati</arg>
 <arg>PASSWORD=wrong123</arg>
 <arg>EXPECTED_ERROR=Enter Valid Credentials.</arg>
 <arg>SUCCESS=False</arg>
-<status status="FAIL" start="2026-04-06T18:04:03.089579" elapsed="1.668696">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:50.322389" elapsed="6.388349"/>
 </kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Attach Screenshot To Allure" owner="LoginPage">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>${screenshot}=</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:56.716221" elapsed="0.000894"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Attach File</arg>
+<arg>${screenshot}</arg>
+<arg>name=Failure Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:41:56.717896" elapsed="0.001114"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:41:56.715026" elapsed="0.005001"/>
+</kw>
+<kw name="Close Application Browser" owner="BrowserKeywords">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-06T18:04:04.823869" elapsed="2.300426"/>
+<status status="PASS" start="2026-04-07T12:41:56.722075" elapsed="2.295041"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:04:04.822954" elapsed="2.301537"/>
+<status status="PASS" start="2026-04-07T12:41:56.720963" elapsed="2.296847"/>
+</kw>
+<arg>Attach Screenshot To Allure</arg>
+<arg>AND</arg>
+<arg>Close Application Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-07T12:41:56.713327" elapsed="2.304999"/>
 </kw>
 <tag>Regression</tag>
-<status status="FAIL" start="2026-04-06T18:03:58.344161" elapsed="8.780662">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:47.302413" elapsed="11.716690"/>
 </test>
-<test id="s1-t5" name="Valid Credentials" line="34">
+<test id="s1-t5" name="Valid Credentials" line="35">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:04:07.134925" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-06T18:04:07.134632" elapsed="2.491315"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-07T12:41:59.065124" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001BAF2D70FC0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-07T12:41:59.064435" elapsed="0.000758"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-06T18:04:09.626672" elapsed="1.154645"/>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:59.077169" elapsed="0.000659"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:59.078247" elapsed="0.000872"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-04-07T12:41:59.079880" elapsed="0.000894"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:41:59.082037" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-04-07T12:41:59.081525" elapsed="2.253230"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:42:01.357375" level="INFO">Opening url 'https://test.bijib.in'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-07T12:42:01.356841" elapsed="1.055884"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-06T18:04:10.781830" elapsed="0.000550"/>
+<status status="PASS" start="2026-04-07T12:42:02.426374" elapsed="0.000610"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:04:07.134188" elapsed="3.648402"/>
+<status status="PASS" start="2026-04-07T12:41:59.063439" elapsed="3.363900"/>
 </kw>
 <kw name="Login Test">
 <kw name="Submit Login" owner="LoginPage">
 <kw name="Enter Username" owner="LoginPage">
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-06T18:04:10.789691" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<msg time="2026-04-07T12:42:02.434147" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-06T18:04:10.788519" elapsed="0.001266"/>
+<status status="PASS" start="2026-04-07T12:42:02.432881" elapsed="0.001379"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-04-06T18:04:10.797739" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
-<msg time="2026-04-06T18:04:10.802226" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-04-06T18:04:10.790150" elapsed="0.020916">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:42:02.445651" elapsed="0.278350"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T18:04:10.811762" elapsed="0.000155"/>
+<status status="PASS" start="2026-04-07T12:42:02.724608" elapsed="0.260449"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:42:02.986870" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-06T18:04:10.812401" elapsed="0.000171"/>
+<status status="PASS" start="2026-04-07T12:42:02.986041" elapsed="0.478149"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-06T18:04:10.813070" elapsed="0.000152"/>
+<status status="PASS" start="2026-04-07T12:42:03.474928" elapsed="0.000813"/>
 </kw>
 <arg>Enter Username</arg>
 <arg>${USERNAME}</arg>
-<status status="FAIL" start="2026-04-06T18:04:10.787461" elapsed="0.026184">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:42:02.431445" elapsed="1.044686"/>
 </kw>
 <arg>${username}</arg>
-<status status="FAIL" start="2026-04-06T18:04:10.786128" elapsed="0.027975">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:42:02.430550" elapsed="1.045934"/>
 </kw>
 <kw name="Enter Password" owner="LoginPage">
+<kw name="Textfield With Placeholder" owner="TextFields">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:42:03.478834" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<var>${INPUT_PATH}</var>
+<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:42:03.478253" elapsed="0.000646"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:42:03.489576" elapsed="0.243746"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_PATH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:42:03.734223" elapsed="0.276596"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:42:04.012400" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<arg>${INPUT_PATH}</arg>
+<arg>${VALUE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:42:04.011682" elapsed="0.486134"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:42:04.528290" elapsed="0.001136"/>
+</kw>
+<arg>Enter Password</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2026-04-07T12:42:03.477676" elapsed="1.052302"/>
+</kw>
 <arg>${password}</arg>
-<status status="NOT RUN" start="2026-04-06T18:04:10.814816" elapsed="0.000136"/>
+<status status="PASS" start="2026-04-07T12:42:03.476902" elapsed="1.053551"/>
 </kw>
 <kw name="Click Login Button" owner="LoginPage">
-<status status="NOT RUN" start="2026-04-06T18:04:10.815505" elapsed="0.000097"/>
+<kw name="Button Click" owner="Buttons">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:42:04.533830" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<var>${BASE_PATH}</var>
+<arg>//button[normalize-space()="${LABEL}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:42:04.532898" elapsed="0.001045"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-07T12:42:04.557467" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<var>${BUTTON_PATH}</var>
+<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-07T12:42:04.554525" elapsed="0.003175"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_PATH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-07T12:42:04.602507" elapsed="0.246310"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-07T12:42:04.850532" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<arg>${BUTTON_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-07T12:42:04.849762" elapsed="0.633768"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked button with label ${LABEL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-07T12:42:05.500339" elapsed="0.001366"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2026-04-07T12:42:04.532062" elapsed="0.970374"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:42:04.531161" elapsed="0.971818"/>
 </kw>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-06T18:04:10.784859" elapsed="0.031091">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:42:02.429377" elapsed="3.074102"/>
 </kw>
 <if>
 <branch type="IF" condition="'${SUCCESS}' == 'True'">
 <kw name="Login Should Be Successful" owner="LoginPage">
-<status status="NOT RUN" start="2026-04-06T18:04:10.816691" elapsed="0.000101"/>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${DASHBOARD_URL}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-04-07T12:42:05.505760" elapsed="1.387603"/>
 </kw>
-<status status="NOT RUN" start="2026-04-06T18:04:10.816259" elapsed="0.000660"/>
+<status status="PASS" start="2026-04-07T12:42:05.504913" elapsed="1.389767"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:42:05.504055" elapsed="1.391023"/>
 </branch>
 <branch type="ELSE">
 <kw name="Verify Login Error Message" owner="LoginPage">
 <arg>${EXPECTED_ERROR}</arg>
-<status status="NOT RUN" start="2026-04-06T18:04:10.817452" elapsed="0.000099"/>
+<status status="NOT RUN" start="2026-04-07T12:42:06.895809" elapsed="0.000176"/>
 </kw>
-<status status="NOT RUN" start="2026-04-06T18:04:10.817050" elapsed="0.000628"/>
+<status status="NOT RUN" start="2026-04-07T12:42:06.895392" elapsed="0.001096"/>
 </branch>
-<status status="NOT RUN" start="2026-04-06T18:04:10.816178" elapsed="0.001603"/>
+<status status="PASS" start="2026-04-07T12:42:05.503982" elapsed="1.395157"/>
 </if>
 <arg>USERNAME=rgarikapati</arg>
 <arg>PASSWORD=E7q_35&amp;ZR]5D*iRZ</arg>
 <arg>EXPECTED_ERROR=</arg>
 <arg>SUCCESS=True</arg>
-<status status="FAIL" start="2026-04-06T18:04:10.783529" elapsed="0.034523">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:42:02.428275" elapsed="4.471670"/>
 </kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Attach Screenshot To Allure" owner="LoginPage">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>${screenshot}=</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:42:06.904116" elapsed="0.000891"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Attach File</arg>
+<arg>${screenshot}</arg>
+<arg>name=Failure Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-04-07T12:42:06.905735" elapsed="0.000719"/>
+</kw>
+<status status="PASS" start="2026-04-07T12:42:06.903047" elapsed="0.003919"/>
+</kw>
+<kw name="Close Application Browser" owner="BrowserKeywords">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-06T18:04:10.820017" elapsed="2.264189"/>
+<status status="PASS" start="2026-04-07T12:42:06.908420" elapsed="2.311639"/>
 </kw>
-<status status="PASS" start="2026-04-06T18:04:10.819106" elapsed="2.265637"/>
+<status status="PASS" start="2026-04-07T12:42:06.907611" elapsed="2.313322"/>
+</kw>
+<arg>Attach Screenshot To Allure</arg>
+<arg>AND</arg>
+<arg>Close Application Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-07T12:42:06.901560" elapsed="2.319863"/>
 </kw>
 <tag>Regression</tag>
-<status status="FAIL" start="2026-04-06T18:04:07.131527" elapsed="5.953822">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</status>
+<status status="PASS" start="2026-04-07T12:41:59.059996" elapsed="10.164453"/>
 </test>
-<status status="FAIL" start="2026-04-06T18:03:25.106355" elapsed="47.990509"/>
+<status status="PASS" start="2026-04-07T12:41:12.845609" elapsed="56.420059"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="3" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="3" skip="0">Regression</stat>
+<stat pass="5" fail="0" skip="0">Regression</stat>
 </tag>
 <suite>
-<stat name="LoginPageTest" id="s1" pass="2" fail="3" skip="0">LoginPageTest</stat>
+<stat name="LoginPageTest" id="s1" pass="5" fail="0" skip="0">LoginPageTest</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-04-06T18:03:43.198742" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B44E35]
-	(No symbol) [0x00007FF6C8B69DB4]
-	(No symbol) [0x00007FF6C8BDEE75]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
-<msg time="2026-04-06T18:04:04.691236" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
-<msg time="2026-04-06T18:04:10.797739" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6C8D8CF45+75717]
-	GetHandleVerifier [0x00007FF6C8D8CFA0+75808]
-	(No symbol) [0x00007FF6C8B58F9A]
-	(No symbol) [0x00007FF6C8B31B41]
-	(No symbol) [0x00007FF6C8BDEC2E]
-	(No symbol) [0x00007FF6C8BFECC2]
-	(No symbol) [0x00007FF6C8BD7153]
-	(No symbol) [0x00007FF6C8BA0421]
-	(No symbol) [0x00007FF6C8BA11B3]
-	GetHandleVerifier [0x00007FF6C908D71D+3223453]
-	GetHandleVerifier [0x00007FF6C9087CC2+3200322]
-	GetHandleVerifier [0x00007FF6C90A5AF3+3322739]
-	GetHandleVerifier [0x00007FF6C8DA6A1A+180890]
-	GetHandleVerifier [0x00007FF6C8DAE11F+211359]
-	GetHandleVerifier [0x00007FF6C8D95294+109332]
-	GetHandleVerifier [0x00007FF6C8D95442+109762]
-	GetHandleVerifier [0x00007FF6C8D7BA59+4825]
-	BaseThreadInitThunk [0x00007FFD28DF7374+20]
-	RtlUserThreadStart [0x00007FFD291DCC91+33]
-</msg>
 </errors>
 </robot>

@@ -50,4 +50,8 @@ Wait Until Error Msg Disappear
 Login Should Be Successful
    Wait Until Location Is    ${DASHBOARD_URL}     ${TIMEOUT} 
 
+Attach Screenshot To Allure
+    Run Keyword If Test Failed    ${screenshot}=    Capture Page Screenshot
+    Run Keyword If Test Failed    Attach File    ${screenshot}    name=Failure Screenshot
+
 

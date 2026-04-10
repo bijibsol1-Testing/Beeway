@@ -91,11 +91,12 @@ Add Shift Test
     Check User Shift in Modpay    
     ...    ${SUBSERVICE_NAME_IN_MODPAY}    
     ...    ${ROLE_NAME_IN_MODPAY}    
-    ...    ${MODPAY_DOCTOR_NAME}   
+    ...    ${DOCTOR_NAME}   
     ...    ${USERTYPE_IN_MODPAY}    
     ...    ${MODPAY_MONTH}    
     ...    ${YEAR}   
-    ...    ${PAYCYCLE_IN_MODPAY}    
+    ...    ${PAYCYCLE_IN_MODPAY} 
+    ...    ${MODPAY_DOCTOR_NAME}      
     ...    ${DAY-DATE}    
     ...    ${SHIFT-TIME}
     ...    ${DUTY_TYPE_SYMBOL}

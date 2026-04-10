@@ -26,13 +26,13 @@ Add Shift in Beeway
     sleep     2s
     Sub Service selection    ${SUBSERVICE_NAME}
     sleep     2s 
-    # Select Date from Hospital Schedule    ${YEAR}     ${MONTH}    ${DATE}    ${HOSPITAL_NAME}  
-    # ${DATE_XPATH}=    Set Variable    (//li[.//div[normalize-space()='${DATE}']])[1]
-    # Wait Until Element Is Visible    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']     ${TIMEOUT_LONG}
-    # Click Element    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']
-    # ${payment_type}=    Add Shift   ${ROLE}   ${DEPARTMENT}    ${WARD}   ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
-    # RETURN    ${payment_type}
-    RETURN    P
+    Select Date from Hospital Schedule    ${YEAR}     ${MONTH}    ${DATE}    ${HOSPITAL_NAME}  
+    ${DATE_XPATH}=    Set Variable    (//li[.//div[normalize-space()='${DATE}']])[1]
+    Wait Until Element Is Visible    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']     ${TIMEOUT_LONG}
+    Click Element    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']
+    ${payment_type}=    Add Shift   ${ROLE}   ${DEPARTMENT}    ${WARD}   ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
+    RETURN    ${payment_type}
+    # RETURN    P
     
 Add Shift
     [Arguments]    ${ROLE}    ${DEPARTMENT}    ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME_TIME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}

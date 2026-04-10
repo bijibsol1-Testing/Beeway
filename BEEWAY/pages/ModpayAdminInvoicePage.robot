@@ -12,22 +12,20 @@ Resource    ../pages/BeewayDashboardPage.robot
 ***Keywords***
 
 Wait For Modpay Loader To Disappear
-    [Arguments]    ${locator}=//app-bijib-loader    ${timeout}=30s
+    [Arguments]    ${locator}=//app-bijib-loader    ${TIMEOUT_LONG}
 
     # Step 1: Wait briefly for loader to appear (optional)
     ${is_visible}=    Run Keyword And Return Status
-    ...    Wait Until Element Is Visible    ${locator}    5s
-
+    ...    Wait Until Element Is Visible    ${locator}    ${TIMEOUT}
     # Step 2: If visible, wait for it to disappear
     IF    ${is_visible}
-        Wait Until Element Is Not Visible    ${locator}    ${timeout}
+        Wait Until Element Is Not Visible    ${locator}    ${TIMEOUT}
     END
 
 Select SubService in Modpay
     [Arguments]    ${SUBSERVICE_NAME_IN_MODPAY}
 
     Wait For Modpay Loader To Disappear
-
     # Open correct dropdown
     ${dropdown}=    Set Variable    //div[contains(@class,'form-group')][.//label[contains(.,'Sub Service')]]//li[contains(@class,'dropdown')]
     Wait Until Element Is Visible    ${dropdown}    ${TIMEOUT}
@@ -50,16 +48,16 @@ Select Role in Modpay
     Log To Console    ✅ Role selected: ${ROLE_NAME_IN_MODPAY}
 
 User Search in Modpay
-    [Arguments]    ${MODPAY_DOCTOR_NAME}
+    [Arguments]    ${DOCTOR_NAME}
     
     ${search_xpath}=    Set Variable    xpath=//input[@name='auto-text']
     Wait Until Element Is Visible    ${search_xpath}    ${TIMEOUT}
-    Input Text    ${search_xpath}    ${MODPAY_DOCTOR_NAME}
+    Input Text    ${search_xpath}    ${DOCTOR_NAME}
 
-    ${userselect_xpath}=    Set Variable    xpath=//label[normalize-space(.)="${MODPAY_DOCTOR_NAME}"]
-    Wait Until Element Is Visible    ${userselect_xpath}    ${TIMEOUT}
-    Click Element    ${userselect_xpath}
-    Log To Console    ✅ User searched: ${MODPAY_DOCTOR_NAME}
+    ${userselect_xpath}=    Set Variable    xpath=//label[normalize-space(.)="${DOCTOR_NAME}"]
+    Wait Until Element Is Visible    xpath=//label[normalize-space(.)="${DOCTOR_NAME}"]    ${TIMEOUT}
+    Click Element    xpath=//label[normalize-space(.)="${DOCTOR_NAME}"]
+    Log To Console    ✅ User searched: ${DOCTOR_NAME}
 
 Select Usertype in Modpay
     [Arguments]    ${USERTYPE_IN_MODPAY}
@@ -127,12 +125,12 @@ Capture Screenshot Step
     Log To Console    ✅ Captured screenshot: ${file}
 
 Check User Shift in Modpay
-    [Arguments]    ${SUBSERVICE_NAME_IN_MODPAY}    ${ROLE_NAME_IN_MODPAY}    ${MODPAY_DOCTOR_NAME}    ${USERTYPE_IN_MODPAY}    ${MODPAY_MONTH}    ${YEAR}    ${PAYCYCLE_IN_MODPAY}    ${DAY-DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}
+    [Arguments]    ${SUBSERVICE_NAME_IN_MODPAY}    ${ROLE_NAME_IN_MODPAY}    ${DOCTOR_NAME}    ${USERTYPE_IN_MODPAY}    ${MODPAY_MONTH}    ${YEAR}    ${PAYCYCLE_IN_MODPAY}    ${MODPAY_DOCTOR_NAME}     ${DAY-DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}
 
     # Set Selenium Speed    0.2s
     Select SubService in Modpay    ${SUBSERVICE_NAME_IN_MODPAY}
     Select Role in Modpay    ${ROLE_NAME_IN_MODPAY}
-    User Search in Modpay    ${MODPAY_DOCTOR_NAME}
+    User Search in Modpay    ${DOCTOR_NAME}
     Select Usertype in Modpay    ${USERTYPE_IN_MODPAY}
     Select PayCycle/Month/Year in Modpay    ${MODPAY_MONTH}    ${YEAR}    ${PAYCYCLE_IN_MODPAY} 
     Button Click    Search

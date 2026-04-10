@@ -1,11 +1,12 @@
 *** Settings ***
-Library    SeleniumLibrary
+# Library    SeleniumLibrary
 Resource    ../resources/BrowserKeywords.robot
 Resource    ../resources/UIComponents.robot
 Resource    ../resources/Login.robot
 Resource    ../resources/Service.robot 
 Resource    ../resources/PageSelect.robot
 Resource    ../pages/BeewayDashboardPage.robot
+Resource    ../Variables/TEST.robot
 
 
 *** Variables ***
@@ -25,12 +26,13 @@ Add Shift in Beeway
     sleep     2s
     Sub Service selection    ${SUBSERVICE_NAME}
     sleep     2s 
-    Select Date from Hospital Schedule    ${YEAR}     ${MONTH}    ${DATE}    ${HOSPITAL_NAME}  
-    ${DATE_XPATH}=    Set Variable    (//li[.//div[normalize-space()='${DATE}']])[1]
-    Wait Until Element Is Visible    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']     ${TIMEOUT_LONG}
-    Click Element    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']
-    Add Shift   ${ROLE}   ${DEPARTMENT}    ${WARD}   ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
-
+    # Select Date from Hospital Schedule    ${YEAR}     ${MONTH}    ${DATE}    ${HOSPITAL_NAME}  
+    # ${DATE_XPATH}=    Set Variable    (//li[.//div[normalize-space()='${DATE}']])[1]
+    # Wait Until Element Is Visible    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']     ${TIMEOUT_LONG}
+    # Click Element    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']
+    # ${payment_type}=    Add Shift   ${ROLE}   ${DEPARTMENT}    ${WARD}   ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
+    # RETURN    ${payment_type}
+    RETURN    P
     
 Add Shift
     [Arguments]    ${ROLE}    ${DEPARTMENT}    ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME_TIME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
@@ -39,16 +41,16 @@ Add Shift
     Select Role Department Ward    ${ROLE}   ${DEPARTMENT}    ${WARD}
     Click Button    xpath=//button[normalize-space()='Select']
     Select Doctor    ${DOCTOR_NAME}
-    Log To Console    ✅ Doctor selected
     Select Shift Dropdown     ${SHIFT_NAME_TIME}    ${DEPARTMENT}    ${WARD}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
     Select Duty type Dropdown    ${DUTY_TYPE}    ${DEPARTMENT}    ${WARD}
     Log To Console    ✅ Shift & duty type selected
+    ${payment_type}=    Check Payment Type
     Checkbox Should Be Selected    xpath=//input[@id='clash_checkbox']
     Log To Console    ✅ Clash verified
     Select Comments Dropdown    ${COMMENTS}    ${DEPARTMENT}    ${WARD}    ${SHIFT_NAME_TIME}
-
     Button Click    Save
     Log To Console    ✅ Shift saved successfully
+    RETURN    ${payment_type}
 
 #validate shift added successfully in Admin Login
 Get Shift exist Status without Ward
@@ -115,6 +117,14 @@ Get Shift Exist Status Admin Login
         ${exists}=    Get Shift exist Status with Ward    ${DATE}    ${DOCTOR_NAME}    ${TIME}    ${WARD}
     END
     RETURN    ${exists}
+
+Navigate To Modpay
+    wait Until Element Is Visible    xpath=//li[normalize-space()='ModPay']    ${TIMEOUT}
+    Click Element    xpath=//li[normalize-space()='ModPay']
+    Wait For Page Loader To Disappear
+    Wait Until Location Is    ${MODPAY_INVOICE_URL}    ${TIMEOUT_LONG}
+    Wait Until Page Does Not Contain Element    //app-bijib-loader    ${TIMEOUT_LONG}
+    Log To Console    ✅ Navigated to Modpay
 
 Validate Shift in Doctor login
     [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${DOCTOR_NAME}    ${TIME}

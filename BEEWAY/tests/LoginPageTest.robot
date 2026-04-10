@@ -1,5 +1,5 @@
 *** Settings ***
-Library    SeleniumLibrary    screenshot_root_directory=results/Screenshots
+Library    SeleniumLibrary    screenshot_root_directory=${EXECDIR}/results/Screenshots
 Library    allure_robotframework
 Library     String
 Library    DataDriver    file=../data/Login_Testdata.csv    dialect=excel
@@ -12,7 +12,7 @@ Resource    ../pages/LoginPage.robot
 # Test Template    Login Test
 
 Test Setup    Open Browser To Application
-Test Teardown    Run Keywords    Attach Screenshot To Allure    AND    Close Application Browser
+Test Teardown    Close Application Browser
 Test Template    Login Test
 
 

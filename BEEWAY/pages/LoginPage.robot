@@ -1,6 +1,10 @@
 *** Settings ***
-# Library    SeleniumLibrary    
-Resource    ../../MODPAY/pages/Generate_invoicePage.robot
+# Library    SeleniumLibrary  
+Resource    ../resources/BrowserKeywords.robot
+Resource    ../resources/UIComponents.robot
+Resource    ../resources/Login.robot
+Resource    ../pages/BeewayDashboardPage.robot  
+
 
 *** Variables ***
 ${ERROR_MSG_PATH}    //p[contains(@class,"alert alert-danger")]
@@ -29,7 +33,7 @@ Submit Login
    Enter Username    ${username}
    Enter Password    ${password}
    Click Login Button
-   Capture Screenshot Step    After Click Login Button
+   # Capture Screenshot Step    login
 
 Verify Login Error Message
    [Arguments]    ${EXPECTED_ERROR_MESSAGE}
@@ -50,8 +54,5 @@ Wait Until Error Msg Disappear
 Login Should Be Successful
    Wait Until Location Is    ${DASHBOARD_URL}     ${TIMEOUT} 
 
-Attach Screenshot To Allure
-    Run Keyword If Test Failed    ${screenshot}=    Capture Page Screenshot
-    Run Keyword If Test Failed    Attach File    ${screenshot}    name=Failure Screenshot
 
 

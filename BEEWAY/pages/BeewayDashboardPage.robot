@@ -1,12 +1,10 @@
 *** Settings ***
-Library    SeleniumLibrary
+# Library    SeleniumLibrary
 Resource    ../pages/UserSelectionPage.robot
 Resource    ../resources/BrowserKeywords.robot
 Resource    ../resources/PageSelect.robot
 Resource    ../resources/Login.robot
 Resource    ../resources/Service.robot
-
-
 
 
 *** Keywords ***
@@ -170,8 +168,25 @@ Select Duty type Dropdown
 
     Wait Until Element Is Visible    xpath=(//select)[${INDEX}]    ${TIMEOUT}
     Select From List By Label        xpath=(//select)[${INDEX}]    ${DUTY_TYPE}
-
     Log To Console    ✅ Duty type '${DUTY_TYPE}' selected from dropdown index ${INDEX}
+
+Get Toggle Text
+    [Arguments]    ${locator}
+
+    Wait Until Element Is Visible    ${locator}    10s
+    ${checkbox}=    Set Variable    ${locator}//input
+    ${label}=       Set Variable    ${locator}//span[contains(@class,'switch-label')]
+    ${is_checked}=    Run Keyword And Return Status    
+    ...    Checkbox Should Be Selected    ${checkbox}
+    ${on}=     Get Element Attribute    ${label}    data-on
+    ${off}=    Get Element Attribute    ${label}    data-off
+    ${state}=    Set Variable If    ${is_checked}    ${on}    ${off}
+    RETURN    ${state}
+
+Check Payment Type
+    ${status}=    Get Toggle Text    //label[.//span[@data-on='P']]
+    Log To Console    Payment Type: ${status}
+    RETURN    ${status}
 
 Select Comments Dropdown
     [Arguments]    ${COMMENTS}    ${DEPARTMENT}    ${WARD}    ${SHIFT_NAME_TIME}

@@ -1,17 +1,22 @@
 *** Settings ***
-Library     SeleniumLibrary
-Library    allure_robotframework
+Library     SeleniumLibrary    screenshot_root_directory=${EXECDIR}/results/Screenshots
 Library    DataDriver    file=../data/AddShiftData.csv    dialect=excel
 Resource    ../pages/AddShiftPage.robot
 Resource    ../pages/LoginPage.robot
+Resource    ../pages/ModpayAdminInvoicePage.robot
+Resource    ../resources/DateKeywords.robot
+
 
 # Suite Setup    Open Browser To Application
 # Suite Teardown    Close Application Browser
 # Test Template    Add Shift Test
 
 Test Setup    Open Browser To Application
-Test Teardown    Run Keywords    Attach Screenshot To Allure    AND    Close Application Browser
+Test Teardown    Close Application Browser
 Test Template    Add Shift Test
+
+*** Test Cases ***
+Add Shift Test in CSV
 
 
 *** Keywords ***
@@ -22,9 +27,7 @@ Add Shift Test
     ...    ${SERVICE_NAME} 
     ...    ${HOSPITAL_NAME} 
     ...    ${SUBSERVICE_NAME}  
-    ...    ${YEAR}
-    ...    ${MONTH}
-    ...    ${DATE}
+    ...    ${SHIFT_DATE_CONSTANT}    
     ...    ${ACTION}
     ...    ${ROLE}
     ...    ${DEPARTMENT}
@@ -40,10 +43,20 @@ Add Shift Test
     ...    ${STARTMIN}                
     ...    ${ENDHOUR}
     ...    ${ENDMIN}
+    ...    ${SUBSERVICE_NAME_IN_MODPAY}
+    ...    ${ROLE_NAME_IN_MODPAY}
+    ...    ${MODPAY_DOCTOR_NAME}
+    ...    ${USERTYPE_IN_MODPAY}
+    ...    ${PAYCYCLE_IN_MODPAY}
+    ...    ${DAY-DATE}
+    ...    ${SHIFT-TIME}
+    ...    ${DUTY_TYPE_SYMBOL}
 
+    ${DATE}=    Get Day From Date    ${SHIFT_DATE_CONSTANT}
+    ${MONTH}=    Get Month From Date    ${SHIFT_DATE_CONSTANT}    short    True
+    ${YEAR}=    Get Year From Date    ${SHIFT_DATE_CONSTANT}
 
-    # Open Browser To Application
-    Add Shift in Beeway  
+    ${payment_type}=    Add Shift in Beeway  
     ...   ${USERNAME}    
     ...   ${PASSWORD}
     ...   ${SERVICE_NAME} 
@@ -68,10 +81,27 @@ Add Shift Test
     Sleep    2s
 
     ${SHIFT_EXISTS}=    
-    ...    Get Shift Exist Status Admin Login    
-    ...   ${DATE}    ${DOCTOR_NAME}    ${SHIFT_NAME}    ${TIME}    ${WARD}
+    ...    Get Shift Exist Status Admin Login
+    ...    ${DATE}    ${DOCTOR_NAME}    ${SHIFT_NAME}    ${TIME}    ${WARD}
 
     Should Be True     ${SHIFT_EXISTS}
+    sleep    2s
+    Navigate To Modpay
+    ${MODPAY_MONTH}=    Get Month From Date    ${SHIFT_DATE_CONSTANT}    full
+    Check User Shift in Modpay    
+    ...    ${SUBSERVICE_NAME_IN_MODPAY}    
+    ...    ${ROLE_NAME_IN_MODPAY}    
+    ...    ${MODPAY_DOCTOR_NAME}   
+    ...    ${USERTYPE_IN_MODPAY}    
+    ...    ${MODPAY_MONTH}    
+    ...    ${YEAR}   
+    ...    ${PAYCYCLE_IN_MODPAY}    
+    ...    ${DAY-DATE}    
+    ...    ${SHIFT-TIME}
+    ...    ${DUTY_TYPE_SYMBOL}
+    ...    ${payment_type}
+    
+    Close Application Browser
     Open Browser To Application
 
     Validate Shift in Doctor login     
@@ -85,13 +115,4 @@ Add Shift Test
     ...    ${DATE}
     ...    ${DOCTOR_NAME}
     ...    ${TIME}
-    Close Application Browser
-
-
-*** Test Cases ***
-Add Shift Using CSV
-    [Tags]    Smoke    Regression
-
-
-
 

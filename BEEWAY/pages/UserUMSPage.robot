@@ -1,5 +1,4 @@
 *** Settings ***
-Library    SeleniumLibrary
 Resource    ../resources/BrowserKeywords.robot
 Resource    ../resources/UIComponents.robot  
 Resource    ../pages/ModpayAdminInvoicePage.robot
@@ -25,7 +24,7 @@ UMS Calennder Year and Month Selection
     Click Element    xpath=//ul//li[normalize-space(.)='${MONTH}']
     wait Until Element Is Visible    xpath=//ul//li[normalize-space(.)='Year']    ${TIMEOUT}
     Click Element    xpath=//ul//li[normalize-space(.)='Year']
-    Click Element    xpath=//ul//li[normalize-space(.)='${YEAR}']
+    Click Element    xpath=//li[normalize-space(.)='${YEAR}']
     Button Click    Done
 
 Check Shift with date

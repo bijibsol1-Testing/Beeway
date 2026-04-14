@@ -7,6 +7,7 @@ Resource    ../resources/Service.robot
 Resource    ../resources/PageSelect.robot
 Resource    ../pages/BeewayDashboardPage.robot
 Resource    ../Variables/TEST.robot
+Resource    ../pages/UserUMSPage.robot
 
 
 *** Variables ***
@@ -127,19 +128,23 @@ Navigate To Modpay
     Log To Console    ✅ Navigated to Modpay
 
 Validate Shift in Doctor login
-    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${DOCTOR_NAME}    ${TIME}
+    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${DOCTOR_NAME}    ${TIME}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
 
     Login and Goto Dashboard   ${DOCTORLOGIN}    ${PASSWORD}
     Wait For Page Loader To Disappear
+    Verify UMS Calender Shift     ${MONTH}    ${YEAR}    ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
     Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
     Select Hospital     ${HOSPITAL_NAME} 
+    sleep     2s
     Sub Service selection    ${SUBSERVICE_NAME}
-    sleep     2s  
     Select Date from My Schedule    ${YEAR}     ${MONTH}    ${DATE}    ${HOSPITAL_NAME}
     ${USER_SHIFT_EXISTS}=    User Shift exist Status    ${DATE}    ${DOCTOR_NAME}    ${TIME}
     Should Be True    ${USER_SHIFT_EXISTS}    Shift not found for ${DOCTOR_NAME} on ${DATE} with timing ${TIME}
+    Capture Screenshot Step    UserShift${DOCTOR_NAME}
     Log To Console    ✅ Shift for Dr.${DOCTOR_NAME} at ${TIME} on ${DATE} found in Doctor Login
+
+
     
 
 

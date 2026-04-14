@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-04-09T18:47:34.869208" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-04-14T15:11:55.286016" rpa="false" schemaversion="5">
 <suite id="s1" name="AddShiftTest" source="D:\Apps\Automation\BEEWAY\tests\AddShiftTest.robot">
-<test id="s1-t1" name="Add Shift Test in CSV" line="19">
+<test id="s1-t1" name="TC1 - Adding shift in Ans roster for obs role" line="19">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:35.552730" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
+<msg time="2026-04-14T15:11:56.454219" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-09T18:47:35.552367" elapsed="2.988787"/>
+<status status="PASS" start="2026-04-14T15:11:56.453430" elapsed="4.803477"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.541703" elapsed="0.071724"/>
+<status status="PASS" start="2026-04-14T15:12:01.257517" elapsed="0.075590"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.613941" elapsed="0.000670"/>
+<status status="PASS" start="2026-04-14T15:12:01.333727" elapsed="0.000576"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:47:35.551056" elapsed="3.063811"/>
+<status status="PASS" start="2026-04-14T15:11:56.450472" elapsed="4.884082"/>
 </kw>
 <kw name="Add Shift Test">
 <kw name="Get Day From Date" owner="DateKeywords">
 <kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:47:38.638495" level="INFO">${day} = 09</msg>
+<msg time="2026-04-14T15:12:01.352751" level="INFO">${day} = 09</msg>
 <var>${day}</var>
 <arg>${date}</arg>
 <arg>result_format=%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.628332" elapsed="0.010253"/>
+<status status="PASS" start="2026-04-14T15:12:01.338415" elapsed="0.014470"/>
 </kw>
 <return>
 <value>${day}</value>
-<status status="PASS" start="2026-04-09T18:47:38.638737" elapsed="0.000098"/>
+<status status="PASS" start="2026-04-14T15:12:01.353101" elapsed="0.000153"/>
 </return>
-<msg time="2026-04-09T18:47:38.639254" level="INFO">${DATE} = 09</msg>
+<msg time="2026-04-14T15:12:01.353748" level="INFO">${DATE} = 09</msg>
 <var>${DATE}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:47:38.627425" elapsed="0.011895"/>
+<status status="PASS" start="2026-04-14T15:12:01.337861" elapsed="0.015988"/>
 </kw>
 <kw name="Get Month From Date" owner="DateKeywords">
 <if>
 <branch type="IF" condition="'${format}' == 'short'">
 <kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:47:38.641541" level="INFO">${month} = May</msg>
+<msg time="2026-04-14T15:12:01.357456" level="INFO">${month} = May</msg>
 <var>${month}</var>
 <arg>${date}</arg>
 <arg>result_format=%b</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.641057" elapsed="0.000539"/>
+<status status="PASS" start="2026-04-14T15:12:01.356472" elapsed="0.001087"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:47:38.640653" elapsed="0.001045"/>
+<status status="PASS" start="2026-04-14T15:12:01.355791" elapsed="0.001967"/>
 </branch>
 <branch type="ELSE IF" condition="'${format}' == 'full'">
 <kw name="Convert Date" owner="DateTime">
@@ -59,9 +59,9 @@
 <arg>${date}</arg>
 <arg>result_format=%B</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:38.642074" elapsed="0.000078"/>
+<status status="NOT RUN" start="2026-04-14T15:12:01.358353" elapsed="0.002263"/>
 </kw>
-<status status="NOT RUN" start="2026-04-09T18:47:38.641786" elapsed="0.000519"/>
+<status status="NOT RUN" start="2026-04-14T15:12:01.357921" elapsed="0.002959"/>
 </branch>
 <branch type="ELSE IF" condition="'${format}' == 'number'">
 <kw name="Convert Date" owner="DateTime">
@@ -69,61 +69,61 @@
 <arg>${date}</arg>
 <arg>result_format=%m</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:38.642800" elapsed="0.000086"/>
+<status status="NOT RUN" start="2026-04-14T15:12:01.364285" elapsed="0.000206"/>
 </kw>
-<status status="NOT RUN" start="2026-04-09T18:47:38.642423" elapsed="0.000632"/>
+<status status="NOT RUN" start="2026-04-14T15:12:01.361046" elapsed="0.003690"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" owner="BuiltIn">
 <arg>Invalid format: ${format}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:38.643502" elapsed="0.000092"/>
+<status status="NOT RUN" start="2026-04-14T15:12:01.367007" elapsed="0.000145"/>
 </kw>
-<status status="NOT RUN" start="2026-04-09T18:47:38.643172" elapsed="0.000548"/>
+<status status="NOT RUN" start="2026-04-14T15:12:01.365147" elapsed="0.002268"/>
 </branch>
-<status status="PASS" start="2026-04-09T18:47:38.640603" elapsed="0.003224"/>
+<status status="PASS" start="2026-04-14T15:12:01.355704" elapsed="0.011843"/>
 </if>
 <if>
 <branch type="IF" condition="${uppercase}">
 <kw name="Convert To Upper Case" owner="String">
-<msg time="2026-04-09T18:47:38.645499" level="INFO">${month} = MAY</msg>
+<msg time="2026-04-14T15:12:01.369234" level="INFO">${month} = MAY</msg>
 <var>${month}</var>
 <arg>${month}</arg>
 <doc>Converts string to upper case.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.644665" elapsed="0.000958"/>
+<status status="PASS" start="2026-04-14T15:12:01.368553" elapsed="0.000807"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:47:38.644056" elapsed="0.001741"/>
+<status status="PASS" start="2026-04-14T15:12:01.367787" elapsed="0.001747"/>
 </branch>
-<status status="PASS" start="2026-04-09T18:47:38.643999" elapsed="0.001927"/>
+<status status="PASS" start="2026-04-14T15:12:01.367722" elapsed="0.001936"/>
 </if>
 <return>
 <value>${month}</value>
-<status status="PASS" start="2026-04-09T18:47:38.646074" elapsed="0.000132"/>
+<status status="PASS" start="2026-04-14T15:12:01.369818" elapsed="0.000136"/>
 </return>
-<msg time="2026-04-09T18:47:38.646606" level="INFO">${MONTH} = MAY</msg>
+<msg time="2026-04-14T15:12:01.370452" level="INFO">${MONTH} = MAY</msg>
 <var>${MONTH}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
 <arg>short</arg>
 <arg>True</arg>
-<status status="PASS" start="2026-04-09T18:47:38.640041" elapsed="0.006693"/>
+<status status="PASS" start="2026-04-14T15:12:01.354790" elapsed="0.015764"/>
 </kw>
 <kw name="Get Year From Date" owner="DateKeywords">
 <kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:47:38.650736" level="INFO">${year} = 2026</msg>
+<msg time="2026-04-14T15:12:01.372224" level="INFO">${year} = 2026</msg>
 <var>${year}</var>
 <arg>${date}</arg>
 <arg>result_format=%Y</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.649465" elapsed="0.001420"/>
+<status status="PASS" start="2026-04-14T15:12:01.371773" elapsed="0.000506"/>
 </kw>
 <return>
 <value>${year}</value>
-<status status="PASS" start="2026-04-09T18:47:38.651197" elapsed="0.000158"/>
+<status status="PASS" start="2026-04-14T15:12:01.372400" elapsed="0.000065"/>
 </return>
-<msg time="2026-04-09T18:47:38.651837" level="INFO">${YEAR} = 2026</msg>
+<msg time="2026-04-14T15:12:01.372728" level="INFO">${YEAR} = 2026</msg>
 <var>${YEAR}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:47:38.647334" elapsed="0.004605"/>
+<status status="PASS" start="2026-04-14T15:12:01.371176" elapsed="0.001631"/>
 </kw>
 <kw name="Add Shift in Beeway" owner="AddShiftPage">
 <kw name="Login and Goto Dashboard" owner="Login">
@@ -131,181 +131,181 @@
 <arg>${LOGIN_PAGE_TITLE}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.660477" elapsed="0.023262"/>
+<status status="PASS" start="2026-04-14T15:12:01.377809" elapsed="0.020882"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Login Page Loaded Successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.684113" elapsed="0.000889"/>
+<status status="PASS" start="2026-04-14T15:12:01.399011" elapsed="0.000687"/>
 </kw>
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:47:38.687545" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<msg time="2026-04-14T15:12:01.402340" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.686667" elapsed="0.000960"/>
+<status status="PASS" start="2026-04-14T15:12:01.401439" elapsed="0.000989"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.688026" elapsed="0.129979"/>
+<status status="PASS" start="2026-04-14T15:12:01.402828" elapsed="0.143433"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.818586" elapsed="0.076496"/>
+<status status="PASS" start="2026-04-14T15:12:01.546594" elapsed="0.063622"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:38.895770" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<msg time="2026-04-14T15:12:01.611102" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:38.895397" elapsed="0.136056"/>
+<status status="PASS" start="2026-04-14T15:12:01.610633" elapsed="0.170087"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.031796" elapsed="0.000925"/>
+<status status="PASS" start="2026-04-14T15:12:01.781026" elapsed="0.001694"/>
 </kw>
 <arg>Enter Username</arg>
 <arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-09T18:47:38.685689" elapsed="0.347265"/>
+<status status="PASS" start="2026-04-14T15:12:01.400318" elapsed="0.382742"/>
 </kw>
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:47:39.034661" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<msg time="2026-04-14T15:12:01.786675" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.034119" elapsed="0.000598"/>
+<status status="PASS" start="2026-04-14T15:12:01.785070" elapsed="0.001691"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.035001" elapsed="0.047631"/>
+<status status="PASS" start="2026-04-14T15:12:01.787335" elapsed="0.034183"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.083796" elapsed="0.048162"/>
+<status status="PASS" start="2026-04-14T15:12:01.821838" elapsed="0.033142"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:39.132602" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<msg time="2026-04-14T15:12:01.855630" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.132253" elapsed="0.128416"/>
+<status status="PASS" start="2026-04-14T15:12:01.855277" elapsed="0.114358"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.261040" elapsed="0.000867"/>
+<status status="PASS" start="2026-04-14T15:12:01.969951" elapsed="0.000851"/>
 </kw>
 <arg>Enter Password</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-09T18:47:39.033450" elapsed="0.228719"/>
+<status status="PASS" start="2026-04-14T15:12:01.783970" elapsed="0.187042"/>
 </kw>
 <kw name="Button Click" owner="Buttons">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:47:39.263764" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<msg time="2026-04-14T15:12:01.972496" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
 <var>${BASE_PATH}</var>
 <arg>//button[normalize-space()="${LABEL}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.263194" elapsed="0.000643"/>
+<status status="PASS" start="2026-04-14T15:12:01.972007" elapsed="0.000545"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:47:39.264712" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<msg time="2026-04-14T15:12:01.973245" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
 <var>${BUTTON_PATH}</var>
 <arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.264091" elapsed="0.000747"/>
+<status status="PASS" start="2026-04-14T15:12:01.972779" elapsed="0.000515"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BUTTON_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.265235" elapsed="0.029547"/>
+<status status="PASS" start="2026-04-14T15:12:01.973528" elapsed="0.029131"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:39.295419" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<msg time="2026-04-14T15:12:02.003262" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
 <arg>${BUTTON_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.295101" elapsed="0.097759"/>
+<status status="PASS" start="2026-04-14T15:12:02.002960" elapsed="0.094225"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Clicked button with label ${LABEL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.393389" elapsed="0.000971"/>
+<status status="PASS" start="2026-04-14T15:12:02.097497" elapsed="0.000627"/>
 </kw>
 <arg>Login</arg>
-<status status="PASS" start="2026-04-09T18:47:39.262622" elapsed="0.131991"/>
+<status status="PASS" start="2026-04-14T15:12:01.971479" elapsed="0.126814"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${DASHBOARD_URL}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2026-04-09T18:47:39.394909" elapsed="1.469316"/>
+<status status="PASS" start="2026-04-14T15:12:02.098585" elapsed="1.478857"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navigated to Dashboard Successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:40.864645" elapsed="0.002171"/>
+<status status="PASS" start="2026-04-14T15:12:03.577914" elapsed="0.001012"/>
 </kw>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-09T18:47:38.659539" elapsed="2.207568"/>
+<status status="PASS" start="2026-04-14T15:12:01.376830" elapsed="2.202326"/>
 </kw>
 <kw name="Wait For Page Loader To Disappear" owner="PageSelect">
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>xpath=//div[contains(@class,'loader-wrapper')]</arg>
 <arg>${TIMEOUT_LONG}</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:40.868667" elapsed="6.896854"/>
+<status status="PASS" start="2026-04-14T15:12:03.580485" elapsed="8.341666"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:47:40.867734" elapsed="6.898068"/>
+<status status="PASS" start="2026-04-14T15:12:03.579670" elapsed="8.342668"/>
 </kw>
 <kw name="Goto Service" owner="Service">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:47.777127" level="INFO">Current location is 'https://test.bijib.in/#/layout/dashboard'.</msg>
+<msg time="2026-04-14T15:12:11.930920" level="INFO">Current location is 'https://test.bijib.in/#/layout/dashboard'.</msg>
 <arg>${DASHBOARD_URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2026-04-09T18:47:47.767467" elapsed="0.009841"/>
+<status status="PASS" start="2026-04-14T15:12:11.923301" elapsed="0.007758"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navigated to Dashboard</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:47.777707" elapsed="0.002434"/>
+<status status="PASS" start="2026-04-14T15:12:11.931347" elapsed="0.000996"/>
 </kw>
 <kw name="Click Element With Path" owner="Buttons">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:47:47.783844" level="INFO">${ELEMENT_PATH} = xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]</msg>
+<msg time="2026-04-14T15:12:11.934205" level="INFO">${ELEMENT_PATH} = xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]</msg>
 <var>${ELEMENT_PATH}</var>
 <arg>xpath=(${PATH})[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:47:47.782992" elapsed="0.000947"/>
+<status status="PASS" start="2026-04-14T15:12:11.933668" elapsed="0.000595"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ELEMENT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:47.784373" elapsed="0.052039"/>
+<status status="PASS" start="2026-04-14T15:12:11.934533" elapsed="0.032973"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:47.837416" level="INFO">Clicking element 'xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]'.</msg>
+<msg time="2026-04-14T15:12:11.968139" level="INFO">Clicking element 'xpath=(//li[@title="BeeWay"]/div[normalize-space()="BeeWay"])[1]'.</msg>
 <arg>${ELEMENT_PATH}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:47.836900" elapsed="0.236860"/>
+<status status="PASS" start="2026-04-14T15:12:11.967824" elapsed="0.122204"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Clicked element with path ${PATH}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:48.074252" elapsed="0.001116"/>
+<status status="PASS" start="2026-04-14T15:12:12.090464" elapsed="0.001721"/>
 </kw>
 <arg>//li[@title="${SERVICE_NAME}"]/div[normalize-space()="${SERVICE_NAME}"]</arg>
-<status status="PASS" start="2026-04-09T18:47:47.781261" elapsed="0.294364"/>
+<status status="PASS" start="2026-04-14T15:12:11.932906" elapsed="0.159636"/>
 </kw>
 <if>
 <branch type="IF" condition="${HOSPITAL_NAME} != &quot;&quot;">
@@ -313,151 +313,102 @@
 <var>${SUBMENU_PATH}</var>
 <arg>//div[contains(@class,"submenu dsktp-vw-dsply")]/span[normalize-space()="${SERVICE_NAME}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:48.076619" elapsed="0.000087"/>
+<status status="NOT RUN" start="2026-04-14T15:12:12.093440" elapsed="0.000067"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${HOSPITAL_PATH}</var>
 <arg>${SUBMENU_PATH}/following-sibling::ul//li[normalize-space()="${HOSPITAL_NAME}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:48.077079" elapsed="0.000070"/>
+<status status="NOT RUN" start="2026-04-14T15:12:12.093790" elapsed="0.000063"/>
 </kw>
 <kw name="Click Element With Path" owner="Buttons">
 <arg>${HOSPITAL_PATH}</arg>
-<status status="NOT RUN" start="2026-04-09T18:47:48.077618" elapsed="0.000078"/>
+<status status="NOT RUN" start="2026-04-14T15:12:12.094221" elapsed="0.000067"/>
 </kw>
-<status status="NOT RUN" start="2026-04-09T18:47:48.075864" elapsed="0.001942"/>
+<status status="NOT RUN" start="2026-04-14T15:12:12.092863" elapsed="0.001501"/>
 </branch>
-<status status="PASS" start="2026-04-09T18:47:48.075807" elapsed="0.002117"/>
+<status status="PASS" start="2026-04-14T15:12:12.092784" elapsed="0.001658"/>
 </if>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<msg time="2026-04-14T15:12:42.356266" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/selenium-screenshot-1.png"&gt;&lt;img src="Screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-14T15:12:42.356627" level="FAIL">Location did not become 'https://test.bijib.in/beeway/0.1.63/#/layout/dashboard' in 30 seconds.</msg>
 <arg>${BEEWAY_URL}</arg>
 <arg>${TIMEOUT_LONG}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2026-04-09T18:47:48.078238" elapsed="3.817201"/>
+<status status="FAIL" start="2026-04-14T15:12:12.094691" elapsed="30.276825">Location did not become 'https://test.bijib.in/beeway/0.1.63/#/layout/dashboard' in 30 seconds.</status>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navigated to ${SERVICE_NAME} Service</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:51.896115" elapsed="0.001120"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.372265" elapsed="0.000118"/>
 </kw>
 <arg>${SERVICE_NAME}</arg>
-<status status="PASS" start="2026-04-09T18:47:47.766515" elapsed="4.130982"/>
+<status status="FAIL" start="2026-04-14T15:12:11.922750" elapsed="30.449972">Location did not become 'https://test.bijib.in/beeway/0.1.63/#/layout/dashboard' in 30 seconds.</status>
 </kw>
 <kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>xpath=//div[contains(@class,'loader-wrapper')]</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:51.898922" elapsed="1.289910"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:47:51.898013" elapsed="1.290988"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.373122" elapsed="0.000063"/>
 </kw>
 <kw name="Select Hospital" owner="BeewayDashboardPage">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:53.190113" level="INFO">Clicking element 'xpath=//li[contains(@class,'cus-select-dropdown')]'.</msg>
-<arg>xpath=//li[contains(@class,'cus-select-dropdown')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:53.189880" elapsed="0.225444"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:53.417578" elapsed="0.225061"/>
-</kw>
-<msg time="2026-04-09T18:47:53.642873" level="INFO">${DROPDOWN_VISIBLE} = True</msg>
-<var>${DROPDOWN_VISIBLE}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-04-09T18:47:53.415900" elapsed="0.227029"/>
-</kw>
-<if>
-<branch type="IF" condition="${DROPDOWN_VISIBLE}">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]//li[contains(normalize-space(), '${HOSPITAL_NAME}')]</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:53.643428" elapsed="0.028907"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:53.672983" level="INFO">Clicking element 'xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]//li[contains(normalize-space(), 'Prince of Wales Private Hospital')]'.</msg>
-<arg>xpath=//ul[contains(@class,'dropdown-list') and contains(@class,'shown')]//li[contains(normalize-space(), '${HOSPITAL_NAME}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:53.672637" elapsed="0.090804"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Hospital selected: ${HOSPITAL_NAME}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:53.763771" elapsed="0.000762"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:47:53.643111" elapsed="0.121591"/>
-</branch>
-<branch type="ELSE">
-<kw name="Get Text" owner="SeleniumLibrary">
-<var>${DEFAULT_HOSPITAL}</var>
-<arg>xpath=//li[contains(@class,'cus-select-dropdown')]//div[contains(@class,'b-p-2')]//div[1]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:53.765181" elapsed="0.000056"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${DEFAULT_HOSPITAL}</arg>
 <arg>${HOSPITAL_NAME}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:53.765483" elapsed="0.000055"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Default hospital verified: ${DEFAULT_HOSPITAL}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:47:53.765760" elapsed="0.000046"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:47:53.764841" elapsed="0.001041"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:47:53.643071" elapsed="0.122883"/>
-</if>
-<arg>${HOSPITAL_NAME}</arg>
-<status status="PASS" start="2026-04-09T18:47:53.189391" elapsed="0.576680"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.373560" elapsed="0.000048"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-04-09T18:47:55.766976" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-04-09T18:47:53.766289" elapsed="2.000946"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.373908" elapsed="0.000105"/>
 </kw>
 <kw name="Sub Service selection" owner="BeewayDashboardPage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//li[normalize-space()="${SUBSERVICE_NAME}"][1]</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:47:55.768767" elapsed="0.042996"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:47:55.812474" level="INFO">Clicking element 'xpath=//li[normalize-space()="Ans Roster"][1]'.</msg>
-<arg>xpath=//li[normalize-space()="${SUBSERVICE_NAME}"][1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:47:55.812091" elapsed="0.568821"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Sub-service selected: ${SUBSERVICE_NAME}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:47:56.381228" elapsed="0.000803"/>
-</kw>
 <arg>${SUBSERVICE_NAME}</arg>
-<status status="PASS" start="2026-04-09T18:47:55.767829" elapsed="0.614507"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.374459" elapsed="0.000095"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-04-09T18:47:58.384112" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-04-09T18:47:56.382663" elapsed="2.001744"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.374803" elapsed="0.000048"/>
+</kw>
+<kw name="Select Date from Hospital Schedule" owner="BeewayDashboardPage">
+<arg>${YEAR}</arg>
+<arg>${MONTH}</arg>
+<arg>${DATE}</arg>
+<arg>${HOSPITAL_NAME}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:42.375291" elapsed="0.000078"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${DATE_XPATH}</var>
+<arg>(//li[.//div[normalize-space()='${DATE}']])[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:42.375843" elapsed="0.000104"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']</arg>
+<arg>${TIMEOUT_LONG}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:42.376469" elapsed="0.000082"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:42.376979" elapsed="0.000087"/>
+</kw>
+<kw name="Add Shift" owner="AddShiftPage">
+<var>${payment_type}</var>
+<arg>${ROLE}</arg>
+<arg>${DEPARTMENT}</arg>
+<arg>${WARD}</arg>
+<arg>${DOCTOR_NAME}</arg>
+<arg>${SHIFT_NAME}</arg>
+<arg>${DUTY_TYPE}</arg>
+<arg>${COMMENTS}</arg>
+<arg>${STARTHOUR}</arg>
+<arg>${STARTMIN}</arg>
+<arg>${ENDHOUR}</arg>
+<arg>${ENDMIN}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:42.377684" elapsed="0.000092"/>
 </kw>
 <return>
-<value>P</value>
-<status status="PASS" start="2026-04-09T18:47:58.384637" elapsed="0.000140"/>
+<value>${payment_type}</value>
+<status status="NOT RUN" start="2026-04-14T15:12:42.377989" elapsed="0.000076"/>
 </return>
-<msg time="2026-04-09T18:47:58.385164" level="INFO">${payment_type} = P</msg>
 <var>${payment_type}</var>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
@@ -482,571 +433,79 @@
 <tag>Regression</tag>
 <tag>Smoke</tag>
 <doc>Login to Bijib and add shift in Beeway</doc>
-<status status="PASS" start="2026-04-09T18:47:38.652830" elapsed="19.732426"/>
+<status status="FAIL" start="2026-04-14T15:12:01.373464" elapsed="41.004907">Location did not become 'https://test.bijib.in/beeway/0.1.63/#/layout/dashboard' in 30 seconds.</status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-04-09T18:48:00.386726" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-04-09T18:47:58.385866" elapsed="2.001106"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.378759" elapsed="0.000051"/>
 </kw>
 <kw name="Get Shift Exist Status Admin Login" owner="AddShiftPage">
-<if>
-<branch type="IF" condition="'${WARD}' == '' or '${WARD}' == '${EMPTY}'">
-<kw name="Get Shift exist Status without Ward" owner="AddShiftPage">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:00.393453" level="INFO">${DATE_TEXT_XPATH} = //div[contains(@class,'date-text') and normalize-space(.)='09']</msg>
-<var>${DATE_TEXT_XPATH}</var>
-<arg>//div[contains(@class,'date-text') and normalize-space(.)='${DATE}']</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.392523" elapsed="0.001049"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=${DATE_TEXT_XPATH}</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.394077" elapsed="0.036684"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:00.431704" level="INFO">${DATE_ARROW_XPATH} = ["//div[contains(@class,'date-text') and normalize-space(.)='09']", "//i[contains(@class,'fa-chevron-down')]"]</msg>
-<var>${DATE_ARROW_XPATH}</var>
-<arg>//div[contains(@class,'date-text') and normalize-space(.)='${DATE}']</arg>
-<arg>//i[contains(@class,'fa-chevron-down')]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.431090" elapsed="0.000671"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:00.584312" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/selenium-screenshot-65.png"&gt;&lt;img src="Screenshots/selenium-screenshot-65.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-04-09T18:48:00.584588" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression ["//div[contains(@class,'date-text') and normalize-space(.)='09']", "//i[contains(@class,'fa-chevron-down')]"] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '["//div[contains(@class,'date-text') and normalize-space(.)='09']", "//i[contains(@class,'fa-chevron-down')]"]' is not a valid XPath expression.
-  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E910998]
-	(No symbol) [0x00007FF72E913A0C]
-	(No symbol) [0x00007FF72E913ADF]
-	(No symbol) [0x00007FF72E95ED77]
-	(No symbol) [0x00007FF72E95F77C]
-	(No symbol) [0x00007FF72E9B25A7]
-	(No symbol) [0x00007FF72E9873BF]
-	(No symbol) [0x00007FF72E9AF39C]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<arg>xpath=${DATE_ARROW_XPATH}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-04-09T18:48:00.432574" elapsed="0.165534">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression ["//div[contains(@class,'date-text') and normalize-space(.)='09']", "//i[contains(@class,'fa-chevron-down')]"] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '["//div[contains(@class,'date-text') and normalize-space(.)='09']", "//i[contains(@class,'fa-chevron-down')]"]' is not a valid XPath expression.
-  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E910998]
-	(No symbol) [0x00007FF72E913A0C]
-	(No symbol) [0x00007FF72E913ADF]
-	(No symbol) [0x00007FF72E95ED77]
-	(No symbol) [0x00007FF72E95F77C]
-	(No symbol) [0x00007FF72E9B25A7]
-	(No symbol) [0x00007FF72E9873BF]
-	(No symbol) [0x00007FF72E9AF39C]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<msg time="2026-04-09T18:48:00.598360" level="INFO">${is_visible} = False</msg>
-<var>${is_visible}</var>
-<arg>Element Should Be Visible</arg>
-<arg>xpath=${DATE_ARROW_XPATH}</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.432065" elapsed="0.166349"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_visible}</arg>
-<arg>Click Element</arg>
-<arg>xpath=${DATE_ARROW_XPATH}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.598682" elapsed="0.000460"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:00.599857" level="INFO">${SHIFT_LIST} = //li[descendant::div[contains(@class,'date-text') and normalize-space(.)='09']]//div[contains(@class,'user-section-list')]//div[contains(@class,'user-section')][descendant::h4[normalize-space(.)='Jess...</msg>
-<var>${SHIFT_LIST}</var>
-<arg>//li[descendant::div[contains(@class,'date-text') and normalize-space(.)='${DATE}']]//div[contains(@class,'user-section-list')]//div[contains(@class,'user-section')][descendant::h4[normalize-space(.)='${DOCTOR_NAME}'] and descendant::div[contains(@class,'shift-name')]//span[contains(normalize-space(.),'${SHIFT_NAME}')]]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.599355" elapsed="0.000550"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Shift XPath: ${SHIFT_LIST}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.600106" elapsed="0.000752"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=${SHIFT_LIST}</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.601183" elapsed="0.025807"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:00.638904" level="INFO">Current page contains element 'xpath=//li[descendant::div[contains(@class,'date-text') and normalize-space(.)='09']]//div[contains(@class,'user-section-list')]//div[contains(@class,'user-section')][descendant::h4[normalize-space(.)='Jessica ILM'] and descendant::div[contains(@class,'shift-name')]//span[contains(normalize-space(.),'N12')]]'.</msg>
-<arg>xpath=${SHIFT_LIST}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.629065" elapsed="0.009980"/>
-</kw>
-<msg time="2026-04-09T18:48:00.639247" level="INFO">${exists} = True</msg>
-<var>${exists}</var>
-<arg>Page Should Contain Element</arg>
-<arg>xpath=${SHIFT_LIST}</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.628109" elapsed="0.011189"/>
-</kw>
-<return>
-<value>${exists}</value>
-<status status="PASS" start="2026-04-09T18:48:00.639417" elapsed="0.000075"/>
-</return>
-<msg time="2026-04-09T18:48:00.639789" level="INFO">${exists} = True</msg>
-<var>${exists}</var>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_NAME}</arg>
-<status status="PASS" start="2026-04-09T18:48:00.391337" elapsed="0.248507"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:00.389088" elapsed="0.250868"/>
-</branch>
-<branch type="ELSE">
-<kw name="Get Shift exist Status with Ward" owner="AddShiftPage">
-<var>${exists}</var>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${TIME}</arg>
-<arg>${WARD}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:00.640427" elapsed="0.000060"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:00.640038" elapsed="0.000545"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:00.389029" elapsed="0.251625"/>
-</if>
-<return>
-<value>${exists}</value>
-<status status="PASS" start="2026-04-09T18:48:00.640725" elapsed="0.000062"/>
-</return>
-<msg time="2026-04-09T18:48:00.641051" level="INFO">${SHIFT_EXISTS} = True</msg>
 <var>${SHIFT_EXISTS}</var>
 <arg>${DATE}</arg>
 <arg>${DOCTOR_NAME}</arg>
 <arg>${SHIFT_NAME}</arg>
 <arg>${TIME}</arg>
 <arg>${WARD}</arg>
-<status status="PASS" start="2026-04-09T18:48:00.387800" elapsed="0.253302"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.379176" elapsed="0.000060"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${SHIFT_EXISTS}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.641375" elapsed="0.000871"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.379474" elapsed="0.000046"/>
+</kw>
+<kw name="Capture Screenshot Step" owner="ModpayAdminInvoicePage">
+<arg>Shift${DOCTOR_NAME}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:42.379781" elapsed="0.000049"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-04-09T18:48:02.644055" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-04-09T18:48:00.642621" elapsed="2.001702"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.380029" elapsed="0.000045"/>
 </kw>
+<if>
+<branch type="IF" condition="'${payment_type}' == 'P'">
 <kw name="Navigate To Modpay" owner="AddShiftPage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//li[normalize-space()='ModPay']</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:02.645873" elapsed="0.035258"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:02.681827" level="INFO">Clicking element 'xpath=//li[normalize-space()='ModPay']'.</msg>
-<arg>xpath=//li[normalize-space()='ModPay']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:02.681503" elapsed="0.087168"/>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>xpath=//div[contains(@class,'loader-wrapper')]</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:02.769483" elapsed="0.009253"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:02.769026" elapsed="0.009874"/>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${MODPAY_INVOICE_URL}</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2026-04-09T18:48:02.779145" elapsed="1.677515"/>
-</kw>
-<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
-<arg>//app-bijib-loader</arg>
-<arg>${TIMEOUT_LONG}</arg>
-<doc>Waits until the element ``locator`` disappears from the current page.</doc>
-<status status="PASS" start="2026-04-09T18:48:04.457271" elapsed="0.042889"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Navigated to Modpay</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:04.500672" elapsed="0.017439"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:02.645006" elapsed="1.873376"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.380479" elapsed="0.000048"/>
 </kw>
 <kw name="Get Month From Date" owner="DateKeywords">
-<if>
-<branch type="IF" condition="'${format}' == 'short'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%b</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:04.520699" elapsed="0.000102"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:04.520104" elapsed="0.000869"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'full'">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:04.523410" level="INFO">${month} = May</msg>
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%B</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:04.522025" elapsed="0.001509"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:04.521101" elapsed="0.002628"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'number'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%m</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:04.524381" elapsed="0.000100"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:04.523863" elapsed="0.000770"/>
-</branch>
-<branch type="ELSE">
-<kw name="Fail" owner="BuiltIn">
-<arg>Invalid format: ${format}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:04.525148" elapsed="0.000094"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:04.524758" elapsed="0.000627"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:04.520047" elapsed="0.005592"/>
-</if>
-<if>
-<branch type="IF" condition="${uppercase}">
-<kw name="Convert To Upper Case" owner="String">
-<var>${month}</var>
-<arg>${month}</arg>
-<doc>Converts string to upper case.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:04.526406" elapsed="0.000076"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:04.525845" elapsed="0.000778"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:04.525793" elapsed="0.000943"/>
-</if>
-<return>
-<value>${month}</value>
-<status status="PASS" start="2026-04-09T18:48:04.526837" elapsed="0.000096"/>
-</return>
-<msg time="2026-04-09T18:48:04.527343" level="INFO">${MODPAY_MONTH} = May</msg>
 <var>${MODPAY_MONTH}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
 <arg>full</arg>
-<status status="PASS" start="2026-04-09T18:48:04.519210" elapsed="0.008219"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.380938" elapsed="0.000049"/>
 </kw>
 <kw name="Check User Shift in Modpay" owner="ModpayAdminInvoicePage">
-<kw name="Select SubService in Modpay" owner="ModpayAdminInvoicePage">
-<kw name="Wait For Modpay Loader To Disappear" owner="ModpayAdminInvoicePage">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:04.536130" elapsed="0.453540"/>
-</kw>
-<msg time="2026-04-09T18:48:04.989900" level="INFO">${is_visible} = True</msg>
-<var>${is_visible}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${locator}</arg>
-<arg>5s</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-04-09T18:48:04.535030" elapsed="0.454925"/>
-</kw>
-<if>
-<branch type="IF" condition="${is_visible}">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:04.990964" elapsed="4.352392"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:04.990284" elapsed="4.353205"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:04.990223" elapsed="4.353346"/>
-</if>
-<status status="PASS" start="2026-04-09T18:48:04.533904" elapsed="4.809766"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:09.344372" level="INFO">${dropdown} = //div[contains(@class,'form-group')][.//label[contains(.,'Sub Service')]]//li[contains(@class,'dropdown')]</msg>
-<var>${dropdown}</var>
-<arg>//div[contains(@class,'form-group')][.//label[contains(.,'Sub Service')]]//li[contains(@class,'dropdown')]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.343926" elapsed="0.000495"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dropdown}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.344653" elapsed="0.033370"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:09.378667" level="INFO">Clicking element '//div[contains(@class,'form-group')][.//label[contains(.,'Sub Service')]]//li[contains(@class,'dropdown')]'.</msg>
-<arg>${dropdown}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.378350" elapsed="0.088260"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:09.467433" level="INFO">${option_xpath} = //li[contains(@class,'list-item') and contains(normalize-space(),'ALL')]</msg>
-<var>${option_xpath}</var>
-<arg>//li[contains(@class,'list-item') and contains(normalize-space(),'${SUBSERVICE_NAME_IN_MODPAY}')]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.466908" elapsed="0.000623"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${option_xpath}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.467751" elapsed="0.032475"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:09.500860" level="INFO">Clicking element '//li[contains(@class,'list-item') and contains(normalize-space(),'ALL')]'.</msg>
-<arg>${option_xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.500544" elapsed="0.134693"/>
-</kw>
-<kw name="Wait For Modpay Loader To Disappear" owner="ModpayAdminInvoicePage">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.636647" elapsed="0.476619"/>
-</kw>
-<msg time="2026-04-09T18:48:10.113495" level="INFO">${is_visible} = True</msg>
-<var>${is_visible}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${locator}</arg>
-<arg>5s</arg>
-<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-04-09T18:48:09.636146" elapsed="0.477404"/>
-</kw>
-<if>
-<branch type="IF" condition="${is_visible}">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:10.114041" elapsed="5.346656"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:10.113722" elapsed="5.347241"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:10.113684" elapsed="5.347533"/>
-</if>
-<status status="PASS" start="2026-04-09T18:48:09.635650" elapsed="5.825792"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Subservice selected: ${SUBSERVICE_NAME_IN_MODPAY}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:15.462093" elapsed="0.001758"/>
-</kw>
 <arg>${SUBSERVICE_NAME_IN_MODPAY}</arg>
-<status status="PASS" start="2026-04-09T18:48:04.531582" elapsed="10.932661"/>
-</kw>
-<kw name="Select Role in Modpay" owner="ModpayAdminInvoicePage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//label[normalize-space()='Role']/following::select[1]</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:15.465803" elapsed="0.038696"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:15.505223" level="INFO">Selecting options from selection list 'xpath=//label[normalize-space()='Role']/following::select[1]' by label Obs Anaesthetist.</msg>
-<arg>xpath=//label[normalize-space()='Role']/following::select[1]</arg>
-<arg>${ROLE_NAME_IN_MODPAY}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2026-04-09T18:48:15.504831" elapsed="0.203363"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Role selected: ${ROLE_NAME_IN_MODPAY}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:15.708730" elapsed="0.001808"/>
-</kw>
-<arg>${ROLE_NAME_IN_MODPAY}</arg>
-<status status="PASS" start="2026-04-09T18:48:15.464973" elapsed="0.245853"/>
-</kw>
-<kw name="User Search in Modpay" owner="ModpayAdminInvoicePage">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:15.713888" level="INFO">${search_xpath} = xpath=//input[@name='auto-text']</msg>
-<var>${search_xpath}</var>
-<arg>xpath=//input[@name='auto-text']</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:15.712884" elapsed="0.001120"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${search_xpath}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:15.714502" elapsed="0.051823"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:15.767032" level="INFO">Typing text 'Jessica iLm' into text field 'xpath=//input[@name='auto-text']'.</msg>
-<arg>${search_xpath}</arg>
-<arg>${MODPAY_DOCTOR_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:15.766644" elapsed="0.402356"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:16.170564" level="INFO">${userselect_xpath} = xpath=//label[normalize-space(.)="Jessica iLm"]</msg>
-<var>${userselect_xpath}</var>
-<arg>xpath=//label[normalize-space(.)="${MODPAY_DOCTOR_NAME}"]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:16.169465" elapsed="0.001173"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:26.529111" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/selenium-screenshot-66.png"&gt;&lt;img src="Screenshots/selenium-screenshot-66.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-04-09T18:48:26.529318" level="FAIL">Element 'xpath=//label[normalize-space(.)="Jessica iLm"]' not visible after 10 seconds.</msg>
-<arg>${userselect_xpath}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-04-09T18:48:16.170962" elapsed="10.361802">Element 'xpath=//label[normalize-space(.)="Jessica iLm"]' not visible after 10 seconds.</status>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${userselect_xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.533362" elapsed="0.000117"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ User searched: ${MODPAY_DOCTOR_NAME}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.533760" elapsed="0.000064"/>
-</kw>
-<arg>${MODPAY_DOCTOR_NAME}</arg>
-<status status="FAIL" start="2026-04-09T18:48:15.711707" elapsed="10.822331">Element 'xpath=//label[normalize-space(.)="Jessica iLm"]' not visible after 10 seconds.</status>
-</kw>
-<kw name="Select Usertype in Modpay" owner="ModpayAdminInvoicePage">
-<arg>${USERTYPE_IN_MODPAY}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:26.534476" elapsed="0.000068"/>
-</kw>
-<kw name="Select PayCycle/Month/Year in Modpay" owner="ModpayAdminInvoicePage">
-<arg>${MODPAY_MONTH}</arg>
-<arg>${YEAR}</arg>
-<arg>${PAYCYCLE_IN_MODPAY}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:26.535067" elapsed="0.000078"/>
-</kw>
-<kw name="Button Click" owner="Buttons">
-<arg>Search</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:26.535453" elapsed="0.000048"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.535704" elapsed="0.000046"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Clicked Search Button</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.535960" elapsed="0.000044"/>
-</kw>
-<if>
-<branch type="IF" condition="'${PAYMENT_TYPE}' == 'P'">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Payment Type P → Records should be displayed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.536335" elapsed="0.000043"/>
-</kw>
-<kw name="Check User Invoice in Modpay" owner="ModpayAdminInvoicePage">
-<arg>${MODPAY_DOCTOR_NAME}</arg>
-<arg>${DAY-DATE}</arg>
-<arg>${SHIFT-TIME}</arg>
-<arg>${DUTY_TYPE_SYMBOL}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:26.536681" elapsed="0.000048"/>
-</kw>
-<kw name="Capture Screenshot Step" owner="ModpayAdminInvoicePage">
-<arg>Invoice${MODPAY_DOCTOR_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:26.536993" elapsed="0.000050"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:26.536136" elapsed="0.000973"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Payment Type UP → No records should be displayed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.537367" elapsed="0.000043"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>(//p[text()='No Records Found'])[1]</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.537629" elapsed="0.000043"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<arg>(//p[text()='No Records Found'])[1]</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:26.537891" elapsed="0.000043"/>
-</kw>
-<kw name="Capture Screenshot Step" owner="ModpayAdminInvoicePage">
-<arg>NoRecords${MODPAY_DOCTOR_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:26.538183" elapsed="0.000047"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:26.537180" elapsed="0.001115"/>
-</branch>
-<status status="NOT RUN" start="2026-04-09T18:48:26.536106" elapsed="0.002251"/>
-</if>
-<arg>${SUBSERVICE_NAME_IN_MODPAY}</arg>
-<arg>${ROLE_NAME_IN_MODPAY}</arg>
-<arg>${MODPAY_DOCTOR_NAME}</arg>
+<arg>${ROLE}</arg>
+<arg>${DOCTOR_NAME}</arg>
 <arg>${USERTYPE_IN_MODPAY}</arg>
 <arg>${MODPAY_MONTH}</arg>
 <arg>${YEAR}</arg>
 <arg>${PAYCYCLE_IN_MODPAY}</arg>
+<arg>${MODPAY_DOCTOR_NAME}</arg>
 <arg>${DAY-DATE}</arg>
 <arg>${SHIFT-TIME}</arg>
 <arg>${DUTY_TYPE_SYMBOL}</arg>
 <arg>${payment_type}</arg>
-<status status="FAIL" start="2026-04-09T18:48:04.528491" elapsed="22.010031">Element 'xpath=//label[normalize-space(.)="Jessica iLm"]' not visible after 10 seconds.</status>
+<status status="NOT RUN" start="2026-04-14T15:12:42.381411" elapsed="0.000050"/>
 </kw>
+<status status="NOT RUN" start="2026-04-14T15:12:42.380209" elapsed="0.001378"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>⛔ Payment type is not P. Skipping Modpay validation.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:42.381866" elapsed="0.000045"/>
+</kw>
+<status status="NOT RUN" start="2026-04-14T15:12:42.381659" elapsed="0.000326"/>
+</branch>
+<status status="NOT RUN" start="2026-04-14T15:12:42.380177" elapsed="0.001870"/>
+</if>
 <kw name="Close Application Browser" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:26.538826" elapsed="0.000046"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.382257" elapsed="0.000046"/>
 </kw>
 <kw name="Open Browser To Application" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:26.539099" elapsed="0.000044"/>
+<status status="NOT RUN" start="2026-04-14T15:12:42.382531" elapsed="0.000050"/>
 </kw>
 <kw name="Validate Shift in Doctor login" owner="AddShiftPage">
 <arg>${DOCTORLOGIN}</arg>
@@ -1059,7 +518,9 @@ Stacktrace:
 <arg>${DATE}</arg>
 <arg>${DOCTOR_NAME}</arg>
 <arg>${TIME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:26.539434" elapsed="0.000049"/>
+<arg>${SHIFT-TIME}</arg>
+<arg>${DUTY_TYPE_SYMBOL}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:42.382933" elapsed="0.000050"/>
 </kw>
 <arg>USERNAME=rgarikapati</arg>
 <arg>PASSWORD=E7q_35&amp;ZR]5D*iRZ</arg>
@@ -1083,75 +544,74 @@ Stacktrace:
 <arg>ENDHOUR=</arg>
 <arg>ENDMIN=</arg>
 <arg>SUBSERVICE_NAME_IN_MODPAY=ALL</arg>
-<arg>ROLE_NAME_IN_MODPAY=Obs Anaesthetist</arg>
 <arg>MODPAY_DOCTOR_NAME=Jessica iLm</arg>
 <arg>USERTYPE_IN_MODPAY=Shift Users</arg>
 <arg>PAYCYCLE_IN_MODPAY=</arg>
 <arg>DAY-DATE=Sat - 09/05/2026</arg>
 <arg>SHIFT-TIME=19:00 - 07:00</arg>
 <arg>DUTY_TYPE_SYMBOL=oncall</arg>
-<status status="FAIL" start="2026-04-09T18:47:38.624739" elapsed="47.914940">Element 'xpath=//label[normalize-space(.)="Jessica iLm"]' not visible after 10 seconds.</status>
+<status status="FAIL" start="2026-04-14T15:12:01.335693" elapsed="41.047514">Location did not become 'https://test.bijib.in/beeway/0.1.63/#/layout/dashboard' in 30 seconds.</status>
 </kw>
 <kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-09T18:48:26.541136" elapsed="2.692971"/>
+<status status="PASS" start="2026-04-14T15:12:42.385991" elapsed="2.366817"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:48:26.540649" elapsed="2.693771"/>
+<status status="PASS" start="2026-04-14T15:12:42.384911" elapsed="2.368361"/>
 </kw>
-<status status="FAIL" start="2026-04-09T18:47:35.547320" elapsed="53.687570">Element 'xpath=//label[normalize-space(.)="Jessica iLm"]' not visible after 10 seconds.</status>
+<status status="FAIL" start="2026-04-14T15:11:56.443732" elapsed="48.310162">Location did not become 'https://test.bijib.in/beeway/0.1.63/#/layout/dashboard' in 30 seconds.</status>
 </test>
-<test id="s1-t2" name="Add Shift Test in CSV" line="19">
+<test id="s1-t2" name="TC2 - Adding shift in Ans roster for gen role" line="19">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:29.242602" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
+<msg time="2026-04-14T15:12:44.764128" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-09T18:48:29.241793" elapsed="3.008653"/>
+<status status="PASS" start="2026-04-14T15:12:44.763181" elapsed="3.013312"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.250966" elapsed="0.057303"/>
+<status status="PASS" start="2026-04-14T15:12:47.776875" elapsed="0.054949"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.308847" elapsed="0.000590"/>
+<status status="PASS" start="2026-04-14T15:12:47.832317" elapsed="0.000464"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:48:29.240821" elapsed="3.068860"/>
+<status status="PASS" start="2026-04-14T15:12:44.761571" elapsed="3.071408"/>
 </kw>
 <kw name="Add Shift Test">
 <kw name="Get Day From Date" owner="DateKeywords">
 <kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:32.314005" level="INFO">${day} = 20</msg>
+<msg time="2026-04-14T15:12:47.837312" level="INFO">${day} = 20</msg>
 <var>${day}</var>
 <arg>${date}</arg>
 <arg>result_format=%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.313561" elapsed="0.000498"/>
+<status status="PASS" start="2026-04-14T15:12:47.836779" elapsed="0.000595"/>
 </kw>
 <return>
 <value>${day}</value>
-<status status="PASS" start="2026-04-09T18:48:32.314176" elapsed="0.000083"/>
+<status status="PASS" start="2026-04-14T15:12:47.837504" elapsed="0.001904"/>
 </return>
-<msg time="2026-04-09T18:48:32.314463" level="INFO">${DATE} = 20</msg>
+<msg time="2026-04-14T15:12:47.840081" level="INFO">${DATE} = 20</msg>
 <var>${DATE}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:32.313040" elapsed="0.001475"/>
+<status status="PASS" start="2026-04-14T15:12:47.836079" elapsed="0.004125"/>
 </kw>
 <kw name="Get Month From Date" owner="DateKeywords">
 <if>
 <branch type="IF" condition="'${format}' == 'short'">
 <kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:32.316190" level="INFO">${month} = Jul</msg>
+<msg time="2026-04-14T15:12:47.844401" level="INFO">${month} = Jul</msg>
 <var>${month}</var>
 <arg>${date}</arg>
 <arg>result_format=%b</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.315769" elapsed="0.000483"/>
+<status status="PASS" start="2026-04-14T15:12:47.843387" elapsed="0.001232"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:48:32.315409" elapsed="0.000939"/>
+<status status="PASS" start="2026-04-14T15:12:47.842664" elapsed="0.002177"/>
 </branch>
 <branch type="ELSE IF" condition="'${format}' == 'full'">
 <kw name="Convert Date" owner="DateTime">
@@ -1159,9 +619,9 @@ Stacktrace:
 <arg>${date}</arg>
 <arg>result_format=%B</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:32.316616" elapsed="0.000044"/>
+<status status="NOT RUN" start="2026-04-14T15:12:47.845517" elapsed="0.000106"/>
 </kw>
-<status status="NOT RUN" start="2026-04-09T18:48:32.316420" elapsed="0.000319"/>
+<status status="NOT RUN" start="2026-04-14T15:12:47.845046" elapsed="0.000728"/>
 </branch>
 <branch type="ELSE IF" condition="'${format}' == 'number'">
 <kw name="Convert Date" owner="DateTime">
@@ -1169,61 +629,61 @@ Stacktrace:
 <arg>${date}</arg>
 <arg>result_format=%m</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:32.316979" elapsed="0.000043"/>
+<status status="NOT RUN" start="2026-04-14T15:12:47.846298" elapsed="0.000084"/>
 </kw>
-<status status="NOT RUN" start="2026-04-09T18:48:32.316800" elapsed="0.000297"/>
+<status status="NOT RUN" start="2026-04-14T15:12:47.845906" elapsed="0.000610"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" owner="BuiltIn">
 <arg>Invalid format: ${format}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:32.317334" elapsed="0.000042"/>
+<status status="NOT RUN" start="2026-04-14T15:12:47.846951" elapsed="0.000075"/>
 </kw>
-<status status="NOT RUN" start="2026-04-09T18:48:32.317158" elapsed="0.000323"/>
+<status status="NOT RUN" start="2026-04-14T15:12:47.846621" elapsed="0.000518"/>
 </branch>
-<status status="PASS" start="2026-04-09T18:48:32.315376" elapsed="0.002165"/>
+<status status="PASS" start="2026-04-14T15:12:47.842595" elapsed="0.004637"/>
 </if>
 <if>
 <branch type="IF" condition="${uppercase}">
 <kw name="Convert To Upper Case" owner="String">
-<msg time="2026-04-09T18:48:32.318187" level="INFO">${month} = JUL</msg>
+<msg time="2026-04-14T15:12:47.848389" level="INFO">${month} = JUL</msg>
 <var>${month}</var>
 <arg>${month}</arg>
 <doc>Converts string to upper case.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.317920" elapsed="0.000366"/>
+<status status="PASS" start="2026-04-14T15:12:47.847930" elapsed="0.000536"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:48:32.317641" elapsed="0.000952"/>
+<status status="PASS" start="2026-04-14T15:12:47.847395" elapsed="0.001201"/>
 </branch>
-<status status="PASS" start="2026-04-09T18:48:32.317615" elapsed="0.001238"/>
+<status status="PASS" start="2026-04-14T15:12:47.847352" elapsed="0.001341"/>
 </if>
 <return>
 <value>${month}</value>
-<status status="PASS" start="2026-04-09T18:48:32.319625" elapsed="0.000137"/>
+<status status="PASS" start="2026-04-14T15:12:47.848787" elapsed="0.000094"/>
 </return>
-<msg time="2026-04-09T18:48:32.320203" level="INFO">${MONTH} = JUL</msg>
+<msg time="2026-04-14T15:12:47.849188" level="INFO">${MONTH} = JUL</msg>
 <var>${MONTH}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
 <arg>short</arg>
 <arg>True</arg>
-<status status="PASS" start="2026-04-09T18:48:32.314944" elapsed="0.005371"/>
+<status status="PASS" start="2026-04-14T15:12:47.841281" elapsed="0.007978"/>
 </kw>
 <kw name="Get Year From Date" owner="DateKeywords">
 <kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:32.324290" level="INFO">${year} = 2026</msg>
+<msg time="2026-04-14T15:12:47.851636" level="INFO">${year} = 2026</msg>
 <var>${year}</var>
 <arg>${date}</arg>
 <arg>result_format=%Y</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.323042" elapsed="0.001357"/>
+<status status="PASS" start="2026-04-14T15:12:47.850747" elapsed="0.001002"/>
 </kw>
 <return>
 <value>${year}</value>
-<status status="PASS" start="2026-04-09T18:48:32.324751" elapsed="0.000535"/>
+<status status="PASS" start="2026-04-14T15:12:47.851949" elapsed="0.000107"/>
 </return>
-<msg time="2026-04-09T18:48:32.325864" level="INFO">${YEAR} = 2026</msg>
+<msg time="2026-04-14T15:12:47.852454" level="INFO">${YEAR} = 2026</msg>
 <var>${YEAR}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:32.321167" elapsed="0.004799"/>
+<status status="PASS" start="2026-04-14T15:12:47.849808" elapsed="0.002725"/>
 </kw>
 <kw name="Add Shift in Beeway" owner="AddShiftPage">
 <kw name="Login and Goto Dashboard" owner="Login">
@@ -1231,258 +691,304 @@ Stacktrace:
 <arg>${LOGIN_PAGE_TITLE}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.330631" elapsed="0.029250"/>
+<status status="PASS" start="2026-04-14T15:12:47.859013" elapsed="0.027061"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Login Page Loaded Successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.360208" elapsed="0.000777"/>
+<status status="PASS" start="2026-04-14T15:12:47.886416" elapsed="0.000732"/>
 </kw>
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:32.362944" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
+<msg time="2026-04-14T15:12:47.890303" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.362303" elapsed="0.000702"/>
+<status status="PASS" start="2026-04-14T15:12:47.889091" elapsed="0.001338"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.363388" elapsed="0.060970"/>
+<status status="PASS" start="2026-04-14T15:12:47.891035" elapsed="0.063261"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.425204" elapsed="0.088279"/>
+<status status="PASS" start="2026-04-14T15:12:47.958130" elapsed="0.149194"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:32.514210" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
+<msg time="2026-04-14T15:12:48.108359" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.513811" elapsed="0.142500"/>
+<status status="PASS" start="2026-04-14T15:12:48.107824" elapsed="0.174575"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.656631" elapsed="0.000743"/>
+<status status="PASS" start="2026-04-14T15:12:48.283105" elapsed="0.001213"/>
 </kw>
 <arg>Enter Username</arg>
 <arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-09T18:48:32.361603" elapsed="0.295962"/>
+<status status="PASS" start="2026-04-14T15:12:47.887674" elapsed="0.396898"/>
 </kw>
 <kw name="Textfield With Placeholder" owner="TextFields">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:32.659190" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
+<msg time="2026-04-14T15:12:48.286185" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
 <var>${INPUT_PATH}</var>
 <arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.658581" elapsed="0.000667"/>
+<status status="PASS" start="2026-04-14T15:12:48.285652" elapsed="0.000586"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.659500" elapsed="0.026508"/>
+<status status="PASS" start="2026-04-14T15:12:48.286476" elapsed="0.034605"/>
 </kw>
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${INPUT_PATH}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.686310" elapsed="0.034031"/>
+<status status="PASS" start="2026-04-14T15:12:48.321382" elapsed="0.041514"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:32.721472" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
+<msg time="2026-04-14T15:12:48.363537" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
 <arg>${INPUT_PATH}</arg>
 <arg>${VALUE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.720850" elapsed="0.123163"/>
+<status status="PASS" start="2026-04-14T15:12:48.363192" elapsed="0.138564"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.844305" elapsed="0.000720"/>
+<status status="PASS" start="2026-04-14T15:12:48.502062" elapsed="0.000737"/>
 </kw>
 <arg>Enter Password</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-09T18:48:32.657963" elapsed="0.187249"/>
+<status status="PASS" start="2026-04-14T15:12:48.285051" elapsed="0.217928"/>
 </kw>
 <kw name="Button Click" owner="Buttons">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:32.846830" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
+<msg time="2026-04-14T15:12:48.504932" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
 <var>${BASE_PATH}</var>
 <arg>//button[normalize-space()="${LABEL}"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.846321" elapsed="0.000563"/>
+<status status="PASS" start="2026-04-14T15:12:48.504354" elapsed="0.000639"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:32.847614" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
+<msg time="2026-04-14T15:12:48.505755" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
 <var>${BUTTON_PATH}</var>
 <arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.847128" elapsed="0.000536"/>
+<status status="PASS" start="2026-04-14T15:12:48.505263" elapsed="0.000543"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BUTTON_PATH}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.847899" elapsed="0.022591"/>
+<status status="PASS" start="2026-04-14T15:12:48.506043" elapsed="0.028846"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:32.871514" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
+<msg time="2026-04-14T15:12:48.535576" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
 <arg>${BUTTON_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.870792" elapsed="0.093739"/>
+<status status="PASS" start="2026-04-14T15:12:48.535187" elapsed="0.103492"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Clicked button with label ${LABEL}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:32.965075" elapsed="0.001172"/>
+<status status="PASS" start="2026-04-14T15:12:48.639169" elapsed="0.002994"/>
 </kw>
 <arg>Login</arg>
-<status status="PASS" start="2026-04-09T18:48:32.845646" elapsed="0.120843"/>
+<status status="PASS" start="2026-04-14T15:12:48.503429" elapsed="0.139146"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:34.309699" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
+<msg time="2026-04-14T15:12:49.691591" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708F9A]
+	(No symbol) [0x00007FF64B6F4E35]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </msg>
-<msg time="2026-04-09T18:48:34.378467" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
+<msg time="2026-04-14T15:12:49.700817" level="FAIL">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
   (Session info: chrome=136.0.7103.114)
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708DCC]
+	(No symbol) [0x00007FF64B6F617B]
+	(No symbol) [0x00007FF64B6F503E]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </msg>
 <arg>${DASHBOARD_URL}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="FAIL" start="2026-04-09T18:48:32.966927" elapsed="1.419608">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
+<status status="FAIL" start="2026-04-14T15:12:48.643079" elapsed="1.087980">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
   (Session info: chrome=136.0.7103.114)
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708DCC]
+	(No symbol) [0x00007FF64B6F617B]
+	(No symbol) [0x00007FF64B6F503E]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </status>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navigated to Dashboard Successfully</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:34.387022" elapsed="0.000086"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.731840" elapsed="0.000331"/>
 </kw>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-09T18:48:32.329726" elapsed="2.057695">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
+<status status="FAIL" start="2026-04-14T15:12:47.857258" elapsed="1.875787">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
   (Session info: chrome=136.0.7103.114)
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708DCC]
+	(No symbol) [0x00007FF64B6F617B]
+	(No symbol) [0x00007FF64B6F503E]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </status>
 </kw>
 <kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:34.387940" elapsed="0.000105"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.733637" elapsed="0.000107"/>
 </kw>
 <kw name="Goto Service" owner="Service">
 <arg>${SERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:34.388667" elapsed="0.000104"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.734396" elapsed="0.000117"/>
 </kw>
 <kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:34.389222" elapsed="0.000095"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.735032" elapsed="0.000119"/>
 </kw>
 <kw name="Select Hospital" owner="BeewayDashboardPage">
 <arg>${HOSPITAL_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:34.389971" elapsed="0.000114"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.735912" elapsed="0.000197"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:34.390459" elapsed="0.000083"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.736697" elapsed="0.000116"/>
 </kw>
 <kw name="Sub Service selection" owner="BeewayDashboardPage">
 <arg>${SUBSERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:34.390976" elapsed="0.000092"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.737399" elapsed="0.000111"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:34.391385" elapsed="0.000072"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.737881" elapsed="0.000082"/>
+</kw>
+<kw name="Select Date from Hospital Schedule" owner="BeewayDashboardPage">
+<arg>${YEAR}</arg>
+<arg>${MONTH}</arg>
+<arg>${DATE}</arg>
+<arg>${HOSPITAL_NAME}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:49.738527" elapsed="0.000090"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${DATE_XPATH}</var>
+<arg>(//li[.//div[normalize-space()='${DATE}']])[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:49.739122" elapsed="0.000106"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']</arg>
+<arg>${TIMEOUT_LONG}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:49.739661" elapsed="0.000091"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:49.740137" elapsed="0.000088"/>
+</kw>
+<kw name="Add Shift" owner="AddShiftPage">
+<var>${payment_type}</var>
+<arg>${ROLE}</arg>
+<arg>${DEPARTMENT}</arg>
+<arg>${WARD}</arg>
+<arg>${DOCTOR_NAME}</arg>
+<arg>${SHIFT_NAME}</arg>
+<arg>${DUTY_TYPE}</arg>
+<arg>${COMMENTS}</arg>
+<arg>${STARTHOUR}</arg>
+<arg>${STARTMIN}</arg>
+<arg>${ENDHOUR}</arg>
+<arg>${ENDMIN}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:49.740915" elapsed="0.000126"/>
 </kw>
 <return>
-<value>P</value>
-<status status="NOT RUN" start="2026-04-09T18:48:34.391596" elapsed="0.000067"/>
+<value>${payment_type}</value>
+<status status="NOT RUN" start="2026-04-14T15:12:49.741368" elapsed="0.000099"/>
 </return>
 <var>${payment_type}</var>
 <arg>${USERNAME}</arg>
@@ -1508,35 +1014,37 @@ Stacktrace:
 <tag>Regression</tag>
 <tag>Smoke</tag>
 <doc>Login to Bijib and add shift in Beeway</doc>
-<status status="FAIL" start="2026-04-09T18:48:32.326837" elapsed="2.065147">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
+<status status="FAIL" start="2026-04-14T15:12:47.853298" elapsed="1.888584">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
   (Session info: chrome=136.0.7103.114)
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708DCC]
+	(No symbol) [0x00007FF64B6F617B]
+	(No symbol) [0x00007FF64B6F503E]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:34.392585" elapsed="0.000078"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.742827" elapsed="0.000139"/>
 </kw>
 <kw name="Get Shift Exist Status Admin Login" owner="AddShiftPage">
 <var>${SHIFT_EXISTS}</var>
@@ -1545,46 +1053,65 @@ Stacktrace:
 <arg>${SHIFT_NAME}</arg>
 <arg>${TIME}</arg>
 <arg>${WARD}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:34.394508" elapsed="0.000420"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.743935" elapsed="0.000155"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${SHIFT_EXISTS}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:34.396002" elapsed="0.000269"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.745271" elapsed="0.000148"/>
+</kw>
+<kw name="Capture Screenshot Step" owner="ModpayAdminInvoicePage">
+<arg>Shift${DOCTOR_NAME}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:49.746659" elapsed="0.000517"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:34.397087" elapsed="0.000741"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.747671" elapsed="0.000112"/>
 </kw>
+<if>
+<branch type="IF" condition="'${payment_type}' == 'P'">
 <kw name="Navigate To Modpay" owner="AddShiftPage">
-<status status="NOT RUN" start="2026-04-09T18:48:34.398763" elapsed="0.000095"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.749172" elapsed="0.000430"/>
 </kw>
 <kw name="Get Month From Date" owner="DateKeywords">
 <var>${MODPAY_MONTH}</var>
 <arg>${SHIFT_DATE_CONSTANT}</arg>
 <arg>full</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:34.399570" elapsed="0.000094"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.750930" elapsed="0.000140"/>
 </kw>
 <kw name="Check User Shift in Modpay" owner="ModpayAdminInvoicePage">
 <arg>${SUBSERVICE_NAME_IN_MODPAY}</arg>
-<arg>${ROLE_NAME_IN_MODPAY}</arg>
-<arg>${MODPAY_DOCTOR_NAME}</arg>
+<arg>${ROLE}</arg>
+<arg>${DOCTOR_NAME}</arg>
 <arg>${USERTYPE_IN_MODPAY}</arg>
 <arg>${MODPAY_MONTH}</arg>
 <arg>${YEAR}</arg>
 <arg>${PAYCYCLE_IN_MODPAY}</arg>
+<arg>${MODPAY_DOCTOR_NAME}</arg>
 <arg>${DAY-DATE}</arg>
 <arg>${SHIFT-TIME}</arg>
 <arg>${DUTY_TYPE_SYMBOL}</arg>
 <arg>${payment_type}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:34.400413" elapsed="0.000105"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.752139" elapsed="0.000250"/>
 </kw>
+<status status="NOT RUN" start="2026-04-14T15:12:49.748055" elapsed="0.004654"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>⛔ Payment type is not P. Skipping Modpay validation.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-14T15:12:49.753460" elapsed="0.000131"/>
+</kw>
+<status status="NOT RUN" start="2026-04-14T15:12:49.752882" elapsed="0.000888"/>
+</branch>
+<status status="NOT RUN" start="2026-04-14T15:12:49.747984" elapsed="0.005966"/>
+</if>
 <kw name="Close Application Browser" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:34.401065" elapsed="0.000085"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.754424" elapsed="0.000255"/>
 </kw>
 <kw name="Open Browser To Application" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:34.401535" elapsed="0.000076"/>
+<status status="NOT RUN" start="2026-04-14T15:12:49.755245" elapsed="0.000137"/>
 </kw>
 <kw name="Validate Shift in Doctor login" owner="AddShiftPage">
 <arg>${DOCTORLOGIN}</arg>
@@ -1597,7 +1124,9 @@ Stacktrace:
 <arg>${DATE}</arg>
 <arg>${DOCTOR_NAME}</arg>
 <arg>${TIME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:34.402095" elapsed="0.000124"/>
+<arg>${SHIFT-TIME}</arg>
+<arg>${DUTY_TYPE_SYMBOL}</arg>
+<status status="NOT RUN" start="2026-04-14T15:12:49.756108" elapsed="0.000131"/>
 </kw>
 <arg>USERNAME=rgarikapati</arg>
 <arg>PASSWORD=E7q_35&amp;ZR]5D*iRZ</arg>
@@ -1621,1933 +1150,104 @@ Stacktrace:
 <arg>ENDHOUR=</arg>
 <arg>ENDMIN=</arg>
 <arg>SUBSERVICE_NAME_IN_MODPAY=ALL</arg>
-<arg>ROLE_NAME_IN_MODPAY=Gen Anaesthetist</arg>
-<arg>MODPAY_DOCTOR_NAME=</arg>
+<arg>MODPAY_DOCTOR_NAME=Adrian AALNSTU</arg>
 <arg>USERTYPE_IN_MODPAY=Shift Users</arg>
 <arg>PAYCYCLE_IN_MODPAY=</arg>
 <arg>DAY-DATE=Mon - 20/07/2026</arg>
 <arg>SHIFT-TIME=07:00 - 19:00</arg>
 <arg>DUTY_TYPE_SYMBOL=oncall</arg>
-<status status="FAIL" start="2026-04-09T18:48:32.310840" elapsed="2.091766">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
+<status status="FAIL" start="2026-04-14T15:12:47.833923" elapsed="1.922970">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
   (Session info: chrome=136.0.7103.114)
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708DCC]
+	(No symbol) [0x00007FF64B6F617B]
+	(No symbol) [0x00007FF64B6F503E]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </status>
 </kw>
 <kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-09T18:48:34.480120" elapsed="2.537317"/>
+<status status="PASS" start="2026-04-14T15:12:49.762916" elapsed="2.202522"/>
 </kw>
-<status status="PASS" start="2026-04-09T18:48:34.474774" elapsed="2.542975"/>
+<status status="PASS" start="2026-04-14T15:12:49.760521" elapsed="2.205207"/>
 </kw>
-<status status="FAIL" start="2026-04-09T18:48:29.237167" elapsed="7.781215">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
+<status status="FAIL" start="2026-04-14T15:12:44.756580" elapsed="7.209628">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
   (Session info: chrome=136.0.7103.114)
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708DCC]
+	(No symbol) [0x00007FF64B6F617B]
+	(No symbol) [0x00007FF64B6F503E]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </status>
 </test>
-<test id="s1-t3" name="Add Shift Test in CSV" line="19">
+<test id="s1-t3" name="TC3 - Adding shift in Med roster for ICU ward" line="19">
 <kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:37.034940" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-09T18:48:37.034009" elapsed="2.115452"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.150032" elapsed="0.766467"/>
-</kw>
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>0s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.917154" elapsed="0.001667"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:37.032511" elapsed="2.886793"/>
-</kw>
-<kw name="Add Shift Test">
-<kw name="Get Day From Date" owner="DateKeywords">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:39.925336" level="INFO">${day} = 20</msg>
-<var>${day}</var>
-<arg>${date}</arg>
-<arg>result_format=%d</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.924468" elapsed="0.000973"/>
-</kw>
-<return>
-<value>${day}</value>
-<status status="PASS" start="2026-04-09T18:48:39.925821" elapsed="0.000793"/>
-</return>
-<msg time="2026-04-09T18:48:39.927997" level="INFO">${DATE} = 20</msg>
-<var>${DATE}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:39.923361" elapsed="0.004744"/>
-</kw>
-<kw name="Get Month From Date" owner="DateKeywords">
-<if>
-<branch type="IF" condition="'${format}' == 'short'">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:39.933570" level="INFO">${month} = Jul</msg>
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%b</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.932358" elapsed="0.001295"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:39.930944" elapsed="0.002829"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'full'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%B</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:39.934202" elapsed="0.000088"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:39.933853" elapsed="0.000617"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'number'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%m</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:39.935208" elapsed="0.000119"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:39.934599" elapsed="0.000903"/>
-</branch>
-<branch type="ELSE">
-<kw name="Fail" owner="BuiltIn">
-<arg>Invalid format: ${format}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:39.935986" elapsed="0.000059"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:39.935624" elapsed="0.000508"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:39.930826" elapsed="0.005366"/>
-</if>
-<if>
-<branch type="IF" condition="${uppercase}">
-<kw name="Convert To Upper Case" owner="String">
-<msg time="2026-04-09T18:48:39.936987" level="INFO">${month} = JUL</msg>
-<var>${month}</var>
-<arg>${month}</arg>
-<doc>Converts string to upper case.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.936627" elapsed="0.000470"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:39.936305" elapsed="0.000933"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:39.936276" elapsed="0.001032"/>
-</if>
-<return>
-<value>${month}</value>
-<status status="PASS" start="2026-04-09T18:48:39.937378" elapsed="0.000071"/>
-</return>
-<msg time="2026-04-09T18:48:39.937685" level="INFO">${MONTH} = JUL</msg>
-<var>${MONTH}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<arg>short</arg>
-<arg>True</arg>
-<status status="PASS" start="2026-04-09T18:48:39.929544" elapsed="0.008189"/>
-</kw>
-<kw name="Get Year From Date" owner="DateKeywords">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:39.940013" level="INFO">${year} = 2026</msg>
-<var>${year}</var>
-<arg>${date}</arg>
-<arg>result_format=%Y</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.939115" elapsed="0.000997"/>
-</kw>
-<return>
-<value>${year}</value>
-<status status="PASS" start="2026-04-09T18:48:39.940262" elapsed="0.000079"/>
-</return>
-<msg time="2026-04-09T18:48:39.940659" level="INFO">${YEAR} = 2026</msg>
-<var>${YEAR}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:39.938185" elapsed="0.002558"/>
-</kw>
-<kw name="Add Shift in Beeway" owner="AddShiftPage">
-<kw name="Login and Goto Dashboard" owner="Login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${LOGIN_PAGE_TITLE}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.944567" elapsed="0.044038"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Login Page Loaded Successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.989064" elapsed="0.000835"/>
-</kw>
-<kw name="Textfield With Placeholder" owner="TextFields">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:39.991601" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
-<var>${INPUT_PATH}</var>
-<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.991086" elapsed="0.000567"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:39.991891" elapsed="0.033337"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.025543" elapsed="0.074255"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:40.101059" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
-<arg>${INPUT_PATH}</arg>
-<arg>${VALUE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.100293" elapsed="0.186177"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.286782" elapsed="0.001934"/>
-</kw>
-<arg>Enter Username</arg>
-<arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-09T18:48:39.990469" elapsed="0.298657"/>
-</kw>
-<kw name="Textfield With Placeholder" owner="TextFields">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:40.292875" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
-<var>${INPUT_PATH}</var>
-<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.291708" elapsed="0.001286"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.293505" elapsed="0.035705"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.329719" elapsed="0.042679"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:40.373132" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
-<arg>${INPUT_PATH}</arg>
-<arg>${VALUE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.372749" elapsed="0.150536"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.523607" elapsed="0.000826"/>
-</kw>
-<arg>Enter Password</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-09T18:48:40.289840" elapsed="0.234833"/>
-</kw>
-<kw name="Button Click" owner="Buttons">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:40.526646" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
-<var>${BASE_PATH}</var>
-<arg>//button[normalize-space()="${LABEL}"]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.525943" elapsed="0.000783"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:40.527768" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
-<var>${BUTTON_PATH}</var>
-<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.527074" elapsed="0.000770"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${BUTTON_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.528202" elapsed="0.022033"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:40.550851" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
-<msg time="2026-04-09T18:48:40.627173" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<msg time="2026-04-09T18:48:40.831331" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<arg>${BUTTON_PATH}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2026-04-09T18:48:40.550541" elapsed="0.306494">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Clicked button with label ${LABEL}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.857611" elapsed="0.000101"/>
-</kw>
-<arg>Login</arg>
-<status status="FAIL" start="2026-04-09T18:48:40.525177" elapsed="0.332904">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.858618" elapsed="0.000096"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Navigated to Dashboard Successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.859119" elapsed="0.000097"/>
-</kw>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-09T18:48:39.943601" elapsed="0.916086">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:40.860552" elapsed="0.000131"/>
-</kw>
-<kw name="Goto Service" owner="Service">
-<arg>${SERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:40.861568" elapsed="0.000139"/>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:40.862242" elapsed="0.000128"/>
-</kw>
-<kw name="Select Hospital" owner="BeewayDashboardPage">
-<arg>${HOSPITAL_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:40.863058" elapsed="0.000140"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.863648" elapsed="0.000109"/>
-</kw>
-<kw name="Sub Service selection" owner="BeewayDashboardPage">
-<arg>${SUBSERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:40.864248" elapsed="0.000108"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.864695" elapsed="0.000078"/>
-</kw>
-<return>
-<value>P</value>
-<status status="NOT RUN" start="2026-04-09T18:48:40.864939" elapsed="0.000081"/>
-</return>
-<var>${payment_type}</var>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<arg>${SERVICE_NAME}</arg>
-<arg>${HOSPITAL_NAME}</arg>
-<arg>${SUBSERVICE_NAME}</arg>
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<arg>${ACTION}</arg>
-<arg>${ROLE}</arg>
-<arg>${DEPARTMENT}</arg>
-<arg>${WARD}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_NAME_TIME}</arg>
-<arg>${DUTY_TYPE}</arg>
-<arg>${COMMENTS}</arg>
-<arg>${STARTHOUR}</arg>
-<arg>${STARTMIN}</arg>
-<arg>${ENDHOUR}</arg>
-<arg>${ENDMIN}</arg>
-<tag>Regression</tag>
-<tag>Smoke</tag>
-<doc>Login to Bijib and add shift in Beeway</doc>
-<status status="FAIL" start="2026-04-09T18:48:39.941390" elapsed="0.924050">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.869604" elapsed="0.000149"/>
-</kw>
-<kw name="Get Shift Exist Status Admin Login" owner="AddShiftPage">
-<var>${SHIFT_EXISTS}</var>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_NAME}</arg>
-<arg>${TIME}</arg>
-<arg>${WARD}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:40.870529" elapsed="0.000138"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${SHIFT_EXISTS}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.871156" elapsed="0.000103"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:40.871670" elapsed="0.000098"/>
-</kw>
-<kw name="Navigate To Modpay" owner="AddShiftPage">
-<status status="NOT RUN" start="2026-04-09T18:48:40.872336" elapsed="0.000107"/>
-</kw>
-<kw name="Get Month From Date" owner="DateKeywords">
-<var>${MODPAY_MONTH}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<arg>full</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:40.873372" elapsed="0.000137"/>
-</kw>
-<kw name="Check User Shift in Modpay" owner="ModpayAdminInvoicePage">
-<arg>${SUBSERVICE_NAME_IN_MODPAY}</arg>
-<arg>${ROLE_NAME_IN_MODPAY}</arg>
-<arg>${MODPAY_DOCTOR_NAME}</arg>
-<arg>${USERTYPE_IN_MODPAY}</arg>
-<arg>${MODPAY_MONTH}</arg>
-<arg>${YEAR}</arg>
-<arg>${PAYCYCLE_IN_MODPAY}</arg>
-<arg>${DAY-DATE}</arg>
-<arg>${SHIFT-TIME}</arg>
-<arg>${DUTY_TYPE_SYMBOL}</arg>
-<arg>${payment_type}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:40.874311" elapsed="0.000116"/>
-</kw>
-<kw name="Close Application Browser" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:40.874962" elapsed="0.000118"/>
-</kw>
-<kw name="Open Browser To Application" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:40.875603" elapsed="0.000117"/>
-</kw>
-<kw name="Validate Shift in Doctor login" owner="AddShiftPage">
-<arg>${DOCTORLOGIN}</arg>
-<arg>${PASSWORD}</arg>
-<arg>${SERVICE_NAME}</arg>
-<arg>${HOSPITAL_NAME}</arg>
-<arg>${SUBSERVICE_NAME}</arg>
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${TIME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:40.876277" elapsed="0.000118"/>
-</kw>
-<arg>USERNAME=rgarikapati</arg>
-<arg>PASSWORD=E7q_35&amp;ZR]5D*iRZ</arg>
-<arg>SERVICE_NAME=BeeWay</arg>
-<arg>HOSPITAL_NAME=Prince of Wales Private Hospital</arg>
-<arg>SUBSERVICE_NAME=Med Roster</arg>
-<arg>SHIFT_DATE_CONSTANT=2026-07-20</arg>
-<arg>ACTION=Add</arg>
-<arg>ROLE=CMO</arg>
-<arg>DEPARTMENT=</arg>
-<arg>WARD=ICU</arg>
-<arg>DOCTOR_NAME=Aditi AHKNO</arg>
-<arg>SHIFT_NAME=N12</arg>
-<arg>SHIFT_NAME_TIME=N12 - 19:00 to 07:00</arg>
-<arg>DUTY_TYPE=On Site</arg>
-<arg>COMMENTS=As per email from Dr {name} on {date}.</arg>
-<arg>TIME=19:00-07:00</arg>
-<arg>DOCTORLOGIN=akhona</arg>
-<arg>STARTHOUR=</arg>
-<arg>STARTMIN=</arg>
-<arg>ENDHOUR=</arg>
-<arg>ENDMIN=</arg>
-<arg>SUBSERVICE_NAME_IN_MODPAY=Med Roster</arg>
-<arg>ROLE_NAME_IN_MODPAY=CMO</arg>
-<arg>MODPAY_DOCTOR_NAME=</arg>
-<arg>USERTYPE_IN_MODPAY=Shift Users</arg>
-<arg>PAYCYCLE_IN_MODPAY=</arg>
-<arg>DAY-DATE=Mon - 20/07/2026</arg>
-<arg>SHIFT-TIME=19:00 - 07:00</arg>
-<arg>DUTY_TYPE_SYMBOL=plus</arg>
-<status status="FAIL" start="2026-04-09T18:48:39.921118" elapsed="0.955701">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-09T18:48:40.879155" elapsed="2.226735"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:40.878280" elapsed="2.227921"/>
-</kw>
-<status status="FAIL" start="2026-04-09T18:48:37.027644" elapsed="6.079055">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</test>
-<test id="s1-t4" name="Add Shift Test in CSV" line="19">
-<kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:43.121442" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-09T18:48:43.120442" elapsed="3.499171"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.620253" elapsed="0.077843"/>
-</kw>
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>0s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.698417" elapsed="0.000528"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:43.119478" elapsed="3.579734"/>
-</kw>
-<kw name="Add Shift Test">
-<kw name="Get Day From Date" owner="DateKeywords">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:46.705337" level="INFO">${day} = 20</msg>
-<var>${day}</var>
-<arg>${date}</arg>
-<arg>result_format=%d</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.704386" elapsed="0.001028"/>
-</kw>
-<return>
-<value>${day}</value>
-<status status="PASS" start="2026-04-09T18:48:46.705578" elapsed="0.000085"/>
-</return>
-<msg time="2026-04-09T18:48:46.705924" level="INFO">${DATE} = 20</msg>
-<var>${DATE}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:46.703070" elapsed="0.002908"/>
-</kw>
-<kw name="Get Month From Date" owner="DateKeywords">
-<if>
-<branch type="IF" condition="'${format}' == 'short'">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:46.708087" level="INFO">${month} = Jul</msg>
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%b</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.707590" elapsed="0.000553"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:46.707121" elapsed="0.001124"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'full'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%B</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:46.708551" elapsed="0.000049"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:46.708326" elapsed="0.000358"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'number'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%m</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:46.708941" elapsed="0.000044"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:46.708747" elapsed="0.000321"/>
-</branch>
-<branch type="ELSE">
-<kw name="Fail" owner="BuiltIn">
-<arg>Invalid format: ${format}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:46.709376" elapsed="0.000046"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:46.709130" elapsed="0.000413"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:46.707082" elapsed="0.002524"/>
-</if>
-<if>
-<branch type="IF" condition="${uppercase}">
-<kw name="Convert To Upper Case" owner="String">
-<msg time="2026-04-09T18:48:46.710561" level="INFO">${month} = JUL</msg>
-<var>${month}</var>
-<arg>${month}</arg>
-<doc>Converts string to upper case.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.710086" elapsed="0.000535"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:46.709753" elapsed="0.001057"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:46.709709" elapsed="0.001232"/>
-</if>
-<return>
-<value>${month}</value>
-<status status="PASS" start="2026-04-09T18:48:46.711054" elapsed="0.000105"/>
-</return>
-<msg time="2026-04-09T18:48:46.711528" level="INFO">${MONTH} = JUL</msg>
-<var>${MONTH}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<arg>short</arg>
-<arg>True</arg>
-<status status="PASS" start="2026-04-09T18:48:46.706522" elapsed="0.005086"/>
-</kw>
-<kw name="Get Year From Date" owner="DateKeywords">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:46.713512" level="INFO">${year} = 2026</msg>
-<var>${year}</var>
-<arg>${date}</arg>
-<arg>result_format=%Y</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.712854" elapsed="0.000747"/>
-</kw>
-<return>
-<value>${year}</value>
-<status status="PASS" start="2026-04-09T18:48:46.713775" elapsed="0.000101"/>
-</return>
-<msg time="2026-04-09T18:48:46.714233" level="INFO">${YEAR} = 2026</msg>
-<var>${YEAR}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:46.712095" elapsed="0.002212"/>
-</kw>
-<kw name="Add Shift in Beeway" owner="AddShiftPage">
-<kw name="Login and Goto Dashboard" owner="Login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${LOGIN_PAGE_TITLE}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.718621" elapsed="0.022549"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Login Page Loaded Successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.741722" elapsed="0.001801"/>
-</kw>
-<kw name="Textfield With Placeholder" owner="TextFields">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:46.745101" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
-<var>${INPUT_PATH}</var>
-<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.744554" elapsed="0.000607"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.745457" elapsed="0.046512"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.792548" elapsed="0.074505"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:46.867821" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
-<arg>${INPUT_PATH}</arg>
-<arg>${VALUE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:46.867422" elapsed="0.147356"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.015313" elapsed="0.000977"/>
-</kw>
-<arg>Enter Username</arg>
-<arg>${USERNAME}</arg>
-<status status="PASS" start="2026-04-09T18:48:46.743948" elapsed="0.272719"/>
-</kw>
-<kw name="Textfield With Placeholder" owner="TextFields">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:47.018216" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Password"])[1]</msg>
-<var>${INPUT_PATH}</var>
-<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.017675" elapsed="0.000596"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.018514" elapsed="0.030971"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.049806" elapsed="0.037171"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:47.088143" level="INFO">Typing text 'E7q_35&amp;ZR]5D*iRZ' into text field 'xpath=(//input[@placeholder="Enter Password"])[1]'.</msg>
-<arg>${INPUT_PATH}</arg>
-<arg>${VALUE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.087446" elapsed="0.143649"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.231475" elapsed="0.000825"/>
-</kw>
-<arg>Enter Password</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2026-04-09T18:48:47.017074" elapsed="0.215449"/>
-</kw>
-<kw name="Button Click" owner="Buttons">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:47.234517" level="INFO">${BASE_PATH} = //button[normalize-space()="Login"]</msg>
-<var>${BASE_PATH}</var>
-<arg>//button[normalize-space()="${LABEL}"]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.233803" elapsed="0.000794"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:47.235645" level="INFO">${BUTTON_PATH} = xpath=(//button[normalize-space()="Login"])[1]</msg>
-<var>${BUTTON_PATH}</var>
-<arg>xpath=(${BASE_PATH})[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.234948" elapsed="0.000772"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${BUTTON_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.236083" elapsed="0.032162"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:47.268975" level="INFO">Clicking button 'xpath=(//button[normalize-space()="Login"])[1]'.</msg>
-<arg>${BUTTON_PATH}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.268584" elapsed="0.100964"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Clicked button with label ${LABEL}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:47.370010" elapsed="0.000774"/>
-</kw>
-<arg>Login</arg>
-<status status="PASS" start="2026-04-09T18:48:47.233040" elapsed="0.137973"/>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:48.184507" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8F4E35]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<msg time="2026-04-09T18:48:48.198077" level="FAIL">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908DCC]
-	(No symbol) [0x00007FF72E8F617B]
-	(No symbol) [0x00007FF72E8F503E]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<arg>${DASHBOARD_URL}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="FAIL" start="2026-04-09T18:48:47.371335" elapsed="0.832658">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908DCC]
-	(No symbol) [0x00007FF72E8F617B]
-	(No symbol) [0x00007FF72E8F503E]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Navigated to Dashboard Successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:48.204749" elapsed="0.000148"/>
-</kw>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-09T18:48:46.717828" elapsed="1.487606">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908DCC]
-	(No symbol) [0x00007FF72E8F617B]
-	(No symbol) [0x00007FF72E8F503E]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:48.206235" elapsed="0.000141"/>
-</kw>
-<kw name="Goto Service" owner="Service">
-<arg>${SERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:48.207224" elapsed="0.000120"/>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:48.208082" elapsed="0.000158"/>
-</kw>
-<kw name="Select Hospital" owner="BeewayDashboardPage">
-<arg>${HOSPITAL_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:48.209090" elapsed="0.000153"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:48.209752" elapsed="0.000111"/>
-</kw>
-<kw name="Sub Service selection" owner="BeewayDashboardPage">
-<arg>${SUBSERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:48.210460" elapsed="0.000109"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:48.211020" elapsed="0.000109"/>
-</kw>
-<return>
-<value>P</value>
-<status status="NOT RUN" start="2026-04-09T18:48:48.211333" elapsed="0.000092"/>
-</return>
-<var>${payment_type}</var>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<arg>${SERVICE_NAME}</arg>
-<arg>${HOSPITAL_NAME}</arg>
-<arg>${SUBSERVICE_NAME}</arg>
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<arg>${ACTION}</arg>
-<arg>${ROLE}</arg>
-<arg>${DEPARTMENT}</arg>
-<arg>${WARD}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_NAME_TIME}</arg>
-<arg>${DUTY_TYPE}</arg>
-<arg>${COMMENTS}</arg>
-<arg>${STARTHOUR}</arg>
-<arg>${STARTMIN}</arg>
-<arg>${ENDHOUR}</arg>
-<arg>${ENDMIN}</arg>
-<tag>Regression</tag>
-<tag>Smoke</tag>
-<doc>Login to Bijib and add shift in Beeway</doc>
-<status status="FAIL" start="2026-04-09T18:48:46.714950" elapsed="1.496942">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908DCC]
-	(No symbol) [0x00007FF72E8F617B]
-	(No symbol) [0x00007FF72E8F503E]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:48.212767" elapsed="0.000111"/>
-</kw>
-<kw name="Get Shift Exist Status Admin Login" owner="AddShiftPage">
-<var>${SHIFT_EXISTS}</var>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_NAME}</arg>
-<arg>${TIME}</arg>
-<arg>${WARD}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:48.213689" elapsed="0.000121"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${SHIFT_EXISTS}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:48.214406" elapsed="0.000095"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:48.214981" elapsed="0.000098"/>
-</kw>
-<kw name="Navigate To Modpay" owner="AddShiftPage">
-<status status="NOT RUN" start="2026-04-09T18:48:48.215741" elapsed="0.000116"/>
-</kw>
-<kw name="Get Month From Date" owner="DateKeywords">
-<var>${MODPAY_MONTH}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<arg>full</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:48.216653" elapsed="0.000122"/>
-</kw>
-<kw name="Check User Shift in Modpay" owner="ModpayAdminInvoicePage">
-<arg>${SUBSERVICE_NAME_IN_MODPAY}</arg>
-<arg>${ROLE_NAME_IN_MODPAY}</arg>
-<arg>${MODPAY_DOCTOR_NAME}</arg>
-<arg>${USERTYPE_IN_MODPAY}</arg>
-<arg>${MODPAY_MONTH}</arg>
-<arg>${YEAR}</arg>
-<arg>${PAYCYCLE_IN_MODPAY}</arg>
-<arg>${DAY-DATE}</arg>
-<arg>${SHIFT-TIME}</arg>
-<arg>${DUTY_TYPE_SYMBOL}</arg>
-<arg>${payment_type}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:48.217771" elapsed="0.000143"/>
-</kw>
-<kw name="Close Application Browser" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:48.218465" elapsed="0.000106"/>
-</kw>
-<kw name="Open Browser To Application" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:48.219013" elapsed="0.000095"/>
-</kw>
-<kw name="Validate Shift in Doctor login" owner="AddShiftPage">
-<arg>${DOCTORLOGIN}</arg>
-<arg>${PASSWORD}</arg>
-<arg>${SERVICE_NAME}</arg>
-<arg>${HOSPITAL_NAME}</arg>
-<arg>${SUBSERVICE_NAME}</arg>
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${TIME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:48.219644" elapsed="0.000132"/>
-</kw>
-<arg>USERNAME=rgarikapati</arg>
-<arg>PASSWORD=E7q_35&amp;ZR]5D*iRZ</arg>
-<arg>SERVICE_NAME=BeeWay</arg>
-<arg>HOSPITAL_NAME=Prince of Wales Private Hospital</arg>
-<arg>SUBSERVICE_NAME=Med Roster</arg>
-<arg>SHIFT_DATE_CONSTANT=2026-07-20</arg>
-<arg>ACTION=Add</arg>
-<arg>ROLE=CMO</arg>
-<arg>DEPARTMENT=</arg>
-<arg>WARD=GENERAL WARDS</arg>
-<arg>DOCTOR_NAME=Aditi AHKNO</arg>
-<arg>SHIFT_NAME=A12</arg>
-<arg>SHIFT_NAME_TIME=A12 - 07:00 to 19:00</arg>
-<arg>DUTY_TYPE=On Site</arg>
-<arg>COMMENTS=As per email from Dr {name} on {date}.</arg>
-<arg>TIME=07:00-19:00</arg>
-<arg>DOCTORLOGIN=akhona</arg>
-<arg>STARTHOUR=</arg>
-<arg>STARTMIN=</arg>
-<arg>ENDHOUR=</arg>
-<arg>ENDMIN=</arg>
-<arg>SUBSERVICE_NAME_IN_MODPAY=Med Roster</arg>
-<arg>ROLE_NAME_IN_MODPAY=CMO</arg>
-<arg>MODPAY_DOCTOR_NAME=</arg>
-<arg>USERTYPE_IN_MODPAY=Shift Users</arg>
-<arg>PAYCYCLE_IN_MODPAY=</arg>
-<arg>DAY-DATE=Mon - 20/07/2026</arg>
-<arg>SHIFT-TIME=07:00 - 19:00</arg>
-<arg>DUTY_TYPE_SYMBOL=plus</arg>
-<status status="FAIL" start="2026-04-09T18:48:46.699987" elapsed="1.520392">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908DCC]
-	(No symbol) [0x00007FF72E8F617B]
-	(No symbol) [0x00007FF72E8F503E]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-09T18:48:48.222593" elapsed="2.132265"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:48.221933" elapsed="2.133245"/>
-</kw>
-<status status="FAIL" start="2026-04-09T18:48:43.115076" elapsed="7.241764">WebDriverException: Message: target frame detached
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908DCC]
-	(No symbol) [0x00007FF72E8F617B]
-	(No symbol) [0x00007FF72E8F503E]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</test>
-<test id="s1-t5" name="Add Shift Test in CSV" line="19">
-<kw name="Open Browser To Application" owner="BrowserKeywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:50.369068" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-04-09T18:48:50.368595" elapsed="2.462129"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-04-09T18:48:52.831342" elapsed="0.929782"/>
-</kw>
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>0s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.761595" elapsed="0.000455"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:50.367907" elapsed="3.394366"/>
-</kw>
-<kw name="Add Shift Test">
-<kw name="Get Day From Date" owner="DateKeywords">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:53.767434" level="INFO">${day} = 22</msg>
-<var>${day}</var>
-<arg>${date}</arg>
-<arg>result_format=%d</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.766751" elapsed="0.000775"/>
-</kw>
-<return>
-<value>${day}</value>
-<status status="PASS" start="2026-04-09T18:48:53.767710" elapsed="0.000105"/>
-</return>
-<msg time="2026-04-09T18:48:53.768144" level="INFO">${DATE} = 22</msg>
-<var>${DATE}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:53.765881" elapsed="0.002345"/>
-</kw>
-<kw name="Get Month From Date" owner="DateKeywords">
-<if>
-<branch type="IF" condition="'${format}' == 'short'">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:53.770765" level="INFO">${month} = Jul</msg>
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%b</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.770153" elapsed="0.000692"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:53.769666" elapsed="0.001322"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'full'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%B</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:53.771400" elapsed="0.000065"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:53.771095" elapsed="0.000502"/>
-</branch>
-<branch type="ELSE IF" condition="'${format}' == 'number'">
-<kw name="Convert Date" owner="DateTime">
-<var>${month}</var>
-<arg>${date}</arg>
-<arg>result_format=%m</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:53.771993" elapsed="0.000075"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:53.771702" elapsed="0.000510"/>
-</branch>
-<branch type="ELSE">
-<kw name="Fail" owner="BuiltIn">
-<arg>Invalid format: ${format}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:53.772584" elapsed="0.000527"/>
-</kw>
-<status status="NOT RUN" start="2026-04-09T18:48:53.772311" elapsed="0.000945"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:53.769619" elapsed="0.003740"/>
-</if>
-<if>
-<branch type="IF" condition="${uppercase}">
-<kw name="Convert To Upper Case" owner="String">
-<msg time="2026-04-09T18:48:53.774732" level="INFO">${month} = JUL</msg>
-<var>${month}</var>
-<arg>${month}</arg>
-<doc>Converts string to upper case.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.774005" elapsed="0.000835"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:53.773528" elapsed="0.001507"/>
-</branch>
-<status status="PASS" start="2026-04-09T18:48:53.773483" elapsed="0.001704"/>
-</if>
-<return>
-<value>${month}</value>
-<status status="PASS" start="2026-04-09T18:48:53.775355" elapsed="0.000157"/>
-</return>
-<msg time="2026-04-09T18:48:53.775960" level="INFO">${MONTH} = JUL</msg>
-<var>${MONTH}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<arg>short</arg>
-<arg>True</arg>
-<status status="PASS" start="2026-04-09T18:48:53.768938" elapsed="0.007110"/>
-</kw>
-<kw name="Get Year From Date" owner="DateKeywords">
-<kw name="Convert Date" owner="DateTime">
-<msg time="2026-04-09T18:48:53.779148" level="INFO">${year} = 2026</msg>
-<var>${year}</var>
-<arg>${date}</arg>
-<arg>result_format=%Y</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.777905" elapsed="0.001394"/>
-</kw>
-<return>
-<value>${year}</value>
-<status status="PASS" start="2026-04-09T18:48:53.779538" elapsed="0.000130"/>
-</return>
-<msg time="2026-04-09T18:48:53.780051" level="INFO">${YEAR} = 2026</msg>
-<var>${YEAR}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<status status="PASS" start="2026-04-09T18:48:53.776699" elapsed="0.003430"/>
-</kw>
-<kw name="Add Shift in Beeway" owner="AddShiftPage">
-<kw name="Login and Goto Dashboard" owner="Login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${LOGIN_PAGE_TITLE}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.784451" elapsed="0.019151"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Login Page Loaded Successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.803928" elapsed="0.001145"/>
-</kw>
-<kw name="Textfield With Placeholder" owner="TextFields">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-04-09T18:48:53.807601" level="INFO">${INPUT_PATH} = xpath=(//input[@placeholder="Enter Username"])[1]</msg>
-<var>${INPUT_PATH}</var>
-<arg>xpath=(//input[@placeholder="${PLACEHOLDER}"])[${INDEX}]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.806750" elapsed="0.000938"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.808113" elapsed="0.031846"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${INPUT_PATH}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-04-09T18:48:53.840310" elapsed="0.106768"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-04-09T18:48:53.947782" level="INFO">Typing text 'rgarikapati' into text field 'xpath=(//input[@placeholder="Enter Username"])[1]'.</msg>
-<msg time="2026-04-09T18:48:54.016356" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<msg time="2026-04-09T18:48:54.123293" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<arg>${INPUT_PATH}</arg>
-<arg>${VALUE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="FAIL" start="2026-04-09T18:48:53.947400" elapsed="0.205064">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Textfield with placeholder ${PLACEHOLDER} filled with value ${VALUE}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.153045" elapsed="0.000135"/>
-</kw>
-<arg>Enter Username</arg>
-<arg>${USERNAME}</arg>
-<status status="FAIL" start="2026-04-09T18:48:53.805762" elapsed="0.347791">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Textfield With Placeholder" owner="TextFields">
-<arg>Enter Password</arg>
-<arg>${PASSWORD}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.154252" elapsed="0.000138"/>
-</kw>
-<kw name="Button Click" owner="Buttons">
-<arg>Login</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.154960" elapsed="0.000117"/>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.155458" elapsed="0.000092"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Navigated to Dashboard Successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.155970" elapsed="0.000112"/>
-</kw>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<status status="FAIL" start="2026-04-09T18:48:53.783491" elapsed="0.373021">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:54.161506" elapsed="0.000329"/>
-</kw>
-<kw name="Goto Service" owner="Service">
-<arg>${SERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.164960" elapsed="0.000299"/>
-</kw>
-<kw name="Wait For Page Loader To Disappear" owner="PageSelect">
-<status status="NOT RUN" start="2026-04-09T18:48:54.166034" elapsed="0.000185"/>
-</kw>
-<kw name="Select Hospital" owner="BeewayDashboardPage">
-<arg>${HOSPITAL_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.167290" elapsed="0.000229"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.168144" elapsed="0.000111"/>
-</kw>
-<kw name="Sub Service selection" owner="BeewayDashboardPage">
-<arg>${SUBSERVICE_NAME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.168804" elapsed="0.000100"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.169284" elapsed="0.000093"/>
-</kw>
-<return>
-<value>P</value>
-<status status="NOT RUN" start="2026-04-09T18:48:54.169546" elapsed="0.000095"/>
-</return>
-<var>${payment_type}</var>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-<arg>${SERVICE_NAME}</arg>
-<arg>${HOSPITAL_NAME}</arg>
-<arg>${SUBSERVICE_NAME}</arg>
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<arg>${ACTION}</arg>
-<arg>${ROLE}</arg>
-<arg>${DEPARTMENT}</arg>
-<arg>${WARD}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_NAME_TIME}</arg>
-<arg>${DUTY_TYPE}</arg>
-<arg>${COMMENTS}</arg>
-<arg>${STARTHOUR}</arg>
-<arg>${STARTMIN}</arg>
-<arg>${ENDHOUR}</arg>
-<arg>${ENDMIN}</arg>
-<tag>Regression</tag>
-<tag>Smoke</tag>
-<doc>Login to Bijib and add shift in Beeway</doc>
-<status status="FAIL" start="2026-04-09T18:48:53.780811" elapsed="0.389169">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.170646" elapsed="0.000111"/>
-</kw>
-<kw name="Get Shift Exist Status Admin Login" owner="AddShiftPage">
-<var>${SHIFT_EXISTS}</var>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${SHIFT_NAME}</arg>
-<arg>${TIME}</arg>
-<arg>${WARD}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.191488" elapsed="0.000139"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${SHIFT_EXISTS}</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.192092" elapsed="0.000117"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-04-09T18:48:54.192633" elapsed="0.000115"/>
-</kw>
-<kw name="Navigate To Modpay" owner="AddShiftPage">
-<status status="NOT RUN" start="2026-04-09T18:48:54.193354" elapsed="0.000097"/>
-</kw>
-<kw name="Get Month From Date" owner="DateKeywords">
-<var>${MODPAY_MONTH}</var>
-<arg>${SHIFT_DATE_CONSTANT}</arg>
-<arg>full</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.194183" elapsed="0.000112"/>
-</kw>
-<kw name="Check User Shift in Modpay" owner="ModpayAdminInvoicePage">
-<arg>${SUBSERVICE_NAME_IN_MODPAY}</arg>
-<arg>${ROLE_NAME_IN_MODPAY}</arg>
-<arg>${MODPAY_DOCTOR_NAME}</arg>
-<arg>${USERTYPE_IN_MODPAY}</arg>
-<arg>${MODPAY_MONTH}</arg>
-<arg>${YEAR}</arg>
-<arg>${PAYCYCLE_IN_MODPAY}</arg>
-<arg>${DAY-DATE}</arg>
-<arg>${SHIFT-TIME}</arg>
-<arg>${DUTY_TYPE_SYMBOL}</arg>
-<arg>${payment_type}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.195052" elapsed="0.000103"/>
-</kw>
-<kw name="Close Application Browser" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:54.196148" elapsed="0.000138"/>
-</kw>
-<kw name="Open Browser To Application" owner="BrowserKeywords">
-<status status="NOT RUN" start="2026-04-09T18:48:54.196750" elapsed="0.000100"/>
-</kw>
-<kw name="Validate Shift in Doctor login" owner="AddShiftPage">
-<arg>${DOCTORLOGIN}</arg>
-<arg>${PASSWORD}</arg>
-<arg>${SERVICE_NAME}</arg>
-<arg>${HOSPITAL_NAME}</arg>
-<arg>${SUBSERVICE_NAME}</arg>
-<arg>${YEAR}</arg>
-<arg>${MONTH}</arg>
-<arg>${DATE}</arg>
-<arg>${DOCTOR_NAME}</arg>
-<arg>${TIME}</arg>
-<status status="NOT RUN" start="2026-04-09T18:48:54.197397" elapsed="0.000115"/>
-</kw>
-<arg>USERNAME=rgarikapati</arg>
-<arg>PASSWORD=E7q_35&amp;ZR]5D*iRZ</arg>
-<arg>SERVICE_NAME=BeeWay</arg>
-<arg>HOSPITAL_NAME=Prince of Wales Private Hospital</arg>
-<arg>SUBSERVICE_NAME=Med Roster</arg>
-<arg>SHIFT_DATE_CONSTANT=2026-07-22</arg>
-<arg>ACTION=Add</arg>
-<arg>ROLE=CMO</arg>
-<arg>DEPARTMENT=</arg>
-<arg>WARD=CCU</arg>
-<arg>DOCTOR_NAME=Aditi AHKNO</arg>
-<arg>SHIFT_NAME=A12</arg>
-<arg>SHIFT_NAME_TIME=A12 - 07:00 to 19:00</arg>
-<arg>DUTY_TYPE=On Site</arg>
-<arg>COMMENTS=As per email from Dr {name} on {date}.</arg>
-<arg>TIME=07:00-19:00</arg>
-<arg>DOCTORLOGIN=akhona</arg>
-<arg>STARTHOUR=</arg>
-<arg>STARTMIN=</arg>
-<arg>ENDHOUR=</arg>
-<arg>ENDMIN=</arg>
-<arg>SUBSERVICE_NAME_IN_MODPAY=Med Roster</arg>
-<arg>ROLE_NAME_IN_MODPAY=CMO</arg>
-<arg>MODPAY_DOCTOR_NAME=</arg>
-<arg>USERTYPE_IN_MODPAY=Shift Users</arg>
-<arg>PAYCYCLE_IN_MODPAY=</arg>
-<arg>DAY-DATE=Tue - 21/07/2026</arg>
-<arg>SHIFT-TIME=07:00 - 19:00</arg>
-<arg>DUTY_TYPE_SYMBOL=plus</arg>
-<status status="FAIL" start="2026-04-09T18:48:53.763355" elapsed="0.434582">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</kw>
-<kw name="Close Application Browser" owner="BrowserKeywords" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-04-09T18:48:54.208790" elapsed="2.213232"/>
-</kw>
-<status status="PASS" start="2026-04-09T18:48:54.207901" elapsed="2.214618"/>
-</kw>
-<status status="FAIL" start="2026-04-09T18:48:50.364651" elapsed="6.058499">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</status>
-</test>
-<status status="FAIL" start="2026-04-09T18:47:34.872418" elapsed="81.560865"/>
-</suite>
-<statistics>
-<total>
-<stat pass="0" fail="5" skip="0">All Tests</stat>
-</total>
-<tag>
-</tag>
-<suite>
-<stat name="AddShiftTest" id="s1" pass="0" fail="5" skip="0">AddShiftTest</stat>
-</suite>
-</statistics>
+<msg time="2026-04-14T15:12:51.983437" level="INFO">Opening browser 'chrome' to base url 'https://test.bijib.in'.</msg>
 <errors>
-<msg time="2026-04-09T18:48:29.237272" level="WARN">Multiple tests with name 'Add Shift Test in CSV' executed in suite 'AddShiftTest'.</msg>
-<msg time="2026-04-09T18:48:34.309699" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<msg time="2026-04-09T18:48:37.027739" level="WARN">Multiple tests with name 'Add Shift Test in CSV' executed in suite 'AddShiftTest'.</msg>
-<msg time="2026-04-09T18:48:40.627173" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
-<msg time="2026-04-09T18:48:43.115176" level="WARN">Multiple tests with name 'Add Shift Test in CSV' executed in suite 'AddShiftTest'.</msg>
-<msg time="2026-04-09T18:48:48.184507" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
+<msg time="2026-04-14T15:11:56.335368" level="WARN">Error in file 'D:\Apps\Automation\BEEWAY\pages\UserUMSPage.robot' on line 2: Suite 'AddShiftTest' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+<msg time="2026-04-14T15:12:49.691591" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
 from disconnected: not connected to DevTools
   (Session info: chrome=136.0.7103.114); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
 Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8F4E35]
-	(No symbol) [0x00007FF72E919DB4]
-	(No symbol) [0x00007FF72E98EE75]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
+	GetHandleVerifier [0x00007FF64B93CF45+75717]
+	GetHandleVerifier [0x00007FF64B93CFA0+75808]
+	(No symbol) [0x00007FF64B708F9A]
+	(No symbol) [0x00007FF64B6F4E35]
+	(No symbol) [0x00007FF64B719DB4]
+	(No symbol) [0x00007FF64B78EE75]
+	(No symbol) [0x00007FF64B7AECC2]
+	(No symbol) [0x00007FF64B787153]
+	(No symbol) [0x00007FF64B750421]
+	(No symbol) [0x00007FF64B7511B3]
+	GetHandleVerifier [0x00007FF64BC3D71D+3223453]
+	GetHandleVerifier [0x00007FF64BC37CC2+3200322]
+	GetHandleVerifier [0x00007FF64BC55AF3+3322739]
+	GetHandleVerifier [0x00007FF64B956A1A+180890]
+	GetHandleVerifier [0x00007FF64B95E11F+211359]
+	GetHandleVerifier [0x00007FF64B945294+109332]
+	GetHandleVerifier [0x00007FF64B945442+109762]
+	GetHandleVerifier [0x00007FF64B92BA59+4825]
+	BaseThreadInitThunk [0x00007FF9AE1E7374+20]
+	RtlUserThreadStart [0x00007FF9AEBFCC91+33]
 </msg>
-<msg time="2026-04-09T18:48:50.364710" level="WARN">Multiple tests with name 'Add Shift Test in CSV' executed in suite 'AddShiftTest'.</msg>
-<msg time="2026-04-09T18:48:54.016356" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF72EB3CF45+75717]
-	GetHandleVerifier [0x00007FF72EB3CFA0+75808]
-	(No symbol) [0x00007FF72E908F9A]
-	(No symbol) [0x00007FF72E8E1B41]
-	(No symbol) [0x00007FF72E98EC2E]
-	(No symbol) [0x00007FF72E9AECC2]
-	(No symbol) [0x00007FF72E987153]
-	(No symbol) [0x00007FF72E950421]
-	(No symbol) [0x00007FF72E9511B3]
-	GetHandleVerifier [0x00007FF72EE3D71D+3223453]
-	GetHandleVerifier [0x00007FF72EE37CC2+3200322]
-	GetHandleVerifier [0x00007FF72EE55AF3+3322739]
-	GetHandleVerifier [0x00007FF72EB56A1A+180890]
-	GetHandleVerifier [0x00007FF72EB5E11F+211359]
-	GetHandleVerifier [0x00007FF72EB45294+109332]
-	GetHandleVerifier [0x00007FF72EB45442+109762]
-	GetHandleVerifier [0x00007FF72EB2BA59+4825]
-	BaseThreadInitThunk [0x00007FFF45517374+20]
-	RtlUserThreadStart [0x00007FFF473BCC91+33]
-</msg>
+<msg time="2026-04-14T15:12:54.781500" level="ERROR">Execution stopped by user.</msg>
 </errors>
 </robot>

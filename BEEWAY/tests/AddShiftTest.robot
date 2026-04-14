@@ -1,6 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary    screenshot_root_directory=${EXECDIR}/results/Screenshots
-Library    DataDriver    file=../data/AddShiftData.csv    dialect=excel
+Library    DataDriver    file=../data/add_shift_data.csv    dialect=excel
 Resource    ../pages/AddShiftPage.robot
 Resource    ../pages/LoginPage.robot
 Resource    ../pages/ModpayAdminInvoicePage.robot
@@ -44,7 +44,6 @@ Add Shift Test
     ...    ${ENDHOUR}
     ...    ${ENDMIN}
     ...    ${SUBSERVICE_NAME_IN_MODPAY}
-    ...    ${ROLE_NAME_IN_MODPAY}
     ...    ${MODPAY_DOCTOR_NAME}
     ...    ${USERTYPE_IN_MODPAY}
     ...    ${PAYCYCLE_IN_MODPAY}
@@ -80,27 +79,35 @@ Add Shift Test
 
     Sleep    2s
 
-    ${SHIFT_EXISTS}=    
-    ...    Get Shift Exist Status Admin Login
-    ...    ${DATE}    ${DOCTOR_NAME}    ${SHIFT_NAME}    ${TIME}    ${WARD}
-
+    ${SHIFT_EXISTS}=    Get Shift Exist Status Admin Login    
+    ...    ${DATE}    
+    ...    ${DOCTOR_NAME}    
+    ...    ${SHIFT_NAME}    
+    ...    ${TIME}    
+    ...    ${WARD}
+    
     Should Be True     ${SHIFT_EXISTS}
+    Capture Screenshot Step    Shift${DOCTOR_NAME}
     sleep    2s
-    Navigate To Modpay
-    ${MODPAY_MONTH}=    Get Month From Date    ${SHIFT_DATE_CONSTANT}    full
-    Check User Shift in Modpay    
-    ...    ${SUBSERVICE_NAME_IN_MODPAY}    
-    ...    ${ROLE_NAME_IN_MODPAY}    
-    ...    ${DOCTOR_NAME}   
-    ...    ${USERTYPE_IN_MODPAY}    
-    ...    ${MODPAY_MONTH}    
-    ...    ${YEAR}   
-    ...    ${PAYCYCLE_IN_MODPAY} 
-    ...    ${MODPAY_DOCTOR_NAME}      
-    ...    ${DAY-DATE}    
-    ...    ${SHIFT-TIME}
-    ...    ${DUTY_TYPE_SYMBOL}
-    ...    ${payment_type}
+    IF    '${payment_type}' == 'P'
+       Navigate To Modpay
+       ${MODPAY_MONTH}=    Get Month From Date    ${SHIFT_DATE_CONSTANT}    full
+       Check User Shift in Modpay    
+        ...    ${SUBSERVICE_NAME_IN_MODPAY}    
+        ...    ${ROLE}    
+        ...    ${DOCTOR_NAME}   
+        ...    ${USERTYPE_IN_MODPAY}    
+        ...    ${MODPAY_MONTH}    
+        ...    ${YEAR}   
+        ...    ${PAYCYCLE_IN_MODPAY} 
+        ...    ${MODPAY_DOCTOR_NAME}      
+        ...    ${DAY-DATE}    
+        ...    ${SHIFT-TIME}
+        ...    ${DUTY_TYPE_SYMBOL}
+        ...    ${payment_type}
+    ELSE 
+    Log To Console    ⛔ Payment type is not P. Skipping Modpay validation.
+    END   
     
     Close Application Browser
     Open Browser To Application
@@ -116,4 +123,6 @@ Add Shift Test
     ...    ${DATE}
     ...    ${DOCTOR_NAME}
     ...    ${TIME}
+    ...    ${SHIFT-TIME}
+    ...    ${DUTY_TYPE_SYMBOL}
 

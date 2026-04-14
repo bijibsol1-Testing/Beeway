@@ -22,15 +22,13 @@ Wait For Page Loader To Disappear
 
 
 Select Year and Month
-    [Arguments]    ${YEAR}    ${MONTH}    
+    [Arguments]    ${YEAR}    ${MONTH}  
+
     sleep   2s
     Click Element With Path    //i[contains(@class,"fa-solid fa-calendar-days")]
-
     ${SMALL_CALENDAR_PATH}=    Set Variable    //div[contains(@class,"small-calender")]
-    
     Click Element With Path    ${SMALL_CALENDAR_PATH}/div/div/ul/li[normalize-space(text())="${MONTH}"]
     Click Element With Path    ${SMALL_CALENDAR_PATH}/ul/li[normalize-space(text())="Year"]
     Click Element With Path    ${SMALL_CALENDAR_PATH}/div/ul/li[normalize-space(text())="${YEAR}"]
     Button Click    Done   
     sleep  2s
-   

@@ -1,6 +1,6 @@
 *** Test Cases ***,${USERNAME},${PASSWORD},${EXPECTED_ERROR},${SUCCESS}
-Empty Credentials,,,Please Enter User Name/Mobile/Email,False
-Empty password,rgarikapati,,Please Enter Password,False
-Invalid username,ram11,E7q_35&ZR]5D*iRZ,Enter Valid Credentials.,False
-invalid Password,rgarikapati,wrong123,Enter Valid Credentials.,False
-Valid Credentials,rgarikapati,E7q_35&ZR]5D*iRZ,,True
+TC1 - Empty Credentials,,,Please Enter User Name/Mobile/Email,False
+TC2 - Empty Password,rgarikapati,,Please Enter Password,False
+TC3 - Invalid Username,ram11,E7q_35&ZR]5D*iRZ,Enter Valid Credentials.,False
+TC4 - Invalid Password,rgarikapati,wrong123,Enter Valid Credentials.,False
+TC5 - Valid Credentials,rgarikapati,E7q_35&ZR]5D*iRZ,,True

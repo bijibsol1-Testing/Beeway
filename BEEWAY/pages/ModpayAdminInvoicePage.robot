@@ -12,7 +12,7 @@ Resource    ../pages/BeewayDashboardPage.robot
 ***Keywords***
 
 Wait For Modpay Loader To Disappear
-    [Arguments]    ${locator}=//app-bijib-loader    ${TIMEOUT_LONG}
+    [Arguments]    ${locator}=//app-bijib-loader    
 
     # Step 1: Wait briefly for loader to appear (optional)
     ${is_visible}=    Run Keyword And Return Status
@@ -25,7 +25,7 @@ Wait For Modpay Loader To Disappear
 Select SubService in Modpay
     [Arguments]    ${SUBSERVICE_NAME_IN_MODPAY}
 
-    Wait For Modpay Loader To Disappear
+    Wait For Modpay Loader To Disappear    //app-bijib-loader
     # Open correct dropdown
     ${dropdown}=    Set Variable    //div[contains(@class,'form-group')][.//label[contains(.,'Sub Service')]]//li[contains(@class,'dropdown')]
     Wait Until Element Is Visible    ${dropdown}    ${TIMEOUT}
@@ -36,16 +36,16 @@ Select SubService in Modpay
     Wait Until Element Is Visible    ${option_xpath}    10s
     Click Element    ${option_xpath}
 
-    Wait For Modpay Loader To Disappear
+    Wait For Modpay Loader To Disappear    //app-bijib-loader
 
     Log To Console    ✅ Subservice selected: ${SUBSERVICE_NAME_IN_MODPAY}
     
 Select Role in Modpay
-    [Arguments]    ${ROLE_NAME_IN_MODPAY}
+    [Arguments]    ${ROLE}
     
     wait Until Element Is Visible    xpath=//label[normalize-space()='Role']/following::select[1]    ${TIMEOUT}
-    Select From List By Label    xpath=//label[normalize-space()='Role']/following::select[1]    ${ROLE_NAME_IN_MODPAY}
-    Log To Console    ✅ Role selected: ${ROLE_NAME_IN_MODPAY}
+    Select From List By Label    xpath=//label[normalize-space()='Role']/following::select[1]    ${ROLE}
+    Log To Console    ✅ Role selected: ${ROLE}
 
 User Search in Modpay
     [Arguments]    ${DOCTOR_NAME}
@@ -63,7 +63,7 @@ Select Usertype in Modpay
     [Arguments]    ${USERTYPE_IN_MODPAY}
         
     wait Until Element Is Visible    xpath=//label/span[normalize-space()='User Type']/following::select[1]    ${TIMEOUT}
-    Select From List By Label    xpath=//label/span[normalize-space()='User Type']/following::select[1]    ${USERTYPE_IN_MODPAY}
+    Click Element    xpath=//label/span[normalize-space()='User Type']/following::select[1]/option[normalize-space()='${USERTYPE_IN_MODPAY}']   
     Log To Console    ✅ User Type selected: ${USERTYPE_IN_MODPAY}
 
 Select Month in Modpay
@@ -109,7 +109,7 @@ Select PayCycle/Month/Year in Modpay
 Check User Invoice in Modpay
     [Arguments]    ${MODPAY_DOCTOR_NAME}    ${DAY-DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
         
-    wait Until Element Is Visible    xpath=(//p[text()='${MODPAY_DOCTOR_NAME}'])[1]    ${TIMEOUT}
+    wait Until Element Is Visible    xpath=(//p[text()='${MODPAY_DOCTOR_NAME}'])[1]    ${TIMEOUT_LONG}
     Click Element    xpath=(//p[text()='${MODPAY_DOCTOR_NAME}'])[1]
     Wait Until Element Is Visible      xpath=//td//span[contains(normalize-space(.), '${DAY-DATE}') and contains(normalize-space(.), '${SHIFT-TIME}') and .//img[@class='${DUTY_TYPE_SYMBOL}-img']]     ${TIMEOUT}
     Click Element      xpath=//td//span[contains(normalize-space(.), '${DAY-DATE}') and contains(normalize-space(.), '${SHIFT-TIME}') and .//img[@class='${DUTY_TYPE_SYMBOL}-img']]
@@ -125,20 +125,22 @@ Capture Screenshot Step
     Log To Console    ✅ Captured screenshot: ${file}
 
 Check User Shift in Modpay
-    [Arguments]    ${SUBSERVICE_NAME_IN_MODPAY}    ${ROLE_NAME_IN_MODPAY}    ${DOCTOR_NAME}    ${USERTYPE_IN_MODPAY}    ${MODPAY_MONTH}    ${YEAR}    ${PAYCYCLE_IN_MODPAY}    ${MODPAY_DOCTOR_NAME}     ${DAY-DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}
+    [Arguments]    ${SUBSERVICE_NAME_IN_MODPAY}    ${ROLE}    ${DOCTOR_NAME}    ${USERTYPE_IN_MODPAY}    ${MODPAY_MONTH}    ${YEAR}    ${PAYCYCLE_IN_MODPAY}    ${MODPAY_DOCTOR_NAME}     ${DAY-DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}
 
     # Set Selenium Speed    0.2s
     Select SubService in Modpay    ${SUBSERVICE_NAME_IN_MODPAY}
-    Select Role in Modpay    ${ROLE_NAME_IN_MODPAY}
+    Select Role in Modpay    ${ROLE}
     User Search in Modpay    ${DOCTOR_NAME}
     Select Usertype in Modpay    ${USERTYPE_IN_MODPAY}
     Select PayCycle/Month/Year in Modpay    ${MODPAY_MONTH}    ${YEAR}    ${PAYCYCLE_IN_MODPAY} 
     Button Click    Search
-    Sleep    2s
+    Wait For Modpay Loader To Disappear    //app-bijib-loader
     Log To Console   Clicked Search Button
     IF    '${PAYMENT_TYPE}' == 'P'
         Log To Console    Payment Type P → Records should be displayed
+        Sleep    2s
         Check User Invoice in Modpay    ${MODPAY_DOCTOR_NAME}    ${DAY-DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
+        Scroll Element Into View    xpath=//td//span[contains(normalize-space(.), '${DAY-DATE}') and contains(normalize-space(.), '${SHIFT-TIME}') and .//img[@class='${DUTY_TYPE_SYMBOL}-img']]
         Capture Screenshot Step    Invoice${MODPAY_DOCTOR_NAME}
      ELSE
         Log To Console    Payment Type UP → No records should be displayed

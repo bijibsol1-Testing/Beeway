@@ -2,6 +2,8 @@
 Resource    ../resources/BrowserKeywords.robot
 Resource    ../resources/UIComponents.robot  
 Resource    ../pages/ModpayAdminInvoicePage.robot
+Resource    ../pages/AddShiftPage.robot
+Resource    ../resources/DateKeywords.robot
 
 
 *** Keywords ***
@@ -22,29 +24,37 @@ UMS Calennder Year and Month Selection
     Log to Console    UMS Calender icon Clicked Successfully
     Wait Until Element Is Visible    xpath=//ul//li[normalize-space(.)='Month']    ${TIMEOUT}
     Click Element    xpath=//ul//li[normalize-space(.)='${MONTH}']
-    wait Until Element Is Visible    xpath=//ul//li[normalize-space(.)='Year']    ${TIMEOUT}
+    Wait Until Element Is Visible    xpath=//ul//li[normalize-space(.)='Year']    ${TIMEOUT}
     Click Element    xpath=//ul//li[normalize-space(.)='Year']
-    Click Element    xpath=//li[normalize-space(.)='${YEAR}']
+    Sleep    1s
+    Click Element    xpath=//li[normalize-space(text())='2026']
     Button Click    Done
+    Wait For Page Loader To Disappear
 
 Check Shift with date
-    [Arguments]    ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL} 
+    [Arguments]    ${DATE}    ${SHIFT_TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}    ${DOCTOR_NAME}
 
-    ${shift_path}=    Set Variable    xpath=//div[contains(@class,'day-data-item')][.//p[normalize-space(.)='${DATE}']]//div[contains(@class,'user-event-dtls')][.//span[contains(@class,'time') and normalize-space(.)='${SHIFT-TIME}']][.//img[contains(@class,'${DUTY_TYPE_SYMBOL}-img')]]
-    
-    IF    '${payment_type}' == 'P'
-        ${xpath}=    Set Variable    ${shift_path}[.//img[contains(@class,'dollar-img')]]
+     # --- Step 0: Wait for date to load ---
+
+    ${shift_path}=    Set Variable    //div[contains(@class,'day-data-item')][.//p[normalize-space(.)='${DATE}']]//div[contains(@class,'user-event-dtls')][.//span[contains(@class,'time') and normalize-space(.)='${SHIFT_TIME}']][.//img[contains(@class,'${DUTY_TYPE_SYMBOL}-img')]]
+    ${dollar_symbol_path}=    Set Variable    [.//img[contains(@class,'dollar-img')]]
+    IF    '${PAYMENT_TYPE}' == 'P'
+        ${xpath}=    Set Variable    ${shift_path}${dollar_symbol_path}
         Log To Console    ✅ Verifying paid shift with dollar symbol
     ELSE
         ${xpath}=    Set Variable    ${shift_path}
         Log To Console    ⛔ Skipping dollar filter (un-paid shift)
     END
-   Scroll Element Into View    xpath=${xpath}
-   Capture Screenshot Step    UMS_Shift${DOCTOR_NAME}
+
+    # Scroll Element Into View    xpath=${xpath}
+    Capture Screenshot Step    UMS_Shift${DOCTOR_NAME}
+    Log To Console    Screenshot Captured successfully
 
 Verify UMS Calender Shift 
-    [Arguments]    ${MONTH}    ${YEAR}    ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
+    [Arguments]    ${MONTH}    ${YEAR}    ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}      ${DOCTOR_NAME}  
     
     UMS Refresh Button
     UMS Calennder Year and Month Selection    ${MONTH}    ${YEAR}
-    Check Shift with date     ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
+    Check Shift with date     ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}    ${DOCTOR_NAME}
+
+

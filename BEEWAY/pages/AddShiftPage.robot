@@ -7,7 +7,7 @@ Resource    ../resources/Service.robot
 Resource    ../resources/PageSelect.robot
 Resource    ../pages/BeewayDashboardPage.robot
 Resource    ../Variables/TEST.robot
-Resource    ../pages/UserUMSPage.robot
+Resource    ./UserUMSPage.robot
 
 
 *** Variables ***
@@ -38,7 +38,6 @@ Add Shift in Beeway
 Add Shift
     [Arguments]    ${ROLE}    ${DEPARTMENT}    ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME_TIME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
 
- 
     Select Role Department Ward    ${ROLE}   ${DEPARTMENT}    ${WARD}
     Click Button    xpath=//button[normalize-space()='Select']
     Select Doctor    ${DOCTOR_NAME}
@@ -128,11 +127,11 @@ Navigate To Modpay
     Log To Console    ✅ Navigated to Modpay
 
 Validate Shift in Doctor login
-    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${DOCTOR_NAME}    ${TIME}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
+    [Arguments]    ${DOCTORLOGIN}    ${PASSWORD}     ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}     ${MONTH}    ${DATE}     ${DOCTOR_NAME}    ${TIME}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}
 
     Login and Goto Dashboard   ${DOCTORLOGIN}    ${PASSWORD}
     Wait For Page Loader To Disappear
-    Verify UMS Calender Shift     ${MONTH}    ${YEAR}    ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
+    Verify UMS Calender Shift     ${MONTH}    ${YEAR}    ${DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}    ${PAYMENT_TYPE}    ${DOCTOR_NAME}
     Goto Service    ${SERVICE_NAME}
     Wait For Page Loader To Disappear
     Select Hospital     ${HOSPITAL_NAME} 
@@ -143,6 +142,8 @@ Validate Shift in Doctor login
     Should Be True    ${USER_SHIFT_EXISTS}    Shift not found for ${DOCTOR_NAME} on ${DATE} with timing ${TIME}
     Capture Screenshot Step    UserShift${DOCTOR_NAME}
     Log To Console    ✅ Shift for Dr.${DOCTOR_NAME} at ${TIME} on ${DATE} found in Doctor Login
+
+
 
 
     

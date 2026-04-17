@@ -47,7 +47,7 @@ Add Shift Test
     ...    ${MODPAY_DOCTOR_NAME}
     ...    ${USERTYPE_IN_MODPAY}
     ...    ${PAYCYCLE_IN_MODPAY}
-    ...    ${DAY-DATE}
+    ...    ${DAY_DATE}
     ...    ${SHIFT-TIME}
     ...    ${DUTY_TYPE_SYMBOL}
 
@@ -85,7 +85,7 @@ Add Shift Test
     ...    ${SHIFT_NAME}    
     ...    ${TIME}    
     ...    ${WARD}
-    
+
     Should Be True     ${SHIFT_EXISTS}
     Capture Screenshot Step    Shift${DOCTOR_NAME}
     sleep    2s
@@ -101,7 +101,7 @@ Add Shift Test
         ...    ${YEAR}   
         ...    ${PAYCYCLE_IN_MODPAY} 
         ...    ${MODPAY_DOCTOR_NAME}      
-        ...    ${DAY-DATE}    
+        ...    ${DAY_DATE}    
         ...    ${SHIFT-TIME}
         ...    ${DUTY_TYPE_SYMBOL}
         ...    ${payment_type}
@@ -111,6 +111,11 @@ Add Shift Test
     
     Close Application Browser
     Open Browser To Application
+
+    ${DATE}=    Get Day From Date    ${SHIFT_DATE_CONSTANT}
+    ${MONTH}=    Get Month From Date    ${SHIFT_DATE_CONSTANT}    short    True
+    ${YEAR}=    Get Year From Date    ${SHIFT_DATE_CONSTANT}
+    # ${payment_type}=    Set Variable    P
 
     Validate Shift in Doctor login     
     ...    ${DOCTORLOGIN}
@@ -125,4 +130,5 @@ Add Shift Test
     ...    ${TIME}
     ...    ${SHIFT-TIME}
     ...    ${DUTY_TYPE_SYMBOL}
+    ...    ${payment_type}
 

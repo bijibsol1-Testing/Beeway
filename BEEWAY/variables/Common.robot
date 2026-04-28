@@ -5,7 +5,7 @@ ${BROWSER}             chrome
 ${TIMEOUT}             10s
 ${TIMEOUT_LONG}        30s
 
-${ENV}    QAT
+${ENV}    TEST
 
 *** Settings ***
 Resource    ${CURDIR}/${ENV}.robot

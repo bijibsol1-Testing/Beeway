@@ -1,0 +1,7 @@
+*** Test Cases ***,${HOSPITAL_NAME},${SUBSERVICE_NAME},${SHIFT_DATE_CONSTANT},${DOCTOR_NAME},${TIME},${SHIFT_TIME},${DOCTORLOGIN},${DUTY_TYPE_SYMBOL},${PAYMENT_TYPE}
+TC1 - Delete Custom shift in Ans roster for obs role,Prince of Wales Private Hospital,Ans Roster,2026-05-05,Adrian AALNSTU,15:00-22:00,15:00 - 22:00,asultana,oncall,P
+TC2 - Delete shift in Ans roster for obs role,Prince of Wales Private Hospital,Ans Roster,2026-05-09,Jessica ILM,19:00-07:00,19:00 - 07:00,jlim,oncall,P
+TC3 - Delete shift in Ans roster for gen role,Prince of Wales Private Hospital,Ans Roster,2026-07-20,Adrian AALNSTU,07:00-19:00,07:00 - 19:00,asultana,oncall,UP
+TC4 - Delete shift in Med roster for ICU ward,Prince of Wales Private Hospital,Med Roster,2026-07-20,Aditi AHKNO,19:00-07:00,19:00 - 07:00,akhona,plus,P
+TC5 - Delete shift in Med roster for General Wards,Prince of Wales Private Hospital,Med Roster,2026-07-20,Aditi AHKNO,07:00-19:00,07:00 - 19:00,akhona,plus,P
+TC6 - Delete shift in Med roster for CCU ward,Prince of Wales Private Hospital,Med Roster,2026-07-22,Aditi AHKNO,07:00-19:00,07:00 - 19:00,akhona,plus,P

@@ -137,6 +137,8 @@ Validate Shift in Doctor login
     Select Hospital     ${HOSPITAL_NAME} 
     sleep     2s
     Sub Service selection    ${SUBSERVICE_NAME}
+    Wait Until Element Is Visible    xpath=//li[normalize-space()='My Schedule']    ${TIMEOUT}
+    Click Element    xpath=//li[normalize-space()='My Schedule']
     Select Date from My Schedule    ${YEAR}     ${MONTH}    ${DATE}    ${HOSPITAL_NAME}
     ${USER_SHIFT_EXISTS}=    User Shift exist Status    ${DATE}    ${DOCTOR_NAME}    ${TIME}
     Should Be True    ${USER_SHIFT_EXISTS}    Shift not found for ${DOCTOR_NAME} on ${DATE} with timing ${TIME}

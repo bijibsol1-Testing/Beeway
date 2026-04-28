@@ -11,7 +11,7 @@ Open Browser To Application
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Create WebDriver    Chrome    options=${chrome_options}
     Go To    ${URL}
-    Set Selenium Speed    0.1s
+    Set Selenium Speed    0s
 
     # Open Browser    ${URL}    ${BROWSER}
     # Maximize Browser Window

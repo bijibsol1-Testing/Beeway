@@ -1,7 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary    screenshot_root_directory=${EXECDIR}/allure-results/Screenshots
 Library     allure_robotframework
-
+Library     DataDriver    file=../data/Add_Shift_data.csv    dialect=excel
 Resource    ../pages/AddShiftPage.robot
 Resource    ../pages/LoginPage.robot
 Resource    ../pages/ModpayAdminInvoicePage.robot

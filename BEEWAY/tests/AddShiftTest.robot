@@ -78,8 +78,6 @@ Add Shift Test
     ...   ${ENDHOUR}    
     ...   ${ENDMIN}
 
-    Sleep    2s
-
     ${SHIFT_EXISTS}=    Get Shift Exist Status Admin Login    
     ...    ${DATE}    
     ...    ${DOCTOR_NAME}    
@@ -89,7 +87,6 @@ Add Shift Test
 
     Should Be True     ${SHIFT_EXISTS}
     Capture Screenshot Step    Shift${DOCTOR_NAME}
-    sleep    2s
     IF    '${payment_type}' == 'P'
        Navigate To Modpay
        ${MODPAY_MONTH}=    Get Month From Date    ${SHIFT_DATE_CONSTANT}    full

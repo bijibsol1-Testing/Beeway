@@ -12,7 +12,7 @@ Resource    ../pages/BeewayDashboardPage.robot
 ***Keywords***
 
 Wait For Modpay Loader To Disappear
-    [Arguments]    ${locator}=//app-bijib-loader    
+    [Arguments]    ${locator}=//app-bijib-loader
 
     # Step 1: Wait briefly for loader to appear (optional)
     ${is_visible}=    Run Keyword And Return Status
@@ -108,10 +108,10 @@ Select PayCycle/Month/Year in Modpay
 
 Check User Invoice in Modpay
     [Arguments]    ${MODPAY_DOCTOR_NAME}    ${DAY_DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
-        
-    wait Until Element Is Visible    xpath=(//p[text()='${MODPAY_DOCTOR_NAME}'])[1]    ${TIMEOUT_LONG}
-    Click Element    xpath=(//p[text()='${MODPAY_DOCTOR_NAME}'])[1]
+    
+    Click Element With Path    //p[text()='${MODPAY_DOCTOR_NAME}']
     Wait Until Element Is Visible      xpath=//td//span[contains(normalize-space(.), '${DAY_DATE}') and contains(normalize-space(.), '${SHIFT-TIME}') and .//img[@class='${DUTY_TYPE_SYMBOL}-img']]     ${TIMEOUT}
+    Scroll Element Into View      xpath=//td//span[contains(normalize-space(.), '${DAY_DATE}') and contains(normalize-space(.), '${SHIFT-TIME}') and .//img[@class='${DUTY_TYPE_SYMBOL}-img']]
     Click Element      xpath=//td//span[contains(normalize-space(.), '${DAY_DATE}') and contains(normalize-space(.), '${SHIFT-TIME}') and .//img[@class='${DUTY_TYPE_SYMBOL}-img']]
     Log To Console    ✅ Checked User Invoice in Modpay ${MODPAY_DOCTOR_NAME} on ${DAY_DATE} at ${SHIFT-TIME} with duty type symbol ${DUTY_TYPE_SYMBOL}
 
@@ -133,11 +133,10 @@ Check User Shift in Modpay
     Select Usertype in Modpay    ${USERTYPE_IN_MODPAY}
     Select PayCycle/Month/Year in Modpay    ${MODPAY_MONTH}    ${YEAR}    ${PAYCYCLE_IN_MODPAY} 
     Button Click    Search
-    Wait For Modpay Loader To Disappear    //app-bijib-loader
+    Wait For Modpay Loader To Disappear
     Log To Console   Clicked Search Button
     IF    '${PAYMENT_TYPE}' == 'P'
         Log To Console    Payment Type P → Records should be displayed
-        Sleep    2s
         Check User Invoice in Modpay    ${MODPAY_DOCTOR_NAME}    ${DAY_DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
         Scroll To Specific Element    ${DAY_DATE}    ${SHIFT-TIME}    ${DUTY_TYPE_SYMBOL}
         Capture Screenshot Step    Invoice${MODPAY_DOCTOR_NAME}

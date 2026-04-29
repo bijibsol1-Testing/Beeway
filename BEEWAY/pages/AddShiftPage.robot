@@ -119,7 +119,9 @@ Get Shift Exist Status Admin Login
     RETURN    ${exists}
 
 Navigate To Modpay
+    sleep    2s
     wait Until Element Is Visible    xpath=//li[normalize-space()='ModPay']    ${TIMEOUT}
+    Scroll Element Into View    xpath=//li[normalize-space()='ModPay']
     Click Element    xpath=//li[normalize-space()='ModPay']
     Wait For Page Loader To Disappear
     Wait Until Location Is    ${MODPAY_INVOICE_URL}    ${TIMEOUT_LONG}

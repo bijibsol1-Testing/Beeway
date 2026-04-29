@@ -6,7 +6,7 @@ Resource    ../resources/Login.robot
 Resource    ../resources/Service.robot 
 Resource    ../resources/PageSelect.robot
 Resource    ../pages/BeewayDashboardPage.robot
-Resource    ../Variables/TEST.robot
+Resource    ../variables/TEST.robot
 Resource    ./UserUMSPage.robot
 
 

@@ -6,7 +6,7 @@ Resource    ../resources/Login.robot
 Resource    ../resources/Service.robot 
 Resource    ../resources/PageSelect.robot
 Resource    ../pages/BeewayDashboardPage.robot
-Resource    ../variables/TEST.robot
+Resource    ../variables/${ENV}.robot
 Resource    ./UserUMSPage.robot
 
 
@@ -15,7 +15,7 @@ Resource    ./UserUMSPage.robot
 *** Keywords ***
 
 Add Shift in Beeway
-    [Arguments]     ${USERNAME}    ${PASSWORD}    ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}   ${MONTH}    ${DATE}    ${ACTION}    ${ROLE}   ${DEPARTMENT}   ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
+    [Arguments]     ${USERNAME}    ${PASSWORD}    ${SERVICE_NAME}    ${HOSPITAL_NAME}    ${SUBSERVICE_NAME}    ${YEAR}   ${MONTH}    ${DATE}    ${ACTION}    ${ROLE}   ${DEPARTMENT}   ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}    ${RATE_TYPE}    ${RATE}
     [Documentation]    Login to Bijib and add shift in Beeway
     [Tags]    Smoke    Regression
     
@@ -32,12 +32,12 @@ Add Shift in Beeway
     ${DATE_XPATH}=    Set Variable    (//li[.//div[normalize-space()='${DATE}']])[1]
     Wait Until Element Is Visible    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']     ${TIMEOUT_LONG}
     Click Element    xpath=${DATE_XPATH}//li[normalize-space()='${ACTION}']
-    ${payment_type}=    Add Shift   ${ROLE}   ${DEPARTMENT}    ${WARD}   ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
+    ${payment_type}=    Add Shift   ${ROLE}   ${DEPARTMENT}    ${WARD}   ${DOCTOR_NAME}   ${SHIFT_NAME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}    ${RATE_TYPE}    ${RATE}
     RETURN    ${payment_type}
     # RETURN    P
     
 Add Shift
-    [Arguments]    ${ROLE}    ${DEPARTMENT}    ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME_TIME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}
+    [Arguments]    ${ROLE}    ${DEPARTMENT}    ${WARD}    ${DOCTOR_NAME}   ${SHIFT_NAME_TIME}    ${DUTY_TYPE}   ${COMMENTS}    ${STARTHOUR}   ${STARTMIN}   ${ENDHOUR}    ${ENDMIN}    ${RATE_TYPE}    ${RATE}
 
     Select Role Department Ward    ${ROLE}   ${DEPARTMENT}    ${WARD}
     Click Button    xpath=//button[normalize-space()='Select']
@@ -48,7 +48,8 @@ Add Shift
     ${payment_type}=    Check Payment Type
     Checkbox Should Be Selected    xpath=//input[@id='clash_checkbox']
     Log To Console    ✅ Clash verified
-    Select Comments Dropdown    ${COMMENTS}    ${DEPARTMENT}    ${WARD}    ${SHIFT_NAME_TIME}
+    Special rate selection    ${DEPARTMENT}    ${WARD}    ${SHIFT_NAME_TIME}    ${RATE_TYPE}    ${RATE}
+    Select Comments Dropdown    ${COMMENTS}    ${DEPARTMENT}    ${WARD}    ${SHIFT_NAME_TIME}    ${RATE_TYPE}
     Button Click    Save
     Log To Console    ✅ Shift saved successfully
     RETURN    ${payment_type}
@@ -119,6 +120,7 @@ Get Shift Exist Status Admin Login
     END
     RETURN    ${exists}
 
+
 Navigate To Modpay
     sleep    2s
     wait Until Element Is Visible    xpath=//li[normalize-space()='ModPay']    ${TIMEOUT}
@@ -149,6 +151,15 @@ Validate Shift in Doctor login
     Log To Console    ✅ Shift for Dr.${DOCTOR_NAME} at ${TIME} on ${DATE} found in Doctor Login
 
 
+
+
+    
+
+
+
+
+
+    
 
 
     

@@ -160,12 +160,3 @@ Validate Shift in Doctor login
 
 
     
-
-
-    
-
-
-
-
-
-    

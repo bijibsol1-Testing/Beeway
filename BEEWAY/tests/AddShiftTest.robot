@@ -44,6 +44,8 @@ Add Shift Test
     ...    ${STARTMIN}                
     ...    ${ENDHOUR}
     ...    ${ENDMIN}
+    ...    ${RATE_TYPE}    
+    ...    ${RATE}
     ...    ${SUBSERVICE_NAME_IN_MODPAY}
     ...    ${MODPAY_DOCTOR_NAME}
     ...    ${USERTYPE_IN_MODPAY}
@@ -77,6 +79,8 @@ Add Shift Test
     ...   ${STARTMIN}   
     ...   ${ENDHOUR}    
     ...   ${ENDMIN}
+    ...   ${RATE_TYPE}
+    ...   ${RATE}
 
     ${SHIFT_EXISTS}=    Get Shift Exist Status Admin Login    
     ...    ${DATE}    
